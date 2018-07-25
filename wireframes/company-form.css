@@ -1,0 +1,66 @@
+a, body, button, div, fieldset, form, h1, h2, html, input, label, legend, li, main, p, ul {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+  font-family: 'Sunflower', sans-serif;
+  font-size: 20px;
+  font-weight: normal;
+  color: black;
+}
+
+main {
+  width: 300px;
+  border: 2px solid black;
+  background-color: ;
+}
+
+form {
+  padding: 10px;
+}
+
+.title-span {
+  width: 100%;
+  display: inline-block;
+  border-bottom: 2px black solid;
+  background-color: white;
+}
+
+h1 {
+  float: left;
+  padding: 10px;
+}
+
+a {
+  text-decoration: none;
+}
+
+.fa-times {
+  float: right;
+  color: black;
+  padding: 10px;
+}
+
+.fa-caret-down {
+  padding-bottom: 10px;
+}
+
+fieldset {
+  border: 0;
+}
+
+.company-fieldset {
+  padding-bottom: 20px;
+}
+
+input {
+  width: 90%;
+  border: 2px solid black;
+  margin-bottom: 10px;
+}
+
+button {
+  display: block;
+  background-color: ;
+  text-decoration: underline;
+}

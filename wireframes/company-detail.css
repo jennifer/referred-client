@@ -1,0 +1,40 @@
+a, body, button, div, fieldset, footer, form, h1, h2, header, html, img, input, label, legend, li, main, nav, p, section, span, ul {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+  font-family: 'Sunflower', sans-serif;
+  font-size: 20px;
+  font-weight: normal;
+}
+
+body {
+	width: 300px;
+  border: 2px black solid;
+}
+
+main {
+  background-color: ;
+}
+
+span {
+  width: 100%;
+  border-bottom: 2px black solid;
+  display: inline-block;
+  background-color: white;
+}
+
+h1 {
+  float: left;
+  padding: 10px;
+}
+
+i {
+  float: right;
+  padding: 10px;
+  color: black;
+}
+
+div {
+  padding: 10px;
+}

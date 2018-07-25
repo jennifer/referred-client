@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Company detail</title>
+  <link rel='stylesheet' type='text/css' href='company-form.css'>
+  <link href='https://fonts.googleapis.com/css?family=Sunflower:300' rel='stylesheet'>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
+  <meta charset='utf-8'>
+</head>
+<body>
+  <main>
+      <span class='title-span'>
+        <h1>Add a company:</h1>
+        <a href='/'><i class="fas fa-times"></i></a>
+      </span>
+    <form>
+      <fieldset class='company-fieldset'>
+        <legend>
+          <label for='company'>Company name:</label>
+        </legend>
+        <input type='text' name='company' required='' />
+        <label for='location'>Location:</label>
+        <input type='text' name='location' required='' />
+        <label for='description'>Description:</label>
+        <input type='text' name='description' required='' />
+        <label for='notes'>Notes:</label>
+        <input type='text' name='notes' />
+      </fieldset>
+      <a href=''>Add a job <i class="fas fa-caret-down"></i></a>
+      <fieldset>
+        <legend>
+          <label for='description'>Job title:</label>
+        </legend>
+        <input type='text' name='description' />
+        <label for='description'>Job description:</label>
+        <input type='text' name='description' />
+        <label for='applied'>Applied date:</label>
+        <input type='text' name='applied' />
+        <a href=''>Add another job <i class="fas fa-caret-down"></i></a>
+      </fieldset>
+      <a href=''>Add a person <i class="fas fa-caret-down"></i></a>
+      <button type='submit'>Add company</button>
+    </form>
+  </main>
+</body>
+</html>
