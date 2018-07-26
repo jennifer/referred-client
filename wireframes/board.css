@@ -15,19 +15,12 @@ html, body {
 nav {
   border-bottom: 2px black solid;
   background-color: white;
+  text-align: right;
 }
 
 button {
   padding: 10px;
-}
-
-.float-right {
-  float: right;
-  border-left: 2px black solid;
-}
-
-.border-right {
-  border-right: 2px black solid;
+  border-left: 2px solid black;
 }
 
 button:hover, tr:hover {
@@ -50,4 +43,8 @@ th, td {
 
 td {
   height: 100px;
+}
+
+.fa-plus {
+  float: right;
 }
