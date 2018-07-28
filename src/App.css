@@ -1,28 +1,67 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css?family=Sunflower:300');
+
+
+a, body, button, div, fieldset, footer, form, h1, h2, header, html, img, input, label, legend, li, main, nav, p, section, ul {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+  font-family: 'Sunflower', sans-serif;
+  font-size: 20px;
+  font-weight: normal;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+html, body { 
+  min-height: 100%;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+nav {
+  border-bottom: 2px black solid;
+  background-color: white;
+  text-align: right;
 }
 
-.App-title {
-  font-size: 1.5em;
+button {
+  padding: 10px;
+  border-left: 2px solid black;
 }
 
-.App-intro {
-  font-size: large;
+button:hover, tr:hover {
+  background-color: ;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+table {
+  width: 100%;
+  table-layout: fixed;
+  text-align: left;
+  border-collapse: collapse;
+  border-style: hidden;
+  border-bottom: 1px black dashed;
+}
+
+th, td {
+  font-weight: normal;
+  padding: 10px;
+  border: 1px black dashed;
+}
+
+.tool-tip {
+  position: relative;
+  float: right;
+}
+
+.tool-tip .tool-tip-text {
+  visibility: hidden;
+  white-space:nowrap;
+  background-color: #fdc7ff;
+  border: 2px black solid;
+  padding: 5px;
+  position: absolute;
+  z-index: 1;
+  top: -8px;
+  left: 120%;
+}
+
+.tool-tip:hover .tool-tip-text {
+  visibility: visible;
 }
