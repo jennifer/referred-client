@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Sunflower:300');
 
-
 a, body, button, div, fieldset, footer, form, h1, h2, header, html, img, input, label, legend, li, main, nav, p, section, ul {
   margin: 0;
   padding: 0;
@@ -30,38 +29,3 @@ button:hover, tr:hover {
   background-color: ;
 }
 
-table {
-  width: 100%;
-  table-layout: fixed;
-  text-align: left;
-  border-collapse: collapse;
-  border-style: hidden;
-  border-bottom: 1px black dashed;
-}
-
-th, td {
-  font-weight: normal;
-  padding: 10px;
-  border: 1px black dashed;
-}
-
-.tool-tip {
-  position: relative;
-  float: right;
-}
-
-.tool-tip .tool-tip-text {
-  visibility: hidden;
-  white-space:nowrap;
-  background-color: #aef4a4;
-  border: 2px black solid;
-  padding: 5px;
-  position: absolute;
-  z-index: 1;
-  top: -8px;
-  left: 120%;
-}
-
-.tool-tip:hover .tool-tip-text {
-  visibility: visible;
-}
