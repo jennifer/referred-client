@@ -1,22 +1,12 @@
-a, body, button, div, fieldset, form, h1, h2, html, input, label, legend, li, main, p, ul {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  box-sizing: border-box;
-  font-family: 'Sunflower', sans-serif;
-  font-size: 20px;
-  font-weight: normal;
-  color: black;
-}
-
-main {
+.modal-div {
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  height: auto; /* Full height */
   width: 300px;
+  overflow: auto; /* Enable scroll if needed */
   border: 2px solid black;
-  background-color: ;
-}
-
-form {
-  padding: 10px;
+  background-color: white;
+  margin: auto 14%;
 }
 
 .title-span {
@@ -26,9 +16,9 @@ form {
   background-color: white;
 }
 
-h1 {
+.modal-header {
   float: left;
-  padding: 10px;
+  padding: 5px;
 }
 
 a {
@@ -38,7 +28,7 @@ a {
 .fa-times {
   float: right;
   color: black;
-  padding: 10px;
+  padding: 7px;
 }
 
 .fa-caret-down {

@@ -4,13 +4,12 @@ import './detail.css';
 
 export default function Detail(props) {
   return (
-    <div>
-      <span class='title-span'>
-        <h1>Add a company:</h1>
-        <FontAwesomeIcon icon='times' />
+    <div className='modal-div'>
+      <span className='title-span'>
+        <h1 className='modal-header'>Add a company</h1>
       </span>
       <form>
-        <fieldset class='company-fieldset'>
+        <fieldset className='company-fieldset'>
           <legend>
             <label for='company'>Company name:</label>
           </legend>

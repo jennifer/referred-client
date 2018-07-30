@@ -1,13 +1,3 @@
-a, body, button, div, fieldset, footer, form, h1, h2, header, html, img, input, label, legend, li, main, nav, p, section, ul {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  box-sizing: border-box;
-  font-family: 'Sunflower', sans-serif;
-  font-size: 20px;
-  font-weight: normal;
-}
-
 table {
   width: 100%;
   table-layout: fixed;
@@ -23,23 +13,6 @@ th, td {
   border: 1px black dashed;
 }
 
-.tool-tip {
-  position: relative;
-  float: right;
-}
-
-.tool-tip .tool-tip-text {
-  visibility: hidden;
-  white-space:nowrap;
-  background-color: #aef4a4;
-  border: 2px black solid;
-  padding: 5px;
-  position: absolute;
-  z-index: 1;
-  top: -8px;
-  left: 120%;
-}
-
-.tool-tip:hover .tool-tip-text {
-  visibility: visible;
+tr:hover {
+  background-color: #fdffab;
 }

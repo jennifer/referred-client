@@ -1,7 +1,6 @@
 import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import AddClick from './add-click';
 import CompanyCard from './company-card';
-import Detail from './detail';
 import './board.css';
 
 const companies = [
@@ -71,20 +70,12 @@ const people = [
 }
 ];
 
-const addClick = (e)=> {
-  return (
-    <Detail />
-  )  
-}
-
 export default function Board(props) {
   return(
     <table>
       <tr>
         <th>Company
-        <div className='tool-tip'><FontAwesomeIcon icon='plus' onClick={() => addClick()} />
-          <span className='tool-tip-text'>Add a company</span>
-        </div>
+         <AddClick />
         </th>
         <th className='identify' scope='col'>Identified a person</th>
         <th className='contact' scope='col'>Made contact</th>
