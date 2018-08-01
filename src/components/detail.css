@@ -49,3 +49,9 @@ input {
   margin-bottom: 10px;
 }
 
+.submit-button {
+  border: none;
+  text-decoration: underline;
+  cursor: pointer;
+}
+

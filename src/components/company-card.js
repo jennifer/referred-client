@@ -1,5 +1,4 @@
 import React from 'react';
-import AddClick from './add-click';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import './company-card.css'
 
@@ -10,7 +9,9 @@ export default function CompanyCard(props) {
 		    <h1 key={ props.index }>{props.company.name}</h1>
 		    <p key={ props.index }>{props.company.location}</p>
 		    <p key={ props.index }>{props.company.description}</p>
-		    <AddClick />
+		    <div className='tool-tip'><FontAwesomeIcon icon='plus' onClick />
+            	<span className='tool-tip-text'>Add a person</span>
+          	</div>
 		  </td>
 		  <td>identify</td>
 		  <td>contact</td>

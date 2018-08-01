@@ -7,6 +7,7 @@ export default function Detail(props) {
     <div className='modal-div'>
       <span className='title-span'>
         <h1 className='modal-header'>Add a company</h1>
+        <FontAwesomeIcon icon='times' />
       </span>
       <form>
         <fieldset className='company-fieldset'>
@@ -34,7 +35,7 @@ export default function Detail(props) {
           <FontAwesomeIcon icon='caret-down' />
         </fieldset>
         <FontAwesomeIcon icon='caret-down' />
-        <button type='submit'>Add company</button>
+        <button type='submit' className='submit-button'>Add company</button>
       </form>
     </div>
   )

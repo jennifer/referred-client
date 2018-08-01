@@ -4,11 +4,11 @@ nav {
   text-align: right;
 }
 
-button {
+.border-button {
   padding: 10px;
   border-left: 2px solid black;
 }
 
-button:hover {
+.border-button:hover {
   background-color: #fdffab;
 }

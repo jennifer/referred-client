@@ -4,8 +4,8 @@ import './nav.css';
 export default function Nav(props) {
   return(
     <nav>
-    	<button>Logout</button>
-    	<button>About</button>
+    	<button className='border-button'>Logout</button>
+    	<button className='border-button'>About</button>
     </nav>
   )
 };
