@@ -2,6 +2,13 @@ language: node_js
 node_js: node
 cache:
   directories:
-    - node_modules
+  - node_modules
 env:
-  - CI=true
+- CI=true
+deploy:
+  provider: heroku
+  api_key:
+    secure: mCOCE9Ssm7WEVmPi6oOqXvmCzCldr8QrtxQeuHGyXVu1jKIK+taFuFElDfOKejO4KDIG4f6l5OvOO4ZByHFJSWJ3Bsnc406vt3bY0DncfNprqJFHkA3HOev2y/bNo0DPA3zjpqXANQp2Jr3jHHj3wJThTl0S0GGzxVb1t4zRemxUsQd2ENa9QSM3qHCI4/WleIdTxIgS8ZI9U1MC83cbh0bkCrZoa74bDUhCODW9atMryQeE9UkcAWCf5nIDsBfkTFLo/sGlAXiiSYYB2iGYpYvFYH8LRaZTdHJb30lsP8FUTBAd6ZTUi+0eajf1FO9oKVeYUsI5CFtin3Epz9qFuPvxHzBzesLu+PLo7VEDrtA8wlLku6mp2tZxgrRpyhwL7+Ra7VgONBjRczLBznMNBvumLcUt85uunhvaZf4inZXE0gquHZd3ccOtLuVhL+HgJtrSBQoCVeQgbN+jGGzmaWvQ3LNeCoA31Z/mg6dGfXrpeUZ5FG/2VuvuX2A9xmD4vgaMEnYCJ4qWcJdUlk9fOjuewNqmsX0G7LOYBSUnQnUQL2OUOPK3maqTDgSKtJz9p82nxSnKkl3AufXnaEC4jCaa3xiHBW+slRo8j6t9TeoIwbncKfh0GpsWNX9n/moucTxoV2TPr/2ZvB+mueSEjSytU/ouGtOXbSnke1Qbl/Y=
+  app: net-work
+  on:
+    repo: jennifer/network
