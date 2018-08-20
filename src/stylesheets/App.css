@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css?family=Sunflower:300');
+
+a, body, button, div, fieldset, form, h1, h2, html, input, label, legend, li, main, p, ul {
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Sunflower', sans-serif;
+  font-size: 20px;
+  font-weight: normal;
+  color: black;
+}
+
+html, body { 
+  min-height: 100%;
+}
