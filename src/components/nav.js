@@ -1,11 +1,37 @@
 import React from 'react';
-import './nav.css';
+import { connect } from 'react-redux';
+import { clearAuth } from '../actions/auth';
+import { clearAuthToken } from '../local-storage';
+import { Redirect } from 'react-router-dom';
+import '../stylesheets/nav.css';
 
-export default function Nav(props) {
-  return(
-    <nav>
-    	<button className='border-button'>Logout</button>
-    	<button className='border-button'>About</button>
-    </nav>
-  )
-};
+export class Nav extends React.Component {
+  logOut() {
+    this.props.dispatch(clearAuth());
+    clearAuthToken();
+    return <Redirect to='/title-page' />;
+  }
+
+  render() {
+    // Only render the log out button if we are logged in
+    let logOutButton;
+    if (this.props.loggedIn) {
+      logOutButton = (
+        <button className='border-button' onClick={() => this.logOut()}>Log out</button>
+      );
+    }
+    return (
+      <div className='nav'>
+        <h1 className='app-title'>NetWork</h1>
+        {logOutButton}
+        <button className='border-button'>About</button>
+      </div>
+    );
+  }
+}
+
+const mapStateToProps = state => ({
+  loggedIn: state.auth.currentUser !== null
+});
+
+export default connect(mapStateToProps)(Nav);

@@ -1,6 +1,6 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import './detail.css';
+import '../stylesheets/detail.css';
 
 export default function Detail(props) {
   return (

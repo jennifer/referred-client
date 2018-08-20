@@ -1,10 +1,12 @@
 import React from 'react';
-import {Field, reduxForm, focus} from 'redux-form';
-import {registerUser} from '../actions/users';
-import {login} from '../actions/auth';
+import { Field, reduxForm, focus } from 'redux-form';
+import { registerUser } from '../actions/users';
+import { login } from '../actions/auth';
 import Input from './input';
-import {required, nonEmpty, matches, length, isTrimmed} from '../validators';
-const passwordLength = length({min: 10, max: 72});
+import { required, nonEmpty, matches, length, isTrimmed } from '../validators';
+import '../stylesheets/signup-form.css';
+
+const passwordLength = length({min: 5, max: 72});
 const matchesPassword = matches('password');
 
 export class SignupForm extends React.Component {

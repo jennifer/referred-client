@@ -1,29 +1,3 @@
-/*
-import React, { Component } from 'react';
-import Nav from './components/nav';
-import Board from './components/board';
-import './App.css';
-
-import { library } from '@fortawesome/fontawesome-svg-core';
-import { faPlus, faPencilAlt, faTimes, faCaretDown } from '@fortawesome/free-solid-svg-icons';
-
-library.add(faPlus, faPencilAlt, faTimes, faCaretDown);
-
-class App extends Component {
-  render() {
-    return (
-      <div>
-        <Nav />
-        <Board />
-      </div>
-    )
-  }
-}
-
-export default App;
-*/
-
-
 import React from 'react';
 import { connect } from 'react-redux';
 import { Route, withRouter } from 'react-router-dom';
@@ -33,7 +7,7 @@ import Nav from './nav';
 import SignupPage from './signup-page';
 import TitlePage from './title-page';
 import { refreshAuthToken } from '../actions/auth';
-import './App.css';
+import '../stylesheets/App.css';
 
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faPlus, faPencilAlt, faTimes, faCaretDown } from '@fortawesome/free-solid-svg-icons';

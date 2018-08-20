@@ -1,15 +1,15 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import './company-card.css'
+import '../stylesheets/company-card.css'
 
 export default function CompanyCard(props) {
 	return(
 		<tr>
-		  <td key={ props.index }>
-		    <h1 key={ props.index }>{props.company.name}</h1>
-		    <p key={ props.index }>{props.company.location}</p>
-		    <p key={ props.index }>{props.company.description}</p>
-		    <div className='tool-tip'><FontAwesomeIcon icon='plus' onClick />
+		  <td key={props.index}>
+		    <h1 key={props.index}>{props.company.name}</h1>
+		    <p key={props.index}>{props.company.location}</p>
+		    <p key={props.index}>{props.company.description}</p>
+		    <div className='tool-tip'><FontAwesomeIcon icon='plus' />
             	<span className='tool-tip-text'>Add a person</span>
           	</div>
 		  </td>

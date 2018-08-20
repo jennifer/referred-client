@@ -1,6 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {Link, Redirect} from 'react-router-dom';
+import '../stylesheets/title-page.css';
 
 import LoginForm from './login-form';
 
@@ -12,9 +13,10 @@ export function TitlePage(props) {
 
     return (
         <div className="home">
-            <h2>Welcome to Network</h2>
+            <h2>Login:</h2>
             <LoginForm />
-            <Link to="/register">Register</Link>
+            <p>or </p>
+            <Link to="/signup-page">Make an account</Link>
         </div>
     );
 }

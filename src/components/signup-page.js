@@ -1,6 +1,7 @@
 import React from 'react';
-import {connect} from 'react-redux';
-import {Link, Redirect} from 'react-router-dom';
+import { connect } from 'react-redux';
+import { Link, Redirect } from 'react-router-dom';
+import '../stylesheets/signup-page.css';
 
 import SignupForm from './signup-form';
 
@@ -12,9 +13,10 @@ export function SignupPage(props) {
   }
   return (
     <div className="home">
-      <h2>Register for Network</h2>
+      <h2>Make an account:</h2>
       <SignupForm />
-      <Link to="/">Login</Link>
+      <p>or</p>
+      <Link to="/">Go back to login</Link>
     </div>
   );
 }

@@ -1,6 +1,6 @@
 import React from 'react';
 import CompanyCard from './company-card';
-import './board.css';
+import '../stylesheets/board.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const companies = [
@@ -73,37 +73,38 @@ const people = [
 export default function Board(props) {
   return(
     <table>
-      <tr>
-        <th>Company
-          <div className='tool-tip'><FontAwesomeIcon icon='plus' onClick />
-            <span className='tool-tip-text'>Add a company</span>
-          </div>
-        </th>
-        <th className='identify' scope='col'>Identified a person</th>
-        <th className='contact' scope='col'>Made contact</th>
-        <th className='response' scope='col'>Got a response</th>
-        <th className='followup' scope='col'>Sent a follow-up</th>
-        <th className='referral' scope='col'>Got a referral!</th>
-      </tr>
-        {companies.map(function(company, index){
-          const filterPeople = people.filter(person => person.company === company.name && person.status === 1);
-          console.log(filterPeople);
-          return (
-            <CompanyCard company={company} index={index} />
-          )
-        })}
-        {/* Move to person-card component 
-        {people.map(function(person, index){
-          return (
-            <div>
-              <td>
-                <h1 key={ index }>{person.name}</h1>
-                <p key={ index }>{person.title}</p>
-              </td>
+      <tbody>
+        <tr>
+          <th>Company
+            <div className='tool-tip'><FontAwesomeIcon icon='plus' />
+              <span className='tool-tip-text'>Add a company</span>
             </div>
-          )
-        })}
-        */}
+          </th>
+          <th className='identify' scope='col'>Identified a person</th>
+          <th className='contact' scope='col'>Made contact</th>
+          <th className='response' scope='col'>Got a response</th>
+          <th className='followup' scope='col'>Sent a follow-up</th>
+          <th className='referral' scope='col'>Got a referral!</th>
+        </tr>
+          {companies.map(function(company, index){
+            const filterPeople = people.filter(person => person.company === company.name && person.status === 1);
+            return (
+              <CompanyCard company={company} index={index} />
+            )
+          })}
+          {/* Move to person-card component 
+          {people.map(function(person, index){
+            return (
+              <div>
+                <td>
+                  <h1 key={ index }>{person.name}</h1>
+                  <p key={ index }>{person.title}</p>
+                </td>
+              </div>
+            )
+          })}
+          */}
+      </tbody>
     </table>
   )
 };

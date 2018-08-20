@@ -1,12 +1,20 @@
-nav {
+.nav {
+	height: 45px;
   border-bottom: 2px black solid;
   background-color: white;
-  text-align: right;
+}
+
+.app-title {
+	position: absolute;
+	padding: 10px;
 }
 
 .border-button {
-  padding: 10px;
+	position: relative;
+	float: right;
+	height: 100%;
   border-left: 2px solid black;
+  border-bottom: 0;
 }
 
 .border-button:hover {
