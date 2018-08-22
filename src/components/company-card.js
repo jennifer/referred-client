@@ -4,11 +4,11 @@ import '../stylesheets/company-card.css'
 
 export default function CompanyCard(props) {
 	return(
-		<tr>
-		  <td key={props.index}>
-		    <h1 key={props.index}>{props.company.name}</h1>
-		    <p key={props.index}>{props.company.location}</p>
-		    <p key={props.index}>{props.company.description}</p>
+		<tr key={props.index}>
+		  <td>
+		    <h1>{props.company.name}</h1>
+		    <p>{props.company.location}</p>
+		    <p>{props.company.description}</p>
 		    <div className='tool-tip'><FontAwesomeIcon icon='plus' />
             	<span className='tool-tip-text'>Add a person</span>
           	</div>

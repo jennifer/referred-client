@@ -89,7 +89,7 @@ export default function Board(props) {
           {companies.map(function(company, index){
             const filterPeople = people.filter(person => person.company === company.name && person.status === 1);
             return (
-              <CompanyCard company={company} index={index} />
+              <CompanyCard company={company} key={index} />
             )
           })}
           {/* Move to person-card component 
