@@ -4,7 +4,7 @@ import { Field, reduxForm, focus } from 'redux-form';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { login } from '../actions/auth';
 import { required, nonEmpty } from '../validators';
-import '../stylesheets/detail.css'
+import '../stylesheets/company-form.css'
 
 export default function Detail(props) {
   return (
@@ -46,41 +46,41 @@ export default function Detail(props) {
 }
 
 
-export class LoginForm extends React.Component {
+export class CompanyForm extends React.Component {
   onSubmit(values) {
-      return this.props.dispatch(login(values.username, values.password));
+      return this.props.dispatch(company(values.username, values.password));
   }
 
   render() {
     let error;
     if (this.props.error) {
       error = (
-        <div className="form-error" aria-live="polite">
+        <div className='form-error' aria-live='polite'>
           {this.props.error}
         </div>
       );
     }
     return (
       <form
-        className="login-form"
+        className='modal-div'
         onSubmit={this.props.handleSubmit(values =>
           this.onSubmit(values)
         )}>
         {error}
-        <label htmlFor="username">Username</label>
+        <label htmlFor='username'>Username</label>
         <Field
           component={Input}
-          type="text"
-          name="username"
-          id="username"
+          type='text'
+          name='username'
+          id='username'
           validate={[required, nonEmpty]}
         />
-        <label htmlFor="password">Password</label>
+        <label htmlFor='password'>Password</label>
         <Field
           component={Input}
-          type="password"
-          name="password"
-          id="password"
+          type='password'
+          name='password'
+          id='password'
           validate={[required, nonEmpty]}
         />
         <button disabled={this.props.pristine || this.props.submitting}>
@@ -92,6 +92,37 @@ export class LoginForm extends React.Component {
 }
 
 export default reduxForm({
-  form: 'login',
-  onSubmitFail: (errors, dispatch) => dispatch(focus('login', 'username'))
-})(LoginForm);
+  form: 'company',
+  onSubmitFail: (errors, dispatch) => dispatch(focus('company', 'username'))
+})(CompanyForm);
+
+
+
+export class ContactForm extends React.Component {
+  onSubmit(values) {
+    console.log(values);
+  }
+  render() {
+    return (
+      <form
+        onSubmit={this.props.handleSubmit(values =>
+          this.onSubmit(values)
+        )}>
+        <label htmlFor="name">Name</label>
+        <Field name="name" id="name" type="text" component="input" />
+        <label htmlFor="email">Email address</label>
+        <Field name="email" id="email" type="email" component="input" />
+        <label htmlFor="message">Message</label>
+        <Field name="message" id="message" component="textarea" />
+        <label htmlFor="magicWord">What's the magic word?</label>
+        <Field
+          name="magicWord"
+          id="magicWord"
+          type="text"
+          component="input"
+        />
+        <button type="submit">Send message</button>
+      </form>
+    );
+  }
+}

@@ -16,50 +16,50 @@ library.add(faPlus, faPencilAlt, faTimes, faCaretDown);
 
 
 export class App extends React.Component {
-    componentDidUpdate(prevProps) {
-        if (!prevProps.loggedIn && this.props.loggedIn) {
-            // When we are logged in, refresh the auth token periodically
-            this.startPeriodicRefresh();
-        } else if (prevProps.loggedIn && !this.props.loggedIn) {
-            // Stop refreshing when we log out
-            this.stopPeriodicRefresh();
-        }
+  componentDidUpdate(prevProps) {
+    if (!prevProps.loggedIn && this.props.loggedIn) {
+      // When we are logged in, refresh the auth token periodically
+      this.startPeriodicRefresh();
+    } else if (prevProps.loggedIn && !this.props.loggedIn) {
+      // Stop refreshing when we log out
+      this.stopPeriodicRefresh();
+    }
+  }
+
+  componentWillUnmount() {
+    this.stopPeriodicRefresh();
+  }
+
+  startPeriodicRefresh() {
+    this.refreshInterval = setInterval(
+      () => this.props.dispatch(refreshAuthToken()),
+      60 * 60 * 1000 // One hour
+    );
+  }
+
+  stopPeriodicRefresh() {
+    if (!this.refreshInterval) {
+      return;
     }
 
-    componentWillUnmount() {
-        this.stopPeriodicRefresh();
-    }
+    clearInterval(this.refreshInterval);
+  }
 
-    startPeriodicRefresh() {
-        this.refreshInterval = setInterval(
-            () => this.props.dispatch(refreshAuthToken()),
-            60 * 60 * 1000 // One hour
-        );
-    }
-
-    stopPeriodicRefresh() {
-        if (!this.refreshInterval) {
-            return;
-        }
-
-        clearInterval(this.refreshInterval);
-    }
-
-    render() {
-        return (
-            <div className="app">
-                <Nav />
-                <Route exact path="/" component={ TitlePage } />
-                <Route exact path="/board" component={ Board } />
-                <Route exact path="/signup-page" component={ SignupPage } />
-            </div>
-        );
-    }
+  render() {
+    return (
+      <div className="app">
+        <Nav />
+        <Route exact path="/" component={ TitlePage } />
+        <Route exact path="/board" component={ Board } />
+        <Route exact path="/signup-page" component={ SignupPage } />
+      </div>
+    );
+  }
 }
 
 const mapStateToProps = state => ({
-    hasAuthToken: state.auth.authToken !== null,
-    loggedIn: state.auth.currentUser !== null
+  hasAuthToken: state.auth.authToken !== null,
+  loggedIn: state.auth.currentUser !== null
 });
 
 // Deal with update blocking - https://reacttraining.com/react-router/web/guides/dealing-with-update-blocking
