@@ -28,5 +28,6 @@ class Popup extends React.Component {
       </div>
     )
   }
-}
- 
+};
+
+export default (connect(handleHideModal)(Popup);
