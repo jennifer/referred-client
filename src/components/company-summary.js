@@ -1,6 +1,6 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import '../stylesheets/company-card.css'
+import '../stylesheets/company-summary.css'
 
 export default function CompanyCard(props) {
 	return(

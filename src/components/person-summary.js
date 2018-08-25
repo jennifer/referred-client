@@ -1,0 +1,1 @@
+import '../stylesheets/person-summary.css';

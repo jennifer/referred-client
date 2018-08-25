@@ -1,7 +1,8 @@
 import React from 'react';
-import CompanyCard from './company-card';
-import '../stylesheets/board.css';
+import CompanySummary from './company-summary';
+import { showModal } from '../actions/network-actions';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import '../stylesheets/board.css';
 
 const companies = [
   {
@@ -70,41 +71,49 @@ const people = [
 }
 ];
 
-export default function Board(props) {
-  return(
-    <table>
-      <tbody>
-        <tr>
-          <th>Company
-            <div className='tool-tip'><FontAwesomeIcon icon='plus' />
-              <span className='tool-tip-text'>Add a company</span>
-            </div>
-          </th>
-          <th className='identify' scope='col'>Identified a person</th>
-          <th className='contact' scope='col'>Made contact</th>
-          <th className='response' scope='col'>Got a response</th>
-          <th className='followup' scope='col'>Sent a follow-up</th>
-          <th className='referral' scope='col'>Got a referral!</th>
-        </tr>
-          {companies.map(function(company, index){
-            const filterPeople = people.filter(person => person.company === company.name && person.status === 1);
-            return (
-              <CompanyCard company={company} key={index} />
-            )
-          })}
-          {/* Move to person-card component 
-          {people.map(function(person, index){
-            return (
-              <div>
-                <td>
-                  <h1 key={ index }>{person.name}</h1>
-                  <p key={ index }>{person.title}</p>
-                </td>
+export default class Board extends React.Component {
+
+  handleShowModal() {
+    this.props.dispatch(showModal())
+  }
+
+  render() {
+
+    return (
+      <table>
+        <tbody>
+          <tr>
+            <th>Company
+              <div className='tool-tip'><FontAwesomeIcon icon='plus' /*onClick='{() => this.handleShowModal()'*/ />
+                <span className='tool-tip-text'>Add a company</span>
               </div>
-            )
-          })}
-          */}
-      </tbody>
-    </table>
-  )
+            </th>
+            <th className='identify' scope='col'>Identified a person</th>
+            <th className='contact' scope='col'>Made contact</th>
+            <th className='response' scope='col'>Got a response</th>
+            <th className='followup' scope='col'>Sent a follow-up</th>
+            <th className='referral' scope='col'>Got a referral!</th>
+          </tr>
+            {companies.map(function(company, index){
+              const filterPeople = people.filter(person => person.company === company.name && person.status === 1);
+              return (
+                <CompanySummary company={company} key={index} />
+              )
+            })}
+            {/* Move to person-card component 
+            {people.map(function(person, index){
+              return (
+                <div>
+                  <td>
+                    <h1 key={ index }>{person.name}</h1>
+                    <p key={ index }>{person.title}</p>
+                  </td>
+                </div>
+              )
+            })}
+            */}
+        </tbody>
+      </table>
+    )
+  }
 };
