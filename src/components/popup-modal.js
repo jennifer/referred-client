@@ -66,22 +66,30 @@ class Popup extends Component {
     if (type === 'login') {
       const { content } = this.props.item;
       return (
-        <LoginForm />
+        <div className='modal-div'>
+          <LoginForm />
+        </div>
       )
     } else if (type === 'signup') {
       const { content } = this.props.item;
       return (
-        <SignupForm/>
+        <div className='modal-div'>
+          <SignupForm/>
+        </div>
       )
     } else if (type === 'company') {
       const { content } = this.props.item;
       return (
-        <CompanyForm/>
+        <div className='modal-div'>
+          <CompanyForm/>
+        </div>
       )
     } else (type === 'person') {
       const { content } = this.props.item;
       return (
-        <PersonForm/>
+        <div className='modal-div'>
+          <PersonForm/>
+        </div>
       )
     }
     return (

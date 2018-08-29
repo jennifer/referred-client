@@ -61,10 +61,10 @@ export const closeModal = () => ({
 
 
 export const OPEN_MODAL = 'OPEN_MODAL';
-export const openModal = (obj) => {
+export const openModal = (formName) => {
   return {
     type: OPEN_MODAL,
-    obj,
+    formName,
   }
 };
 

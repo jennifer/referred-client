@@ -1,5 +1,6 @@
 import React from 'react';
 import CompanySummary from './company-summary';
+import { connect } from 'react-redux';
 import { openModal } from '../actions/network-actions';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import '../stylesheets/board.css';
@@ -71,10 +72,10 @@ const people = [
 }
 ];
 
-export default class Board extends React.Component {
+export class Board extends React.Component {
 
-  handleOpenModal(props) {
-    this.props.dispatch(openModal)
+  handleOpenModal(popupForm) {
+    this.props.dispatch(openModal(popupForm))
   };
 
 /*
@@ -93,7 +94,7 @@ export default class Board extends React.Component {
         <tbody>
           <tr>
             <th>Company
-              <div className='tool-tip'><FontAwesomeIcon icon='plus' onClick={() => this.handleOpenModal()} />
+              <div className='tool-tip'><FontAwesomeIcon icon='plus' onClick={() => this.handleOpenModal('company')} />
                 <span className='tool-tip-text'>Add a company</span>
               </div>
             </th>
@@ -126,3 +127,5 @@ export default class Board extends React.Component {
     )
   }
 };
+
+export default connect()(Board);

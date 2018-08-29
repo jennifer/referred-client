@@ -8,9 +8,7 @@ import {
 const initialState = {
   data: '',
   error: null,
-  modals: []
-  //modalType: null,
-  //modalProps: {}
+  openModal: false
 };
 
 export default function reducer(state = initialState, action) {
@@ -24,18 +22,17 @@ export default function reducer(state = initialState, action) {
       error: action.error
     });
   }  
-
-  /*
+  
   if (action.type === OPEN_MODAL) {
     return Object.assign({}, state, { openModal: true });
   }
   if (action.type === CLOSE_MODAL) {
-    return Object.assign({}, state, { closeModal: false });
+    return Object.assign({}, state, { openModal: false });
   }
 
   return state;
-  */
-
+  
+/*
   switch (action.type) {
     case OPEN_MODAL:
       return {
@@ -50,4 +47,5 @@ export default function reducer(state = initialState, action) {
     default:
       return state;
   }
+*/
 };

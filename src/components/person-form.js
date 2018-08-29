@@ -5,11 +5,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { login } from '../actions/auth';
 import { company } from '../actions/network-actions';
 import { required, nonEmpty } from '../validators';
-import '../stylesheets/company-form.css'
+import '../stylesheets/person-form.css'
 
-export class CompanyForm extends React.Component {
+export class PersonForm extends React.Component {
   onSubmit(values) {
-      return this.props.dispatch(company(values));
+      return this.props.dispatch(person(values));
   }
 
   render() {
@@ -28,32 +28,37 @@ export class CompanyForm extends React.Component {
         //)}
       >
         {error}
-        <fieldset className='company-fieldset'>
-          <label htmlFor='companyName'>Company name:</label>
+        <fieldset className='person-fieldset'>
+          <label htmlFor='name'>Name:</label>
           <Field
             component={Input}
             type='text'
-            name='companyName'
-            id='companyName'
+            name='personName'
+            id='personName'
             validate={[required, nonEmpty]}
           />
-          <label htmlFor='location'>Location:</label>
+          <label htmlFor='title'>Title:</label>
           <Field
             component={Input}
             type='text'
-            name='location'
-            id='location'
-            validate={[required, nonEmpty]}
+            name='title'
+            id='title'
           />
-          <label htmlFor='location'>Description:</label>
+          <label htmlFor='link'>Link:</label>
           <Field
             component={Input}
             type='text'
-            name='description'
-            id='description'
-            validate={[required, nonEmpty]}
+            name='link'
+            id='link'
           />
-          <label htmlFor='location'>Notes:</label>
+          <label htmlFor='date'>Date:</label>
+          <Field
+            component={Input}
+            type='text'
+            name='date'
+            id='date'
+          />
+          <label htmlFor='notes'>Notes:</label>
           <Field
             component={Input}
             type='text'
