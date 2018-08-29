@@ -1,6 +1,6 @@
 import React from 'react';
 import CompanySummary from './company-summary';
-import { showModal } from '../actions/network-actions';
+import { openModal } from '../actions/network-actions';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import '../stylesheets/board.css';
 
@@ -73,10 +73,19 @@ const people = [
 
 export default class Board extends React.Component {
 
-  handleShowModal() {
-    this.props.dispatch(showModal());
-  }
+  handleOpenModal(props) {
+    this.props.dispatch(openModal)
+  };
 
+/*
+  this.props.dispatch({
+    type: 'SHOW_MODAL',
+    modalType: 'COMPANY_FORM',
+    modalProps: {
+      //companyFormModal
+    }
+  })
+*/
   render() {
 
     return (
@@ -84,7 +93,7 @@ export default class Board extends React.Component {
         <tbody>
           <tr>
             <th>Company
-              <div className='tool-tip'><FontAwesomeIcon icon='plus' onClick={() => this.handleShowModal()} />
+              <div className='tool-tip'><FontAwesomeIcon icon='plus' onClick={() => this.handleOpenModal()} />
                 <span className='tool-tip-text'>Add a company</span>
               </div>
             </th>

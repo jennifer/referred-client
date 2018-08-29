@@ -1,13 +1,16 @@
 import {
     FETCH_PROTECTED_DATA_SUCCESS,
     FETCH_PROTECTED_DATA_ERROR,
-    SHOW_MODAL,
-    HIDE_MODAL
+    OPEN_MODAL,
+    CLOSE_MODAL
 } from '../actions/network-actions';
 
 const initialState = {
-    data: '',
-    error: null
+  data: '',
+  error: null,
+  modals: []
+  //modalType: null,
+  //modalProps: {}
 };
 
 export default function reducer(state = initialState, action) {
@@ -21,11 +24,30 @@ export default function reducer(state = initialState, action) {
       error: action.error
     });
   }  
-  if (action.type === SHOW_MODAL) {
-    return Object.assign({}, state, { showModal: true });
+
+  /*
+  if (action.type === OPEN_MODAL) {
+    return Object.assign({}, state, { openModal: true });
   }
-  if (action.type === HIDE_MODAL) {
-    return Object.assign({}, state, { showModal: false });
+  if (action.type === CLOSE_MODAL) {
+    return Object.assign({}, state, { closeModal: false });
   }
+
   return state;
-}
+  */
+
+  switch (action.type) {
+    case OPEN_MODAL:
+      return {
+        ...state,
+        modals: state.modals.concat(action.obj)
+      };
+    case CLOSE_MODAL:
+      return {
+        ...state,
+        modals: state.modals.filter(item => item.id !== action.obj.id),
+      };
+    default:
+      return state;
+  }
+};

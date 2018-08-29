@@ -3,12 +3,13 @@ import Input from './input';
 import { Field, reduxForm, focus } from 'redux-form';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { login } from '../actions/auth';
+import { company } from '../actions/network-actions';
 import { required, nonEmpty } from '../validators';
 import '../stylesheets/company-form.css'
 
 export class CompanyForm extends React.Component {
   onSubmit(values) {
-      return this.props.dispatch(company(values));
+      return this.props.dispatch(company(values.companyName, values.location, values.description, values.notes));
   }
 
   render() {
@@ -22,18 +23,18 @@ export class CompanyForm extends React.Component {
     }
     return (
       <form
-        onSubmit={this.props.handleSubmit(values =>
-          this.onSubmit(values)
-        )}
+        //onSubmit={this.props.handleSubmit(values =>
+        //  this.onSubmit(values)
+        //)}
       >
         {error}
         <fieldset className='company-fieldset'>
-          <label htmlFor='company-name'>Company name:</label>
+          <label htmlFor='companyName'>Company name:</label>
           <Field
             component={Input}
             type='text'
-            name='company-name'
-            id='company-name'
+            name='companyName'
+            id='companyName'
             validate={[required, nonEmpty]}
           />
           <label htmlFor='location'>Location:</label>
@@ -48,8 +49,8 @@ export class CompanyForm extends React.Component {
           <Field
             component={Input}
             type='text'
-            name='Description'
-            id='Description'
+            name='description'
+            id='description'
             validate={[required, nonEmpty]}
           />
           <label htmlFor='location'>Notes:</label>
@@ -64,7 +65,7 @@ export class CompanyForm extends React.Component {
           </button>
         </fieldset>
       </form>
-  });
+    )};
 }
 
 export default reduxForm({

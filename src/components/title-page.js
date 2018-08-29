@@ -8,15 +8,15 @@ import LoginForm from './login-form';
 export function TitlePage(props) {
   // If we are logged in redirect straight to the user's dashboard
   if (props.loggedIn) {
-    return <Redirect to="/board" />;
+    return <Redirect to='/board' />;
   }
 
   return (
-    <div className="home">
+    <div className='home'>
       <h2>Login:</h2>
       <LoginForm />
       <p>or </p>
-      <Link to="/signup-page">Make an account</Link>
+      <Link to='/signup-page'>Make an account</Link>
     </div>
   );
 }
