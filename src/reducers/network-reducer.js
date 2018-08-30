@@ -1,14 +1,11 @@
 import {
     FETCH_PROTECTED_DATA_SUCCESS,
     FETCH_PROTECTED_DATA_ERROR,
-    OPEN_MODAL,
-    CLOSE_MODAL
 } from '../actions/network-actions';
 
 const initialState = {
   data: '',
-  error: null,
-  openModal: false
+  error: null
 };
 
 export default function reducer(state = initialState, action) {
@@ -22,30 +19,4 @@ export default function reducer(state = initialState, action) {
       error: action.error
     });
   }  
-  
-  if (action.type === OPEN_MODAL) {
-    return Object.assign({}, state, { openModal: true });
-  }
-  if (action.type === CLOSE_MODAL) {
-    return Object.assign({}, state, { openModal: false });
-  }
-
-  return state;
-  
-/*
-  switch (action.type) {
-    case OPEN_MODAL:
-      return {
-        ...state,
-        modals: state.modals.concat(action.obj)
-      };
-    case CLOSE_MODAL:
-      return {
-        ...state,
-        modals: state.modals.filter(item => item.id !== action.obj.id),
-      };
-    default:
-      return state;
-  }
-*/
 };

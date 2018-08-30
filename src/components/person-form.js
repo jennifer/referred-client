@@ -3,7 +3,7 @@ import Input from './input';
 import { Field, reduxForm, focus } from 'redux-form';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { login } from '../actions/auth';
-import { company } from '../actions/network-actions';
+import { person } from '../actions/network-actions';
 import { required, nonEmpty } from '../validators';
 import '../stylesheets/person-form.css'
 
@@ -74,6 +74,6 @@ export class PersonForm extends React.Component {
 }
 
 export default reduxForm({
-  form: 'company',
-  onSubmitFail: (errors, dispatch) => dispatch(focus('company'))
-})(CompanyForm);
+  form: 'person',
+  onSubmitFail: (errors, dispatch) => dispatch(focus('person'))
+})(PersonForm);

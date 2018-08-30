@@ -45,34 +45,20 @@ export const company = values => (dispatch, getState) => {
     .catch(err => {
       dispatch(fetchProtectedDataError(err));
     });
+
+  export const person = values => (dispatch, getState) => {
+  const authToken = getState().auth.authToken;
+  return fetch(`${API_BASE_URL}/people`, {
+    method: 'POST',
+    headers: {
+      // Provide our auth token as credentials
+      Authorization: `Bearer ${authToken}`
+    }
+  })
+    .then(res => normalizeResponseErrors(res))
+    .then(res => res.json())
+    .then(({data}) => dispatch(fetchProtectedDataSuccess(data)))
+    .catch(err => {
+      dispatch(fetchProtectedDataError(err));
+    });
 };
-
-/*
-export const OPEN_MODAL = 'OPEN_MODAL';
-export const openModal = () => ({
-  type: OPEN_MODAL
-});
-
-export const CLOSE_MODAL = 'CLOSE_MODAL';
-export const closeModal = () => ({
-  type: CLOSE_MODAL
-});
-*/
-
-
-export const OPEN_MODAL = 'OPEN_MODAL';
-export const openModal = (formName) => {
-  return {
-    type: OPEN_MODAL,
-    formName,
-  }
-};
-
-export const CLOSE_MODAL = 'CLOSE_MODAL';
-export const closeModal = (obj) => {
-  return {
-    type: CLOSE_MODAL,
-    obj,
-  }
-};
-

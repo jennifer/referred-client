@@ -1,50 +1,32 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { hideModal } from '../actions/network-actions';
 import { CompanyForm } from './company-form';
-import '../stylesheets/popup.css'
+import { PersonForm } from './person-form';
+import '../stylesheets/form-wrapper.css'
 
-/*
-const POPUP_FORMS = {
-  'LOGIN_FORM': LoginFormPopup,
-  'SIGNUP-FORM': SignupFormPopup,
-  'COMPANY_FORM': CompanyFormPopup,
-  'PERSON-FORM': PersonFormPopup
-}
-*/
-
-/*
-class Popup extends React.Component {
-
-  handleHideModal() {
-    this.props.dispatch(hideModal());
-  }
+class formWrapper extends React.Component {
 
   render() {
 
-    return (
-      <div className='modal-div'>
-        <span className='title-span'>
-          <h1 className='modal-header'>Add a company</h1>
-          <FontAwesomeIcon icon='times' />
-        </span>
-        <CompanyForm />
-        <button
-          className='modal-button'
-          aria-label='close'
-          onClick={() => this.handleHideModal()}
-        >
-          Close
-        </button>
-      </div>
-    )
+    if (type === 'company') {
+      return (
+        <div className='modal-div'>
+          <CompanyForm/>
+        </div>
+      )
+    } else (type === 'person') {
+      return (
+        <div className='modal-div'>
+          <PersonForm/>
+        </div>
+      )
+    }
   }
 };
 
-export default Popup;
-*/
+export default formWrapper;
 
-
+/*
 class Popup extends Component {
   closeModal(){
     if(this.props.item.closeModal){
@@ -99,4 +81,4 @@ class Popup extends Component {
 }
 
 export default Popup;
-
+*/

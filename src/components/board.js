@@ -1,7 +1,6 @@
 import React from 'react';
 import CompanySummary from './company-summary';
 import { connect } from 'react-redux';
-import { openModal } from '../actions/network-actions';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import '../stylesheets/board.css';
 
@@ -74,19 +73,6 @@ const people = [
 
 export class Board extends React.Component {
 
-  handleOpenModal(popupForm) {
-    this.props.dispatch(openModal(popupForm))
-  };
-
-/*
-  this.props.dispatch({
-    type: 'SHOW_MODAL',
-    modalType: 'COMPANY_FORM',
-    modalProps: {
-      //companyFormModal
-    }
-  })
-*/
   render() {
 
     return (
