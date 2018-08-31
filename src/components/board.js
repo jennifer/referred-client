@@ -80,7 +80,7 @@ export class Board extends React.Component {
         <tbody>
           <tr>
             <th>Company
-              <div className='tool-tip'><FontAwesomeIcon icon='plus' onClick={() => this.handleOpenModal('company')} />
+              <div className='tool-tip'><FontAwesomeIcon icon='plus' /*onClick={() => this.handleOpenModal('company')}*/ />
                 <span className='tool-tip-text'>Add a company</span>
               </div>
             </th>

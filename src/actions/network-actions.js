@@ -45,8 +45,9 @@ export const company = values => (dispatch, getState) => {
     .catch(err => {
       dispatch(fetchProtectedDataError(err));
     });
+};
 
-  export const person = values => (dispatch, getState) => {
+export const person = values => (dispatch, getState) => {
   const authToken = getState().auth.authToken;
   return fetch(`${API_BASE_URL}/people`, {
     method: 'POST',

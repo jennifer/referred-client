@@ -1,11 +1,11 @@
 import {
     FETCH_PROTECTED_DATA_SUCCESS,
-    FETCH_PROTECTED_DATA_ERROR,
+    FETCH_PROTECTED_DATA_ERROR
 } from '../actions/network-actions';
 
 const initialState = {
-  data: '',
-  error: null
+    data: '',
+    error: null
 };
 
 export default function reducer(state = initialState, action) {
@@ -18,5 +18,6 @@ export default function reducer(state = initialState, action) {
     return Object.assign({}, state, {
       error: action.error
     });
-  }  
-};
+  }
+  return state;
+}
