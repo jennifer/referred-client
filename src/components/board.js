@@ -2,7 +2,11 @@ import React from 'react';
 import CompanySummary from './company-summary';
 import { connect } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import ReactModal from 'react-modal';
+import { openModal, closeModal } from '../actions/network-actions';
+import ReactDOM from 'react-dom';
 import '../stylesheets/board.css';
+import '../stylesheets/form-wrapper.css';
 
 const companies = [
   {
@@ -73,6 +77,14 @@ const people = [
 
 export class Board extends React.Component {
 
+  handleOpenModal() {
+    this.props.dispatch(openModal());
+  }
+
+  handleCloseModal() {
+    this.props.dispatch(closeModal());
+  }
+
   render() {
 
     return (
@@ -80,9 +92,15 @@ export class Board extends React.Component {
         <tbody>
           <tr>
             <th>Company
-              <div className='tool-tip'><FontAwesomeIcon icon='plus' /*onClick={() => this.handleOpenModal('company')}*/ />
+              <div className='tool-tip'><FontAwesomeIcon icon='plus' onClick={this.handleOpenModal.bind(this)} />
                 <span className='tool-tip-text'>Add a company</span>
               </div>
+              <ReactModal 
+                 isOpen={this.props.openModal}
+                 contentLabel="Minimal Modal Example"
+              >
+              <button onClick={this.handleCloseModal.bind(this)}>Close Modal</button>
+              </ReactModal>
             </th>
             <th className='identify' scope='col'>Identified a person</th>
             <th className='contact' scope='col'>Made contact</th>
@@ -114,4 +132,9 @@ export class Board extends React.Component {
   }
 };
 
-export default connect()(Board);
+const mapStateToProps = state => {
+  return {
+    openModal: state.network.openModal  };
+};
+
+export default connect(mapStateToProps)(Board);

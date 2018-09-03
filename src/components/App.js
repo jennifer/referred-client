@@ -49,9 +49,9 @@ export class App extends React.Component {
     return (
       <div className="app">
         <Nav />
-        <Route exact path="/" component={ TitlePage } />
         <Route exact path="/board" component={ Board } />
         <Route exact path="/signup-page" component={ SignupPage } />
+        <Route exact path="/" component={ TitlePage } />
       </div>
     );
   }
