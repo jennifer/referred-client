@@ -1,0 +1,11 @@
+.modal {
+  width: 300px;
+  border: 2px solid black;
+  background-color: white;
+  margin: 4% 17%;
+}
+
+.close-bar {
+	height: 35px;
+  border-bottom: 2px solid black;
+}

@@ -14,7 +14,6 @@ import { faPlus, faPencilAlt, faTimes, faCaretDown } from '@fortawesome/free-sol
 
 library.add(faPlus, faPencilAlt, faTimes, faCaretDown);
 
-
 export class App extends React.Component {
   componentDidUpdate(prevProps) {
     if (!prevProps.loggedIn && this.props.loggedIn) {

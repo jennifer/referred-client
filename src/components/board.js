@@ -1,12 +1,13 @@
 import React from 'react';
 import CompanySummary from './company-summary';
+import CompanyForm from './company-form';
 import { connect } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import ReactModal from 'react-modal';
 import { openModal, closeModal } from '../actions/network-actions';
 import ReactDOM from 'react-dom';
 import '../stylesheets/board.css';
-import '../stylesheets/form-wrapper.css';
+import '../stylesheets/modal.css';
 
 const companies = [
   {
@@ -97,9 +98,13 @@ export class Board extends React.Component {
               </div>
               <ReactModal 
                  isOpen={this.props.openModal}
-                 contentLabel="Minimal Modal Example"
+                 contentLabel='Form to add a company'
+                 className='modal'
               >
-              <button onClick={this.handleCloseModal.bind(this)}>Close Modal</button>
+              <div className='close-bar'>
+                <FontAwesomeIcon icon='times' onClick={this.handleCloseModal.bind(this)} />
+              </div>
+              <CompanyForm />
               </ReactModal>
             </th>
             <th className='identify' scope='col'>Identified a person</th>

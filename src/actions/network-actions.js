@@ -13,6 +13,7 @@ export const fetchProtectedDataError = error => ({
   error
 });
 
+export const FETCH_PROTECTED_DATA = 'FETCH_PROTECTED_DATA';
 export const fetchProtectedData = () => (dispatch, getState) => {
   const authToken = getState().auth.authToken;
   return fetch(`${API_BASE_URL}/protected`, {
@@ -30,7 +31,19 @@ export const fetchProtectedData = () => (dispatch, getState) => {
     });
 };
 
-export const company = values => (dispatch, getState) => {
+export const POST_COMPANY_SUCCESS = "POST_COMPANY_SUCCESS";
+export const postCompanySuccess = data => ({
+  type: POST_COMPANY_SUCCESS,
+  data
+});
+
+export const POST_COMPANY_ERROR = "POST_COMPANY_ERROR";
+export const postCompanyError = error => ({
+  type: POST_COMPANY_ERROR,
+  error
+});
+
+export const postCompany = values => (dispatch, getState) => {
   const authToken = getState().auth.authToken;
   return fetch(`${API_BASE_URL}/companies`, {
     method: 'POST',
@@ -47,7 +60,8 @@ export const company = values => (dispatch, getState) => {
     });
 };
 
-export const person = values => (dispatch, getState) => {
+export const ADD_PERSON = 'ADD_PERSON';
+export const addPerson = values => (dispatch, getState) => {
   const authToken = getState().auth.authToken;
   return fetch(`${API_BASE_URL}/people`, {
     method: 'POST',

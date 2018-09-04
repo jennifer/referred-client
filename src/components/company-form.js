@@ -3,13 +3,14 @@ import Input from './input';
 import { Field, reduxForm, focus } from 'redux-form';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { login } from '../actions/auth';
-import { company } from '../actions/network-actions';
+import { postCompany } from '../actions/network-actions';
 import { required, nonEmpty } from '../validators';
 import '../stylesheets/company-form.css'
 
 export class CompanyForm extends React.Component {
   onSubmit(values) {
-      return this.props.dispatch(company(values));
+      return this.props.dispatch(postCompany(values));
+      console.log(values);
   }
 
   render() {
@@ -23,9 +24,9 @@ export class CompanyForm extends React.Component {
     }
     return (
       <form
-        //onSubmit={this.props.handleSubmit(values =>
-        //  this.onSubmit(values)
-        //)}
+        onSubmit={this.props.handleSubmit(values =>
+         this.onSubmit(values)
+        )}
       >
         {error}
         <fieldset className='company-fieldset'>
@@ -37,6 +38,14 @@ export class CompanyForm extends React.Component {
             id='companyName'
             validate={[required, nonEmpty]}
           />
+          <label htmlFor='companyUrl'>URL:</label>
+          <Field
+            component={Input}
+            type='url'
+            name='companyUrl'
+            id='companyUrl'
+            validate={[required, nonEmpty]}
+          />
           <label htmlFor='location'>Location:</label>
           <Field
             component={Input}
@@ -45,15 +54,14 @@ export class CompanyForm extends React.Component {
             id='location'
             validate={[required, nonEmpty]}
           />
-          <label htmlFor='location'>Description:</label>
+          <label htmlFor='description'>Description:</label>
           <Field
             component={Input}
             type='text'
             name='description'
             id='description'
-            validate={[required, nonEmpty]}
           />
-          <label htmlFor='location'>Notes:</label>
+          <label htmlFor='notes'>Notes:</label>
           <Field
             component={Input}
             type='text'
@@ -61,7 +69,7 @@ export class CompanyForm extends React.Component {
             id='notes'
           />
           <button className='submit-button' disabled={this.props.pristine || this.props.submitting}>
-            Add company
+            Submit
           </button>
         </fieldset>
       </form>

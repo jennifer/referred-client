@@ -1,6 +1,8 @@
 import {
     FETCH_PROTECTED_DATA_SUCCESS,
     FETCH_PROTECTED_DATA_ERROR,
+    POST_COMPANY_SUCCESS,
+    POST_COMPANY_ERROR,
     OPEN_MODAL,
     CLOSE_MODAL
 } from '../actions/network-actions';
@@ -22,6 +24,17 @@ export default function reducer(state = initialState, action) {
       error: action.error
     });
   }
+
+  if (action.type === POST_COMPANY_SUCCESS) {
+    return Object.assign({}, state, {
+      properties: [...state.properties, action.data],
+      error: null
+    });
+  }
+  if (action.type === POST_COMPANY_ERROR) {
+    return Object.assign({}, state, { error: action.error });
+  }
+
   if (action.type === OPEN_MODAL) {
     return Object.assign({}, state, { openModal: true });
   }
