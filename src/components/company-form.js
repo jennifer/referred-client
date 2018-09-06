@@ -1,16 +1,14 @@
 import React from 'react';
 import Input from './input';
 import { Field, reduxForm, focus } from 'redux-form';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { login } from '../actions/auth';
 import { postCompany } from '../actions/network-actions';
 import { required, nonEmpty } from '../validators';
 import '../stylesheets/company-form.css'
 
 export class CompanyForm extends React.Component {
   onSubmit(values) {
-      return this.props.dispatch(postCompany(values));
-      console.log(values);
+    console.log(values);
+    return this.props.dispatch(postCompany(values));
   }
 
   render() {
@@ -38,12 +36,12 @@ export class CompanyForm extends React.Component {
             id='companyName'
             validate={[required, nonEmpty]}
           />
-          <label htmlFor='companyUrl'>URL:</label>
+          <label htmlFor='url'>URL:</label>
           <Field
             component={Input}
             type='url'
-            name='companyUrl'
-            id='companyUrl'
+            name='url'
+            id='url'
             validate={[required, nonEmpty]}
           />
           <label htmlFor='location'>Location:</label>

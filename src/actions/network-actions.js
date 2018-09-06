@@ -45,12 +45,15 @@ export const postCompanyError = error => ({
 
 export const postCompany = values => (dispatch, getState) => {
   const authToken = getState().auth.authToken;
+  values.username = getState().auth.currentUser.username;
   return fetch(`${API_BASE_URL}/companies`, {
     method: 'POST',
     headers: {
       // Provide our auth token as credentials
-      Authorization: `Bearer ${authToken}`
-    }
+      Authorization: `Bearer ${authToken}`,
+      'Content-type': 'application/json'
+    },
+    body: JSON.stringify(values)
   })
     .then(res => normalizeResponseErrors(res))
     .then(res => res.json())
