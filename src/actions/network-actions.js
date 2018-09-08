@@ -45,8 +45,9 @@ export const getCompanyDataError = error => ({
 
 export const getCompanyData = () => (dispatch, getState) => {
   const authToken = getState().auth.authToken;
-  const username = getState().auth.currentUser.username;
-  return fetch(`${API_BASE_URL}/companies/${username}`, {
+  //const username = getState().auth.currentUser.username;
+  //return fetch(`${API_BASE_URL}/companies/${username}`, {
+  return fetch(`${API_BASE_URL}/companies`, {
     method: 'GET',
     headers: {
       // Provide our auth token as credentials

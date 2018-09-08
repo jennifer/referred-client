@@ -33,10 +33,10 @@ export class CompanySummary extends React.Component {
 const mapStateToProps = state => {
   return {
     //username: state.auth.currentUser.username,
-    companyName: state.company.companyName,
-    url: state.company.url,
-    location: state.company.location,
-    description: state.company.description,
+    companyName: state.network.company.companyName,
+    url: state.network.company.url,
+    location: state.network.company.location,
+    description: state.network.company.description,
   };
 };
 
