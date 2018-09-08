@@ -1,4 +1,5 @@
 import React from 'react';
+import { getCompanyData } from '../actions/network-actions';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import '../stylesheets/company-summary.css'
 

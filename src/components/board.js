@@ -114,7 +114,7 @@ export class Board extends React.Component {
             <th className='referral' scope='col'>Got a referral!</th>
           </tr>
             {companies.map(function(company, index){
-              const filterPeople = people.filter(person => person.company === company.name && person.status === 1);
+              // const filterPeople = people.filter(person => person.company === company.name && person.status === 1);
               return (
                 <CompanySummary company={company} key={index} />
               )

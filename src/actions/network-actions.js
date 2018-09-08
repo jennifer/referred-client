@@ -31,19 +31,50 @@ export const fetchProtectedData = () => (dispatch, getState) => {
     });
 };
 
-export const POST_COMPANY_SUCCESS = "POST_COMPANY_SUCCESS";
-export const postCompanySuccess = data => ({
-  type: POST_COMPANY_SUCCESS,
+export const GET_COMPANY_DATA_SUCCESS = 'GET_COMPANY_DATA_SUCCESS';
+export const getCompanyDataSuccess = data => ({
+  type: GET_COMPANY_DATA_SUCCESS,
   data
 });
 
-export const POST_COMPANY_ERROR = "POST_COMPANY_ERROR";
-export const postCompanyError = error => ({
-  type: POST_COMPANY_ERROR,
+export const GET_COMPANY_DATA_ERROR = 'GET_COMPANY_DATA_ERROR';
+export const getCompanyDataError = error => ({
+  type: GET_COMPANY_DATA_ERROR,
   error
 });
 
-export const postCompany = values => (dispatch, getState) => {
+export const getCompanyData = () => (dispatch, getState) => {
+  const authToken = getState().auth.authToken;
+  const username = getState().auth.currentUser.username;
+  return fetch(`${API_BASE_URL}/companies/${username}`, {
+    method: 'GET',
+    headers: {
+      // Provide our auth token as credentials
+      Authorization: `Bearer ${authToken}`,
+      'Content-type': 'application/json'
+    }
+  })
+    .then(res => normalizeResponseErrors(res))
+    .then(res => res.json())
+    .then(data => dispatch(getCompanyDataSuccess(data)))
+    .catch(err => {
+      dispatch(getCompanyDataError(err));
+    });
+};
+
+export const POST_COMPANY_DATA_SUCCESS = 'POST_COMPANY_DATA_SUCCESS';
+export const postCompanyDataSuccess = data => ({
+  type: POST_COMPANY_DATA_SUCCESS,
+  data
+});
+
+export const POST_COMPANY_DATA_ERROR = 'POST_COMPANY_DATA_ERROR';
+export const postCompanyDataError = error => ({
+  type: POST_COMPANY_DATA_ERROR,
+  error
+});
+
+export const postCompanyData = values => (dispatch, getState) => {
   const authToken = getState().auth.authToken;
   values.username = getState().auth.currentUser.username;
   return fetch(`${API_BASE_URL}/companies`, {
@@ -57,12 +88,13 @@ export const postCompany = values => (dispatch, getState) => {
   })
     .then(res => normalizeResponseErrors(res))
     .then(res => res.json())
-    .then(({data}) => dispatch(fetchProtectedDataSuccess(data)))
+    .then(({data}) => dispatch(postCompanyDataSuccess(data)))
     .catch(err => {
-      dispatch(fetchProtectedDataError(err));
+      dispatch(postCompanyDataError(err));
     });
 };
 
+/*
 export const ADD_PERSON = 'ADD_PERSON';
 export const addPerson = values => (dispatch, getState) => {
   const authToken = getState().auth.authToken;
@@ -80,13 +112,14 @@ export const addPerson = values => (dispatch, getState) => {
       dispatch(fetchProtectedDataError(err));
     });
 };
+*/
 
-export const OPEN_MODAL = "OPEN_MODAL";
+export const OPEN_MODAL = 'OPEN_MODAL';
 export const openModal = () => ({
   type: OPEN_MODAL
 });
 
-export const CLOSE_MODAL = "CLOSE_MODAL";
+export const CLOSE_MODAL = 'CLOSE_MODAL';
 export const closeModal = () => ({
   type: CLOSE_MODAL
 });

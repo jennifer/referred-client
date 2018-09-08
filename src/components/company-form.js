@@ -1,14 +1,14 @@
 import React from 'react';
 import Input from './input';
 import { Field, reduxForm, focus } from 'redux-form';
-import { postCompany } from '../actions/network-actions';
+import { postCompanyData } from '../actions/network-actions';
 import { required, nonEmpty } from '../validators';
 import '../stylesheets/company-form.css'
 
 export class CompanyForm extends React.Component {
   onSubmit(values) {
     console.log(values);
-    return this.props.dispatch(postCompany(values));
+    return this.props.dispatch(postCompanyData(values));
   }
 
   render() {
