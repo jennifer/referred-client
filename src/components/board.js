@@ -102,15 +102,11 @@ export class Board extends React.Component {
               <div className='tool-tip'><FontAwesomeIcon icon='plus' onClick={this.handleOpenModal.bind(this)} />
                 <span className='tool-tip-text'>Add a company</span>
               </div>
-              <ReactModal 
-                 isOpen={this.props.openModal}
-                 contentLabel='Form to add a company'
-                 className='modal'
-              >
-              <div className='close-bar'>
-                <FontAwesomeIcon icon='times' onClick={this.handleCloseModal.bind(this)} />
-              </div>
-              <CompanyForm />
+              <ReactModal isOpen={this.props.openModal} contentLabel='Form to add a company' className='modal'>
+                <div className='close-bar'>
+                  <FontAwesomeIcon icon='times' onClick={this.handleCloseModal.bind(this)} />
+                </div>
+                <CompanyForm />
               </ReactModal>
             </th>
             <th className='identify' scope='col'>Identified a person</th>

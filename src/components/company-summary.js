@@ -1,15 +1,25 @@
 import React from 'react';
+import CompanyForm from './company-form';
 import { connect } from 'react-redux';
-import { getCompanyData } from '../actions/network-actions';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { openModal, closeModal } from '../actions/network-actions';
+import ReactModal from 'react-modal';
 import '../stylesheets/company-summary.css'
 
-export default class CompanySummary extends React.Component {
-  
+export class CompanySummary extends React.Component {
+
+  handleOpenModal() {
+    this.props.dispatch(openModal());
+  }
+
+  handleCloseModal() {
+    this.props.dispatch(closeModal());
+  }
+
   render() {
 
     return (
-      <tr key={this.props.index}>
+      <tr key={this.props.index} onClick={this.handleOpenModal.bind(this)}>
         <td>
           <h1>{this.props.company.companyName}</h1>
           <p>{this.props.company.location}</p>
@@ -23,51 +33,21 @@ export default class CompanySummary extends React.Component {
         <td>response</td>
         <td>followup</td>
         <td>referral</td>
+        <ReactModal isOpen={this.props.openModal} contentLabel='Form to add a company' className='modal' >
+          <div className='close-bar'>
+            <FontAwesomeIcon icon='times' onClick={this.handleCloseModal.bind(this)} />
+          </div>
+          <CompanyForm />
+        </ReactModal>
       </tr>
     )
   }
-}
-
-/*
-export class CompanySummary extends React.Component {
-
-  componentDidMount() {
-    this.props.dispatch(getCompanyData(this.props.username));
-
-    return (
-      return(
-      <tr key={props.index}>
-        <td>
-          <h1>{props.company.name}</h1>
-          <p>{props.company.location}</p>
-          <p>{props.company.description}</p>
-          <div className='tool-tip'><FontAwesomeIcon icon='plus' />
-                <span className='tool-tip-text'>Add a person</span>
-              </div>
-        </td>
-        <td>identify</td>
-        <td>contact</td>
-        <td>response</td>
-        <td>followup</td>
-        <td>referral</td>
-      </tr>
-    )
-  }
-}
-
+};
 
 const mapStateToProps = state => {
   return {
-    //username: state.auth.currentUser.username,
-    //companies: state.network.company,
-    companyName: state.network.company.companyName,
-    url: state.network.company.url,
-    location: state.network.company.location,
-    description: state.network.company.description,
+    openModal: state.network.openModal,
   };
 };
 
-
 export default connect(mapStateToProps)(CompanySummary);
-*/
-
