@@ -3,12 +3,14 @@ import CompanySummary from './company-summary';
 import CompanyForm from './company-form';
 import { connect } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { getCompanyData } from '../actions/network-actions';
 import ReactModal from 'react-modal';
 import { openModal, closeModal } from '../actions/network-actions';
 import ReactDOM from 'react-dom';
 import '../stylesheets/board.css';
 import '../stylesheets/modal.css';
 
+/*
 const companies = [
   {
     name: 'Sample Company 1',
@@ -44,6 +46,7 @@ const companies = [
     notes: 'Fusce ornare, orci quis scelerisque hendrerit, odio orci sollicitudin ex, id convallis neque ipsum a lorem.'
   }
 ];
+*/
 
 const people = [
 {
@@ -78,6 +81,10 @@ const people = [
 
 export class Board extends React.Component {
 
+  componentDidMount() {
+    this.props.dispatch(getCompanyData(this.props.username));
+  }
+
   handleOpenModal() {
     this.props.dispatch(openModal());
   }
@@ -87,7 +94,6 @@ export class Board extends React.Component {
   }
 
   render() {
-
     return (
       <table>
         <tbody>
@@ -113,13 +119,35 @@ export class Board extends React.Component {
             <th className='followup' scope='col'>Sent a follow-up</th>
             <th className='referral' scope='col'>Got a referral!</th>
           </tr>
-            {companies.map(function(company, index){
+          {this.props.companies.map(function(company, index){
+            // const filterPeople = people.filter(person => person.company === company.name && person.status === 1);
+            return (
+              <CompanySummary company={company} key={index} index={index} />
+            )
+          })}
+        </tbody>
+      </table>
+    )
+  }
+};
+
+const mapStateToProps = state => {
+  return {
+    openModal: state.network.openModal,
+    companies: state.network.companies
+  };
+};
+
+export default connect(mapStateToProps)(Board);
+
+/*
+ {companies.map(function(company, index){
               // const filterPeople = people.filter(person => person.company === company.name && person.status === 1);
               return (
                 <CompanySummary company={company} key={index} />
               )
             })}
-            {/* Move to person-card component 
+            { Move to person-card component 
             {people.map(function(person, index){
               return (
                 <div>
@@ -130,16 +158,5 @@ export class Board extends React.Component {
                 </div>
               )
             })}
-            */}
-        </tbody>
-      </table>
-    )
-  }
-};
-
-const mapStateToProps = state => {
-  return {
-    openModal: state.network.openModal  };
-};
-
-export default connect(mapStateToProps)(Board);
+            }
+*/

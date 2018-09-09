@@ -13,6 +13,7 @@ const initialState = {
     data: '',
     openModal: false,
     error: null,
+    companies: [],
     company: {
       username: '',
       companyName: '',
@@ -37,7 +38,7 @@ export default function reducer(state = initialState, action) {
 
   if (action.type === GET_COMPANY_DATA_SUCCESS) {
     return Object.assign({}, state, {
-      company: [...state.company, action.data],
+      companies: action.data,
       error: null
     });
   }
