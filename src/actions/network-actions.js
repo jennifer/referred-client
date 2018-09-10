@@ -78,7 +78,7 @@ export const postCompanyDataError = error => ({
 export const postCompanyData = values => (dispatch, getState) => {
   const authToken = getState().auth.authToken;
   values.username = getState().auth.currentUser.username;
-  return fetch(`${API_BASE_URL}/ompaniecs`, {
+  return fetch(`${API_BASE_URL}/companies`, {
     method: 'POST',
     headers: {
       // Provide our auth token as credentials

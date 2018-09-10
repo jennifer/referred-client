@@ -4,9 +4,10 @@ import CompanyForm from './company-form';
 import { connect } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { getCompanyData } from '../actions/network-actions';
-import ReactModal from 'react-modal';
+import Modal from './modal';
 import { openModal, closeModal } from '../actions/network-actions';
 import ReactDOM from 'react-dom';
+import ReactModal from 'react-modal';
 import '../stylesheets/board.css';
 import '../stylesheets/modal.css';
 
@@ -85,13 +86,7 @@ export class Board extends React.Component {
     this.props.dispatch(getCompanyData(this.props.username));
   }
 
-  handleOpenModal() {
-    this.props.dispatch(openModal());
-  }
-
-  handleCloseModal() {
-    this.props.dispatch(closeModal());
-  }
+  
 
   render() {
     return (
@@ -99,15 +94,10 @@ export class Board extends React.Component {
         <tbody>
           <tr>
             <th>Company
-              <div className='tool-tip'><FontAwesomeIcon icon='plus' onClick={this.handleOpenModal.bind(this)} />
+              <div className='tool-tip'><FontAwesomeIcon icon='plus' onClick={<Modal />} />
                 <span className='tool-tip-text'>Add a company</span>
               </div>
-              <ReactModal isOpen={this.props.openModal} contentLabel='Form to add a company' className='modal'>
-                <div className='close-bar'>
-                  <FontAwesomeIcon icon='times' onClick={this.handleCloseModal.bind(this)} />
-                </div>
-                <CompanyForm />
-              </ReactModal>
+              
             </th>
             <th className='identify' scope='col'>Identified a person</th>
             <th className='contact' scope='col'>Made contact</th>

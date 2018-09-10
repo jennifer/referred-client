@@ -1,10 +1,10 @@
 import React from 'react';
-import CompanyForm from './company-form';
+import CompanyDetail from './company-detail';
 import { connect } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Modal from './modal';
 import { openModal, closeModal } from '../actions/network-actions';
 import ReactModal from 'react-modal';
-import '../stylesheets/company-summary.css'
 
 export class CompanySummary extends React.Component {
 
@@ -37,7 +37,7 @@ export class CompanySummary extends React.Component {
           <div className='close-bar'>
             <FontAwesomeIcon icon='times' onClick={this.handleCloseModal.bind(this)} />
           </div>
-          <CompanyForm />
+          <CompanyDetail />
         </ReactModal>
       </tr>
     )
