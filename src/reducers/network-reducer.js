@@ -5,13 +5,10 @@ import {
     GET_COMPANY_DATA_ERROR,
     POST_COMPANY_DATA_SUCCESS,
     POST_COMPANY_DATA_ERROR,
-    OPEN_MODAL,
-    CLOSE_MODAL
 } from '../actions/network-actions';
 
 const initialState = {
     data: '',
-    openModal: false,
     error: null,
     companies: [],
     company: {
@@ -58,13 +55,6 @@ export default function reducer(state = initialState, action) {
     return Object.assign({}, state, { 
       error: action.error 
     });
-  }
-
-  if (action.type === OPEN_MODAL) {
-    return Object.assign({}, state, { openModal: true });
-  }
-  if (action.type === CLOSE_MODAL) {
-    return Object.assign({}, state, { openModal: false });
   }
   return state;
 }

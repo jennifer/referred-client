@@ -8,8 +8,8 @@ export class CompanySummary extends React.Component {
   render() {
 
     return (
-      <Link to='/company-detail'>
-        <tr key={this.props.index}>
+      <tr key={this.props.index}>
+        <Link to='/company-detail'>
           <td>
             <h1>{this.props.company.companyName}</h1>
             <p>{this.props.company.location}</p>
@@ -18,13 +18,13 @@ export class CompanySummary extends React.Component {
               <span className='tool-tip-text'>Add a person</span>
             </div>
           </td>
-          <td>identify</td>
-          <td>contact</td>
-          <td>response</td>
-          <td>followup</td>
-          <td>referral</td>
-        </tr>
-      </Link>
+        </Link>
+        <td>identify</td>
+        <td>contact</td>
+        <td>response</td>
+        <td>followup</td>
+        <td>referral</td>
+      </tr>
     )
   }
 };
