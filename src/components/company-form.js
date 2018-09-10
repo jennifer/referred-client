@@ -1,6 +1,7 @@
 import React from 'react';
-import Input from './input';
 import { Field, reduxForm, focus } from 'redux-form';
+import Input from './input';
+import { Link } from 'react-router-dom';
 import { postCompanyData } from '../actions/network-actions';
 import { required, nonEmpty } from '../validators';
 import '../stylesheets/company-form.css'
@@ -69,6 +70,7 @@ export class CompanyForm extends React.Component {
           <button className='submit-button' disabled={this.props.pristine || this.props.submitting}>
             Submit
           </button>
+          <Link to='/board'>Go Back</Link>
         </fieldset>
       </form>
     )};

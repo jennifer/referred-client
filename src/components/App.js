@@ -1,12 +1,13 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import { Route, withRouter } from 'react-router-dom';
-
 import Board from './board';
+import CompanyDetail from './company-detail';
+import CompanyForm from './company-form';
+import { connect } from 'react-redux';
 import Nav from './nav';
+import { refreshAuthToken } from '../actions/auth';
+import { Route, withRouter } from 'react-router-dom';
 import SignupPage from './signup-page';
 import TitlePage from './title-page';
-import { refreshAuthToken } from '../actions/auth';
 import '../stylesheets/App.css';
 
 import { library } from '@fortawesome/fontawesome-svg-core';
@@ -48,9 +49,11 @@ export class App extends React.Component {
     return (
       <div className="app">
         <Nav />
-        <Route exact path="/board" component={ Board } />
-        <Route exact path="/signup-page" component={ SignupPage } />
         <Route exact path="/" component={ TitlePage } />
+        <Route exact path="/signup-page" component={ SignupPage } />
+        <Route exact path="/board" component={ Board } />
+        <Route exact path="/company-form" component={ CompanyForm } />
+        <Route exact path="/company-detail" component={ CompanyDetail } />
       </div>
     );
   }
