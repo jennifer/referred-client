@@ -4,6 +4,8 @@ import CompanyDetail from './company-detail';
 import CompanyForm from './company-form';
 import { connect } from 'react-redux';
 import Nav from './nav';
+import PersonDetail from './person-detail';
+import PersonForm from './person-form';
 import { refreshAuthToken } from '../actions/auth';
 import { Route, withRouter } from 'react-router-dom';
 import SignupPage from './signup-page';
@@ -54,6 +56,8 @@ export class App extends React.Component {
         <Route exact path="/board" component={ Board } />
         <Route exact path="/company-form" component={ CompanyForm } />
         <Route exact path="/company-detail" component={ CompanyDetail } />
+        <Route exact path="/person-form" component={ PersonForm } />
+        <Route exact path="/person-detail" component={ PersonDetail } />
       </div>
     );
   }

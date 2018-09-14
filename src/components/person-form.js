@@ -3,13 +3,13 @@ import Input from './input';
 import { Field, reduxForm, focus } from 'redux-form';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { login } from '../actions/auth';
-import { person } from '../actions/network-actions';
+import { postPersonData } from '../actions/network-actions';
 import { required, nonEmpty } from '../validators';
 import '../stylesheets/person-form.css'
 
 export class PersonForm extends React.Component {
   onSubmit(values) {
-      return this.props.dispatch(person(values));
+      return this.props.dispatch(postPersonData(values));
   }
 
   render() {
@@ -22,14 +22,18 @@ export class PersonForm extends React.Component {
       );
     }
     return (
-      <form
-        //onSubmit={this.props.handleSubmit(values =>
-        //  this.onSubmit(values)
-        //)}
-      >
+      <form onSubmit={this.props.handleSubmit(values => this.onSubmit(values))}>
         {error}
         <fieldset className='person-fieldset'>
-          <label htmlFor='name'>Name:</label>
+          <label htmlFor='status'>Status:</label>
+          <Field
+            component={Input}
+            type='text'
+            name='status'
+            id='status'
+            validate={[required, nonEmpty]}
+          />
+          <label htmlFor='personName'>Name:</label>
           <Field
             component={Input}
             type='text'
@@ -44,19 +48,12 @@ export class PersonForm extends React.Component {
             name='title'
             id='title'
           />
-          <label htmlFor='link'>Link:</label>
+          <label htmlFor='url'>Link:</label>
           <Field
             component={Input}
-            type='text'
-            name='link'
-            id='link'
-          />
-          <label htmlFor='date'>Date:</label>
-          <Field
-            component={Input}
-            type='text'
-            name='date'
-            id='date'
+            type='url'
+            name='url'
+            id='url'
           />
           <label htmlFor='notes'>Notes:</label>
           <Field

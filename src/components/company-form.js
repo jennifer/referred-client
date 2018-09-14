@@ -22,11 +22,7 @@ export class CompanyForm extends React.Component {
       );
     }
     return (
-      <form
-        onSubmit={this.props.handleSubmit(values =>
-         this.onSubmit(values)
-        )}
-      >
+      <form onSubmit={this.props.handleSubmit(values => this.onSubmit(values))}>
         {error}
         <fieldset className='company-fieldset'>
           <label htmlFor='companyName'>Company name:</label>

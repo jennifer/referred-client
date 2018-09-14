@@ -95,9 +95,19 @@ export const postCompanyData = values => (dispatch, getState) => {
     });
 };
 
-/*
-export const ADD_PERSON = 'ADD_PERSON';
-export const addPerson = values => (dispatch, getState) => {
+export const POST_PERSON_DATA_SUCCESS = 'POST_PERSON_DATA_SUCCESS';
+export const postPersonDataSuccess = data => ({
+  type: POST_PERSON_DATA_SUCCESS,
+  data
+});
+
+export const POST_PERSON_DATA_ERROR = 'POST_PERSON_DATA_ERROR';
+export const postPersonDataError = error => ({
+  type: POST_PERSON_DATA_ERROR,
+  error
+});
+
+export const postPersonData = values => (dispatch, getState) => {
   const authToken = getState().auth.authToken;
   return fetch(`${API_BASE_URL}/people`, {
     method: 'POST',
@@ -113,4 +123,3 @@ export const addPerson = values => (dispatch, getState) => {
       dispatch(fetchProtectedDataError(err));
     });
 };
-*/
