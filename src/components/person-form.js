@@ -1,19 +1,22 @@
 import React from 'react';
+import DropdownList from 'react-widgets/lib/DropdownList';
 import Input from './input';
 import { Field, reduxForm, focus } from 'redux-form';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Link } from 'react-router-dom';
-import { login } from '../actions/auth';
 import { postPersonData } from '../actions/network-actions';
 import { required, nonEmpty } from '../validators';
 import '../stylesheets/person-form.css'
 
 export class PersonForm extends React.Component {
+
   onSubmit(values) {
       return this.props.dispatch(postPersonData(values));
   }
 
   render() {
+
+    const status = [ 'identified', 'made contact', 'got a response', 'followed up', 'got a referral!'  ];
+
     let error;
     if (this.props.error) {
       error = (
@@ -28,11 +31,12 @@ export class PersonForm extends React.Component {
         <fieldset className='person-fieldset'>
           <label htmlFor='status'>Status:</label>
           <Field
-            component={Input}
-            type='text'
+            component={DropdownList}
+            data={status}
+            valueField='value'
+            textField='status'
             name='status'
             id='status'
-            validate={[required, nonEmpty]}
           />
           <label htmlFor='personName'>Name:</label>
           <Field

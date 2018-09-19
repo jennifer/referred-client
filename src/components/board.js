@@ -65,7 +65,7 @@ export class Board extends React.Component {
           {this.props.companies.map(function(company, index){
             // const filterPeople = people.filter(person => person.company === company.name && person.status === 1);
             return (
-              <CompanySummary company={company} index={index} />
+              <CompanySummary company={company} key={index} index={index} />
             )
           })}
         </tbody>
