@@ -1,6 +1,6 @@
 import React from 'react';
 import Board from './board';
-import CompanyDetail from './company-detail';
+import Company from './company-detail';
 import CompanyForm from './company-form';
 import { connect } from 'react-redux';
 import Nav from './nav';
@@ -53,9 +53,9 @@ export class App extends React.Component {
         <Nav />
         <Route exact path="/" component={ TitlePage } />
         <Route exact path="/signup-page" component={ SignupPage } />
-        <Route exact path="/board" component={ Board } />
+        <Route exact path="/dashboard" component={ Board } />
         <Route exact path="/company-form" component={ CompanyForm } />
-        <Route exact path="/company-detail" component={ CompanyDetail } />
+        <Route exact path="/company" component={ Company } />
         <Route exact path="/person-form" component={ PersonForm } />
         <Route exact path="/person-detail" component={ PersonDetail } />
       </div>

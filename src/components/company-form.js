@@ -66,7 +66,7 @@ export class CompanyForm extends React.Component {
           <button className='submit-button' disabled={this.props.pristine || this.props.submitting}>
             Submit
           </button>
-          <Link to='/board'>Go Back</Link>
+          <Link to='/dashboard'>Go Back</Link>
         </fieldset>
       </form>
     )};

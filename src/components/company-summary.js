@@ -1,16 +1,18 @@
 import React from 'react';
+import Company from './company-detail';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export class CompanySummary extends React.Component {
 
+
   render() {
 
     return (
       <tr key={this.props.index}>
         <div className='tool-tip'>
-          <Link to='/company-detail'>
+          <Link to={`/company/${this.props.company._id}`}>
             <td>
               <h1>{this.props.company.companyName}</h1>
               <p>{this.props.company.location}</p>

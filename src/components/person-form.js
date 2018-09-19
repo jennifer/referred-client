@@ -2,6 +2,7 @@ import React from 'react';
 import Input from './input';
 import { Field, reduxForm, focus } from 'redux-form';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { Link } from 'react-router-dom';
 import { login } from '../actions/auth';
 import { postPersonData } from '../actions/network-actions';
 import { required, nonEmpty } from '../validators';
@@ -63,8 +64,9 @@ export class PersonForm extends React.Component {
             id='notes'
           />
           <button className='submit-button' disabled={this.props.pristine || this.props.submitting}>
-            Add company
+            Submit
           </button>
+          <Link to='/company'>Go Back</Link>
         </fieldset>
       </form>
     )};

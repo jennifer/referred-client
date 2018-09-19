@@ -108,6 +108,8 @@ export const postPersonDataError = error => ({
 });
 
 export const postPersonData = values => (dispatch, getState) => {
+  values.username = getState().auth.currentUser.username;
+  values.companyId = getState().network.company._id;
   const authToken = getState().auth.authToken;
   return fetch(`${API_BASE_URL}/people`, {
     method: 'POST',
