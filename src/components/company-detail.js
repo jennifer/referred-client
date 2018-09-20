@@ -21,7 +21,7 @@ export class Company extends React.Component {
         <h2>{company[0].location}</h2>
         <p>{company[0].description}</p>
         <p>{company[0].notes}</p>
-        <Link to='/person-form'>Add a Person</Link>
+        <Link to={`/person-form/${company[0]._id}`}>Add a Person</Link>
         <Link to='/dashboard'>Go Back</Link>
       </div>
     )
@@ -33,15 +33,3 @@ const mapStateToProps = state => ({
 })
 
 export default connect(mapStateToProps)(Company);
-
-/*
-
-<div>
-  <a href={state.company.url} target='_blank'>
-    <h1>{this.props.company.companyName}</h1>
-  </a>
-  <p>{this.props.company.location}</p>
-  <p>{this.props.company.description}</p>
-  <p>{this.props.company.notes}</p>
-</div>
-*/

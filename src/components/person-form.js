@@ -6,12 +6,19 @@ import { Link } from 'react-router-dom';
 import { postPersonData } from '../actions/network-actions';
 import { required, nonEmpty } from '../validators';
 import 'react-widgets/dist/css/react-widgets.css';
-import '../stylesheets/person-form.css'
+import '../stylesheets/person-form.css';
 
 export class PersonForm extends React.Component {
 
+  getCompany(){
+    return (
+      this.props.companies.filter(company => company._id === this.props.match.params.id)
+    )
+  }
+
   onSubmit(values) {
-      return this.props.dispatch(postPersonData(values));
+    values.companyId = this.getCompany();
+    return this.props.dispatch(postPersonData(values));
   }
 
   render() {
@@ -26,6 +33,7 @@ export class PersonForm extends React.Component {
         </div>
       );
     }
+
     return (
       <form onSubmit={this.props.handleSubmit(values => this.onSubmit(values))}>
         {error}

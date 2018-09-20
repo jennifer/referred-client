@@ -1,11 +1,8 @@
 import React from 'react';
-import Company from './company-detail';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export class CompanySummary extends React.Component {
-
 
   render() {
 

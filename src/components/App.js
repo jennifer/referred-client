@@ -56,7 +56,7 @@ export class App extends React.Component {
         <Route exact path="/dashboard" component={ Board } />
         <Route exact path="/company-form" component={ CompanyForm } />
         <Route exact path="/company/:id" component={ Company } />
-        <Route exact path="/person-form" component={ PersonForm } />
+        <Route exact path="/person-form/:id" component={ PersonForm } />
         <Route exact path="/person-detail" component={ PersonDetail } />
       </div>
     );

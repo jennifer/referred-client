@@ -3,7 +3,6 @@ import CompanySummary from './company-summary';
 import { connect } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { getCompanyData } from '../actions/network-actions';
-import ReactDOM from 'react-dom';
 import { Link } from 'react-router-dom';
 import '../stylesheets/board.css';
 

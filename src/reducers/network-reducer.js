@@ -3,10 +3,12 @@ import {
     FETCH_PROTECTED_DATA_ERROR,
     GET_COMPANY_DATA_SUCCESS,
     GET_COMPANY_DATA_ERROR,
-    GET_PERSON_DATA_SUCCESS,
-    GET_PERSON_DATA_ERROR,
+    //GET_PERSON_DATA_SUCCESS,
+    //GET_PERSON_DATA_ERROR,
     POST_COMPANY_DATA_SUCCESS,
     POST_COMPANY_DATA_ERROR,
+    POST_PERSON_DATA_SUCCESS,
+    POST_PERSON_DATA_ERROR,
 } from '../actions/network-actions';
 
 const initialState = {
@@ -58,5 +60,18 @@ export default function reducer(state = initialState, action) {
       error: action.error 
     });
   }
+
+  if (action.type === POST_PERSON_DATA_SUCCESS) {
+    return Object.assign({}, state, {
+      company: [...state.person, action.data],
+      error: null
+    });
+  }
+  if (action.type === POST_PERSON_DATA_ERROR) {
+    return Object.assign({}, state, { 
+      error: action.error 
+    });
+  }
+
   return state;
 }
