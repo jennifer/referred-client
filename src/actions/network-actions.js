@@ -95,6 +95,38 @@ export const postCompanyData = values => (dispatch, getState) => {
     });
 };
 
+export const PUT_COMPANY_DATA_SUCCESS = 'PUT_COMPANY_DATA_SUCCESS';
+export const putCompanyDataSuccess = data => ({
+  type: PUT_COMPANY_DATA_SUCCESS,
+  data
+});
+
+export const PUT_COMPANY_DATA_ERROR = 'PUT_COMPANY_DATA_ERROR';
+export const putCompanyDataError = error => ({
+  type: PUT_COMPANY_DATA_ERROR,
+  error
+});
+
+export const putCompanyData = values => (dispatch, getState) => {
+  const authToken = getState().auth.authToken;
+  values.username = getState().auth.currentUser.username;
+  return fetch(`${API_BASE_URL}/companies`, {
+    method: 'PUT',
+    headers: {
+      // Provide our auth token as credentials
+      Authorization: `Bearer ${authToken}`,
+      'Content-type': 'application/json'
+    },
+    body: JSON.stringify(values)
+  })
+    .then(res => normalizeResponseErrors(res))
+    .then(res => res.json())
+    .then(({data}) => dispatch(postCompanyDataSuccess(data)))
+    .catch(err => {
+      dispatch(postCompanyDataError(err));
+    });
+};
+
 export const POST_PERSON_DATA_SUCCESS = 'POST_PERSON_DATA_SUCCESS';
 export const postPersonDataSuccess = data => ({
   type: POST_PERSON_DATA_SUCCESS,

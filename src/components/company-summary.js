@@ -10,7 +10,7 @@ export class CompanySummary extends React.Component {
       <tr key={this.props.index}>
         <div className='tool-tip'>
           <td>
-            <Link to={`/company/${this.props.company._id}`}>
+            <Link to={`/company-detail/${this.props.company._id}`}>
               <h1>{this.props.company.companyName}</h1>
               <p>{this.props.company.location}</p>
               <p>{this.props.company.description}</p>
