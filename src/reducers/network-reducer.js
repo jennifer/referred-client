@@ -24,6 +24,7 @@ const initialState = {
     error: null,
     companies: [],
     company: {
+      id: '',
       username: '',
       companyName: '',
       url: '',

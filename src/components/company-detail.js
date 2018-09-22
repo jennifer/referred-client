@@ -10,6 +10,20 @@ export class CompanyDetail extends React.Component {
     )
   }
 
+/*
+  buildCompanyProps() {  
+    let company = this.getCompany();
+    const company = {
+      id: {company[0]._id},
+      username: {company[0].username},
+      companyName: {company[0].companyName},
+      url: {company[0].url},
+      location: {company[0].location},
+      description: {company[0].description},
+      notes: {company[0].notes}
+    },
+  }
+*/
   render() {
 
     let company = this.getCompany();
