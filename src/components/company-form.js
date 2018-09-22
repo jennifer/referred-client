@@ -7,9 +7,10 @@ import { required, nonEmpty } from '../validators';
 import '../stylesheets/company-form.css'
 
 export class CompanyForm extends React.Component {
-  
+
   onSubmit(values) {
-    return this.props.dispatch(postCompanyData(values));
+    this.props.dispatch(postCompanyData(values));
+    this.props.history.push('/dashboard');
   }
 
   render() {
