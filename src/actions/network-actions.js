@@ -107,10 +107,9 @@ export const putCompanyDataError = error => ({
   error
 });
 
-export const putCompanyData = values => (dispatch, getState) => {
+export const putCompanyData = (id, values) => (dispatch, getState) => {
   const authToken = getState().auth.authToken;
-  values.username = getState().auth.currentUser.username;
-  return fetch(`${API_BASE_URL}/companies`, {
+  return fetch(`${API_BASE_URL}/companies/${id}`, {
     method: 'PUT',
     headers: {
       // Provide our auth token as credentials

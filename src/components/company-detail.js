@@ -31,6 +31,6 @@ export class CompanyDetail extends React.Component {
 
 const mapStateToProps = state => ({
   companies:state.network.companies
-})
+});
 
 export default connect(mapStateToProps)(CompanyDetail);
