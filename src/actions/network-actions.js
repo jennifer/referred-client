@@ -121,11 +121,36 @@ export const putCompanyData = values => (dispatch, getState) => {
   })
     .then(res => normalizeResponseErrors(res))
     .then(res => res.json())
-    .then(({data}) => dispatch(postCompanyDataSuccess(data)))
+    .then(({data}) => dispatch(putCompanyDataSuccess(data)))
     .catch(err => {
-      dispatch(postCompanyDataError(err));
+      dispatch(putCompanyDataError(err));
     });
 };
+
+export const DELETE_COMPANY_DATA_SUCCESS = 'DELETE_COMPANY_DATA_SUCCESS';
+export const deleteCompanyDataSuccess = data => ({
+  type: DELETE_COMPANY_DATA_SUCCESS,
+  data
+});
+
+export const DELETE_COMPANY_DATA_ERROR = 'DELETE_COMPANY_DATA_ERROR';
+export const deleteCompanyDataError = error => ({
+  type: DELETE_COMPANY_DATA_ERROR,
+  error
+});
+
+export const deleteCompanyData = (id, data) => (dispatch, getState) => {
+  const authToken = getState().auth.authToken;
+  return fetch(`${API_BASE_URL}/companies/${id}`, {
+    method: "DELETE",
+    headers: {
+      // Provide our auth token as credentials
+      Authorization: `Bearer ${authToken}`
+    }
+  }).then(res => dispatch(deleteCompanyDataSuccess(id, data)));
+};
+
+// Person actions
 
 export const POST_PERSON_DATA_SUCCESS = 'POST_PERSON_DATA_SUCCESS';
 export const postPersonDataSuccess = data => ({
@@ -151,8 +176,9 @@ export const postPersonData = values => (dispatch, getState) => {
   })
     .then(res => normalizeResponseErrors(res))
     .then(res => res.json())
-    .then(({data}) => dispatch(fetchProtectedDataSuccess(data)))
+    .then(({data}) => dispatch(postPersonDataSuccess(data)))
     .catch(err => {
-      dispatch(fetchProtectedDataError(err));
+      dispatch(postPersonDataError(err));
     });
 };
+
