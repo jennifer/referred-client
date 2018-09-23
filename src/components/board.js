@@ -7,37 +7,6 @@ import { getPersonData } from '../actions/network-actions';
 import { Link } from 'react-router-dom';
 import '../stylesheets/board.css';
 
-const people = [
-{
-  name: 'Emily Engineer',
-  title: 'Full-Stack Web Developer',
-  company: 'Sample Company 1',
-  location: 'Denver, CO',
-  links: 'https://www.linkedin.com',
-  connection: 'LinkedIn',
-  contacts: {
-    date: '7/20/2018',
-    method: 'LinkedIn'
-  },
-  notes: 'Fusce ornare, orci quis scelerisque hendrerit, odio orci sollicitudin ex, id convallis neque ipsum a lorem.',
-  status: 1
-},
-{
-  name: 'Daphne Dev',
-  title: 'Front-End Engineer',
-  company: 'Sample Company 2',
-  location: 'Boulder, CO',
-  links: 'https://www.linkedin.com',
-  connection: 'Mutual friend',
-  contacts: {
-    date: '7/15/2018',
-    method: 'email'
-  },
-  notes: 'Quisque sed metus at leo tincidunt molestie non a lorem. Curabitur tempus tincidunt tincidunt.',
-  status: 3
-}
-];
-
 export class Board extends React.Component {
 
   componentDidMount() {

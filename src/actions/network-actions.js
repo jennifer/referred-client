@@ -195,8 +195,10 @@ export const postPersonData = values => (dispatch, getState) => {
   return fetch(`${API_BASE_URL}/companies/person`, {
     method: 'POST',
     headers: {
-      Authorization: `Bearer ${authToken}`
-    }
+      Authorization: `Bearer ${authToken}`,
+      'Content-type': 'application/json'
+    },
+    body: JSON.stringify(values)
   })
     .then(res => normalizeResponseErrors(res))
     .then(res => res.json())
@@ -205,4 +207,3 @@ export const postPersonData = values => (dispatch, getState) => {
       dispatch(postPersonDataError(err));
     });
 };
-

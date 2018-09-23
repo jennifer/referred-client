@@ -12,8 +12,10 @@ import '../stylesheets/person-form.css';
 export class PersonForm extends React.Component {
 
   onSubmit(values) {
-    const companyId = this.props.companies._id;
-    values.companyId = companyId;
+    const company = this.props.companies.find(
+      company => company._id === this.props.match.params.id
+    );
+    values.companyId = company._id;
     this.props.dispatch(postPersonData(values));
     this.props.history.push('/dashboard');
   }
@@ -22,8 +24,16 @@ export class PersonForm extends React.Component {
 
     const company = this.props.companies.find(
       company => company._id === this.props.match.params.id
-    )    
+    );
     const status = [ 'identified', 'made contact', 'got a response', 'followed up', 'got a referral!'  ];
+
+    const renderDropdownList = ({ input, data, valueField, textField }) =>
+      <DropdownList {...input}
+        data={data}
+        valueField={valueField}
+        textField={textField}
+        onChange={input.onChange} 
+      />
 
     let error;
     if (this.props.error) {
@@ -41,19 +51,19 @@ export class PersonForm extends React.Component {
         <fieldset className='person-fieldset'>
           <label htmlFor='status'>Status:</label>
           <Field
-            component={DropdownList}
+            component={renderDropdownList}
             data={status}
-            valueField='value'
-            textField='status'
+            valueField='status'
+            textField='value'
             name='status'
             id='status'
           />
-          <label htmlFor='personName'>Name:</label>
+          <label htmlFor='name'>Name:</label>
           <Field
             component={Input}
             type='text'
-            name='personName'
-            id='personName'
+            name='name'
+            id='name'
             validate={[required, nonEmpty]}
           />
           <label htmlFor='title'>Title:</label>
@@ -98,3 +108,21 @@ PersonForm = reduxForm({
 PersonForm = connect(mapStateToProps)(PersonForm);
 
 export default PersonForm
+
+/*
+<label htmlFor="type" className="property-label">
+  Property type
+</label>
+<Field
+  name="type"
+  id="type"
+  component="select"
+  aria-label="property-type"
+  validate={[required, nonEmpty]}
+>
+  <option value="select">Select Type</option>
+  <option value="house">House</option>
+  <option value="condo">Condo</option>
+  <option value="apartment">Apartment</option>
+</Field>
+*/
