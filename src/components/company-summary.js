@@ -25,11 +25,3 @@ export class CompanySummary extends React.Component {
 };
 
 export default connect()(CompanySummary);
-
-/*
-<td>identify</td>
-        <td>contact</td>
-        <td>response</td>
-        <td>followup</td>
-        <td>referral</td>
-*/

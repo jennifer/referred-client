@@ -11,11 +11,8 @@ import '../stylesheets/person-form.css';
 
 export class PersonForm extends React.Component {
 
-  onSubmit(values) {
-    const company = this.props.companies.find(
-      company => company._id === this.props.match.params.id
-    );
-    values.companyId = company._id;
+  onSubmit(values, id) {
+    values.companyId = id;
     this.props.dispatch(postPersonData(values));
     this.props.history.push('/dashboard');
   }
@@ -46,7 +43,7 @@ export class PersonForm extends React.Component {
 
     return (
 
-      <form onSubmit={this.props.handleSubmit(values => this.onSubmit(values))}>
+      <form onSubmit={this.props.handleSubmit(values => this.onSubmit(values, company._id))}>
         {error}
         <fieldset className='person-fieldset'>
           <label htmlFor='status'>Status:</label>
@@ -108,21 +105,3 @@ PersonForm = reduxForm({
 PersonForm = connect(mapStateToProps)(PersonForm);
 
 export default PersonForm
-
-/*
-<label htmlFor="type" className="property-label">
-  Property type
-</label>
-<Field
-  name="type"
-  id="type"
-  component="select"
-  aria-label="property-type"
-  validate={[required, nonEmpty]}
->
-  <option value="select">Select Type</option>
-  <option value="house">House</option>
-  <option value="condo">Condo</option>
-  <option value="apartment">Apartment</option>
-</Field>
-*/
