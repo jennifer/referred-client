@@ -9,11 +9,10 @@ export class PersonSummary extends React.Component {
     return (
     	<tr key={this.props.index}>
 	    <div className='tool-tip' key={this.props.index}>
-        
+        <Link to={`/person-detail/${this.props.person._id}`}>
           <h1>{this.props.person.name}</h1>
-          <p>{this.props.person.url}</p>
           <p>{this.props.person.title}</p>
-
+				</Link>
 	      <span className='tool-tip-text'>View and edit person details</span>
 	    </div>
 	    </tr>
@@ -22,8 +21,3 @@ export class PersonSummary extends React.Component {
 };
 
 export default connect()(PersonSummary);
-
-/*
-<Link to={`/person-detail/${this.props.person._id}`}>
-</Link>
-*/
