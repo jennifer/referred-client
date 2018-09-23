@@ -151,18 +151,6 @@ export const deleteCompanyData = (id, data) => (dispatch, getState) => {
   }).then(res => dispatch(deleteCompanyDataSuccess(id, data)));
 };
 
-export const SET_SELECTED_COMPANY = "SET_SELECTED_COMPANY";
-export const setSelectedCompany = (company, username) => ({
-  type: SET_SELECTED_COMPANY,
-  company,
-  username
-});
-
-export const CLEAR_SELECTED_COMPANY = "CLEAR_SELECTED_COMPANY";
-export const clearSelectedCompany = () => ({
-  type: CLEAR_SELECTED_COMPANY
-});
-
 // Person actions
 
 export const POST_PERSON_DATA_SUCCESS = 'POST_PERSON_DATA_SUCCESS';

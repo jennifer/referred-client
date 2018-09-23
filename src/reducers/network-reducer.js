@@ -7,8 +7,6 @@ import {
     POST_COMPANY_DATA_ERROR,
     PUT_COMPANY_DATA_SUCCESS,
     PUT_COMPANY_DATA_ERROR,
-    CLEAR_SELECTED_COMPANY,
-    SET_SELECTED_COMPANY,
     DELETE_COMPANY_DATA_SUCCESS,
     DELETE_COMPANY_DATA_ERROR,
     //GET_PERSON_DATA_SUCCESS,
@@ -25,15 +23,6 @@ const initialState = {
     data: '',
     error: null,
     companies: [],
-    selectedCompany: {
-      id: '',
-      username: '',
-      companyName: '',
-      url: '',
-      location: '',
-      description: '',
-      notes: ''
-    },
 };
 
 export default function reducer(state = initialState, action) {
@@ -96,29 +85,6 @@ export default function reducer(state = initialState, action) {
     return Object.assign({}, state, { 
       error: action.error 
     });
-  }
-
-  if (action.type === SET_SELECTED_COMPANY) {
-    const selectedCompany = JSON.parse(JSON.stringify(state.selectedCompany));
-    selectedCompany.id = action.property.id;
-    selectedCompany.username = action.username;
-    return Object.assign({}, state, {
-      selectedProperty: action.property,
-    });
-  }
-
-  if (action.type === CLEAR_SELECTED_COMPANY) {
-      return Object.assign({}, state, {
-      selectedCompany: { 
-        id: '',
-        username: '',
-        companyName: '',
-        url: '',
-        location: '',
-        description: '',
-        notes: ''
-      }
-    });  
   }
 
   // Person reducers

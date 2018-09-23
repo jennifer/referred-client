@@ -9,10 +9,24 @@ import { required, nonEmpty } from '../validators';
 
 export class CompanyEdit extends React.Component {
 
-  getCompany(){
-    return (
-      this.props.companies.find(company => company._id === this.props.match.params.id)
+  componentDidMount() {
+    this.handleInitialize();
+  }
+
+  handleInitialize() {
+    const company = this.props.companies.find(
+      company => company._id === this.props.match.params.id
     )
+    const selectedCompany = {
+      id: company._id,
+      username: company.username,
+      companyName: company.companyName,
+      url: company.url,
+      location: company.location,
+      description: company.description,
+      notes: company.notes
+    }
+    this.props.initialize(selectedCompany);
   }
 
   onSubmit(id, values) {
@@ -32,6 +46,7 @@ export class CompanyEdit extends React.Component {
   }
 
   render () {
+    
     let error;
     if (this.props.error) {
       error = (
@@ -39,17 +54,6 @@ export class CompanyEdit extends React.Component {
           {this.props.error}
         </div>
       );
-    }
-
-    const company = this.getCompany();
-    const selectedCompany = {
-      id: company._id,
-      username: company.username,
-      companyName: company.companyName,
-      url: company.url,
-      location: company.location,
-      description: company.description,
-      notes: company.notes
     }
 
     return (
