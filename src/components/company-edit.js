@@ -11,13 +11,13 @@ export class CompanyEdit extends React.Component {
 
   getCompany(){
     return (
-      this.props.companies.filter(company => company._id === this.props.match.params.id)
+      this.props.companies.find(company => company._id === this.props.match.params.id)
     )
   }
 
   onSubmit(id, values) {
   	let company = this.getCompany();
-    values.id = company[0]._id;
+    values.id = company._id;
     return 
       this.props.dispatch(putCompanyData(values));
       this.props.history.push('/dashboard');
@@ -25,7 +25,7 @@ export class CompanyEdit extends React.Component {
 
   onDelete(id, values) {
     let company = this.getCompany();
-    values.id = company[0]._id;
+    values.id = company._id;
     return 
       this.props.dispatch(deleteCompanyData(id, values));
       this.props.history.push('/dashboard');
@@ -40,6 +40,18 @@ export class CompanyEdit extends React.Component {
         </div>
       );
     }
+
+    const company = this.getCompany();
+    const selectedCompany = {
+      id: company._id,
+      username: company.username,
+      companyName: company.companyName,
+      url: company.url,
+      location: company.location,
+      description: company.description,
+      notes: company.notes
+    }
+
     return (
       <div>
         <form onSubmit={this.props.handleSubmit(values => this.onSubmit(values))}>
@@ -91,16 +103,19 @@ export class CompanyEdit extends React.Component {
         </form>
       </div>
     )
-  };
+  }
 };
+
 
 const mapStateToProps = state => ({
   companies:state.network.companies
 });
 
-export default 
-	reduxForm({
-	  form: 'companyEdit',
-	  onSubmitFail: (errors, dispatch) => dispatch(focus('companyEdit'))
-	})(CompanyEdit);
-  connect(mapStateToProps)(CompanyEdit);
+CompanyEdit = reduxForm({
+    form: 'companyEdit',
+    onSubmitFail: (errors, dispatch) => dispatch(focus('companyEdit'))
+  })(CompanyEdit)
+
+CompanyEdit = connect(mapStateToProps)(CompanyEdit);
+
+export default CompanyEdit

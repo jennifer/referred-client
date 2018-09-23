@@ -6,37 +6,23 @@ export class CompanyDetail extends React.Component {
 
   getCompany(){
     return (
-      this.props.companies.filter(company => company._id === this.props.match.params.id)
+      this.props.companies.find(company => company._id === this.props.match.params.id)
     )
   }
 
-/*
-  buildCompanyProps() {  
-    let company = this.getCompany();
-    const company = {
-      id: {company[0]._id},
-      username: {company[0].username},
-      companyName: {company[0].companyName},
-      url: {company[0].url},
-      location: {company[0].location},
-      description: {company[0].description},
-      notes: {company[0].notes}
-    },
-  }
-*/
   render() {
 
-    let company = this.getCompany();
+    const company = this.getCompany();
     return (
       <div>
-        <a href={company[0].url} target='_blank'>
-          <h1>{company[0].companyName}</h1>
+        <a href={company.url} target='_blank'>
+          <h1>{company.companyName}</h1>
         </a>
-        <h2>{company[0].location}</h2>
-        <p>{company[0].description}</p>
-        <p>{company[0].notes}</p>
-        <Link to={`/person-form/${company[0]._id}`}>Add a Person</Link>
-        <Link to={`/company-edit/${company[0]._id}`}>Edit Company</Link>
+        <h2>{company.location}</h2>
+        <p>{company.description}</p>
+        <p>{company.notes}</p>
+        <Link to={`/person-form/${company._id}`}>Add a Person</Link>
+        <Link to={`/company-edit/${company._id}`}>Edit Company</Link>
         <Link to='/dashboard'>Go Back</Link>
       </div>
     )
@@ -48,3 +34,8 @@ const mapStateToProps = state => ({
 });
 
 export default connect(mapStateToProps)(CompanyDetail);
+
+
+/*
+  
+*/
