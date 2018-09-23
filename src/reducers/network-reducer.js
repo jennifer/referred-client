@@ -9,8 +9,8 @@ import {
     PUT_COMPANY_DATA_ERROR,
     DELETE_COMPANY_DATA_SUCCESS,
     DELETE_COMPANY_DATA_ERROR,
-    //GET_PERSON_DATA_SUCCESS,
-    //GET_PERSON_DATA_ERROR,
+    GET_PERSON_DATA_SUCCESS,
+    GET_PERSON_DATA_ERROR,
     POST_PERSON_DATA_SUCCESS,
     POST_PERSON_DATA_ERROR,
     //PUT_PERSON_DATA_SUCCESS,
@@ -81,6 +81,7 @@ export default function reducer(state = initialState, action) {
       error: null
     });
   }
+
   if (action.type === DELETE_COMPANY_DATA_ERROR) {
     return Object.assign({}, state, { 
       error: action.error 
@@ -89,12 +90,26 @@ export default function reducer(state = initialState, action) {
 
   // Person reducers
 
+  if (action.type === GET_PERSON_DATA_SUCCESS) {
+    return Object.assign({}, state, {
+      company: [...state.person, action.data],
+      error: null
+    });
+  }
+
+  if (action.type === GET_PERSON_DATA_ERROR) {
+    return Object.assign({}, state, { 
+      error: action.error 
+    });
+  }
+
   if (action.type === POST_PERSON_DATA_SUCCESS) {
     return Object.assign({}, state, {
       company: [...state.person, action.data],
       error: null
     });
   }
+  
   if (action.type === POST_PERSON_DATA_ERROR) {
     return Object.assign({}, state, { 
       error: action.error 

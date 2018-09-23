@@ -3,6 +3,7 @@ import CompanySummary from './company-summary';
 import { connect } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { getCompanyData } from '../actions/network-actions';
+import { getPersonData } from '../actions/network-actions';
 import { Link } from 'react-router-dom';
 import '../stylesheets/board.css';
 
@@ -41,6 +42,7 @@ export class Board extends React.Component {
 
   componentDidMount() {
     this.props.dispatch(getCompanyData(this.props.username));
+    this.props.dispatch(getPersonData(this.props.username));
   }
 
   render() {
@@ -76,7 +78,8 @@ export class Board extends React.Component {
 const mapStateToProps = state => {
   return {
     openModal: state.network.openModal,
-    companies: state.network.companies
+    companies: state.network.companies,
+    people: state.network.people
   };
 };
 

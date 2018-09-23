@@ -6,7 +6,6 @@ import { Link } from 'react-router-dom';
 import { putCompanyData, deleteCompanyData } from '../actions/network-actions';
 import { required, nonEmpty } from '../validators';
 
-
 export class CompanyEdit extends React.Component {
 
   componentDidMount() {
@@ -29,24 +28,25 @@ export class CompanyEdit extends React.Component {
     this.props.initialize(selectedCompany);
   }
 
-  onSubmit(id, values) {
-  	let company = this.getCompany();
-    values.id = company._id;
+  onSubmit(values) {
+    const id = this.props.companies._id;
     return 
-      this.props.dispatch(putCompanyData(values));
+      this.props.dispatch(putCompanyData(id, values));
       this.props.history.push('/dashboard');
   }
 
-  onDelete(id, values) {
-    let company = this.getCompany();
-    values.id = company._id;
+  deleteCompany(values) {
+    const id = this.props.companies._id;
     return 
       this.props.dispatch(deleteCompanyData(id, values));
       this.props.history.push('/dashboard');
   }
 
   render () {
-    
+
+    const company = this.props.companies.find(
+      company => company._id === this.props.match.params.id
+    )
     let error;
     if (this.props.error) {
       error = (
@@ -58,6 +58,7 @@ export class CompanyEdit extends React.Component {
 
     return (
       <div>
+        <h1>Edit {company.companyName}</h1>
         <form onSubmit={this.props.handleSubmit(values => this.onSubmit(values))}>
           {error}
           <fieldset className='company-fieldset'>
@@ -102,14 +103,20 @@ export class CompanyEdit extends React.Component {
             <button className='submit-button' type='submit' disabled={this.props.pristine || this.props.submitting}>
               Submit
             </button>
-            <Link to='/dashboard'>Go Back</Link>
+            <button
+              className='delete-button'
+              type='button'
+              onClick={() => this.deleteProperty()}
+            >
+              Delete Company
+            </button>
           </fieldset>
         </form>
+        <Link to={`/company-detail/${company._id}`}>Go Back</Link>
       </div>
     )
   }
 };
-
 
 const mapStateToProps = state => ({
   companies:state.network.companies

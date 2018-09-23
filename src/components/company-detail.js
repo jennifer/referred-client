@@ -4,11 +4,11 @@ import { Link } from 'react-router-dom';
 
 export class CompanyDetail extends React.Component {
 
-  
-
   render() {
 
-    const company = this.props.companies.find(company => company._id === this.props.match.params.id)
+    const company = this.props.companies.find(
+      company => company._id === this.props.match.params.id
+    )
     return (
       <div>
         <a href={company.url} target='_blank'>

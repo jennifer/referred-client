@@ -1,4 +1,5 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import DropdownList from 'react-widgets/lib/DropdownList';
 import Input from './input';
 import { Field, reduxForm, focus } from 'redux-form';
@@ -10,21 +11,18 @@ import '../stylesheets/person-form.css';
 
 export class PersonForm extends React.Component {
 
-  getCompany(){
-    return (
-      this.props.companies.filter(company => company._id === this.props.match.params.id)
-    )
-  }
-
   onSubmit(values) {
-    let company = this.getCompany();
-    values.companyId = company[0]._id;
+    const companyId = this.props.companies._id;
+    values.companyId = companyId;
     this.props.dispatch(postPersonData(values));
     this.props.history.push('/dashboard');
   }
 
   render() {
 
+    const company = this.props.companies.find(
+      company => company._id === this.props.match.params.id
+    )    
     const status = [ 'identified', 'made contact', 'got a response', 'followed up', 'got a referral!'  ];
 
     let error;
@@ -37,6 +35,7 @@ export class PersonForm extends React.Component {
     }
 
     return (
+
       <form onSubmit={this.props.handleSubmit(values => this.onSubmit(values))}>
         {error}
         <fieldset className='person-fieldset'>
@@ -81,13 +80,21 @@ export class PersonForm extends React.Component {
           <button className='submit-button' disabled={this.props.pristine || this.props.submitting}>
             Submit
           </button>
-          <Link to='/company'>Go Back</Link>
+          <Link to={`/company-detail/${company._id}`}>Go Back</Link>
         </fieldset>
       </form>
     )};
 }
 
-export default reduxForm({
-  form: 'person',
-  onSubmitFail: (errors, dispatch) => dispatch(focus('person'))
-})(PersonForm);
+const mapStateToProps = state => ({
+  companies:state.network.companies
+});
+
+PersonForm = reduxForm({
+    form: 'person',
+    onSubmitFail: (errors, dispatch) => dispatch(focus('person'))
+  })(PersonForm)
+
+PersonForm = connect(mapStateToProps)(PersonForm);
+
+export default PersonForm

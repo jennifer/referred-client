@@ -23,54 +23,57 @@ export class CompanyForm extends React.Component {
       );
     }
     return (
-      <form onSubmit={this.props.handleSubmit(values => this.onSubmit(values))}>
-        {error}
-        <fieldset className='company-fieldset'>
-          <label htmlFor='companyName'>Company name:</label>
-          <Field
-            component={Input}
-            type='text'
-            name='companyName'
-            id='companyName'
-            validate={[required, nonEmpty]}
-          />
-          <label htmlFor='url'>URL:</label>
-          <Field
-            component={Input}
-            type='url'
-            name='url'
-            id='url'
-            validate={[required, nonEmpty]}
-          />
-          <label htmlFor='location'>Location:</label>
-          <Field
-            component={Input}
-            type='text'
-            name='location'
-            id='location'
-            validate={[required, nonEmpty]}
-          />
-          <label htmlFor='description'>Description:</label>
-          <Field
-            component={Input}
-            type='text'
-            name='description'
-            id='description'
-          />
-          <label htmlFor='notes'>Notes:</label>
-          <Field
-            component={Input}
-            type='text'
-            name='notes'
-            id='notes'
-          />
-          <button className='submit-button' disabled={this.props.pristine || this.props.submitting}>
-            Submit
-          </button>
-          <Link to='/dashboard'>Go Back</Link>
-        </fieldset>
-      </form>
-    )};
+      <div>
+        <form onSubmit={this.props.handleSubmit(values => this.onSubmit(values))}>
+          {error}
+          <fieldset className='company-fieldset'>
+            <label htmlFor='companyName'>Company name:</label>
+            <Field
+              component={Input}
+              type='text'
+              name='companyName'
+              id='companyName'
+              validate={[required, nonEmpty]}
+            />
+            <label htmlFor='url'>URL:</label>
+            <Field
+              component={Input}
+              type='url'
+              name='url'
+              id='url'
+              validate={[required, nonEmpty]}
+            />
+            <label htmlFor='location'>Location:</label>
+            <Field
+              component={Input}
+              type='text'
+              name='location'
+              id='location'
+              validate={[required, nonEmpty]}
+            />
+            <label htmlFor='description'>Description:</label>
+            <Field
+              component={Input}
+              type='text'
+              name='description'
+              id='description'
+            />
+            <label htmlFor='notes'>Notes:</label>
+            <Field
+              component={Input}
+              type='text'
+              name='notes'
+              id='notes'
+            />
+            <button className='submit-button' type='submit' disabled={this.props.pristine || this.props.submitting}>
+              Submit
+            </button>
+          </fieldset>
+        </form>
+        <Link to='/dashboard'>Go Back</Link>
+      </div>
+    )
+  };
 }
 
 export default reduxForm({

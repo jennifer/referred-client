@@ -19,7 +19,6 @@ export const fetchProtectedData = () => (dispatch, getState) => {
   return fetch(`${API_BASE_URL}/protected`, {
     method: 'GET',
     headers: {
-      // Provide our auth token as credentials
       Authorization: `Bearer ${authToken}`
     }
   })
@@ -49,10 +48,8 @@ export const getCompanyData = () => (dispatch, getState) => {
   const authToken = getState().auth.authToken;
   const username = getState().auth.currentUser.username;
   return fetch(`${API_BASE_URL}/companies/${username}`, {
-  //return fetch(`${API_BASE_URL}/companies`, {
     method: 'GET',
     headers: {
-      // Provide our auth token as credentials
       Authorization: `Bearer ${authToken}`,
       'Content-type': 'application/json'
     }
@@ -83,7 +80,6 @@ export const postCompanyData = values => (dispatch, getState) => {
   return fetch(`${API_BASE_URL}/companies`, {
     method: 'POST',
     headers: {
-      // Provide our auth token as credentials
       Authorization: `Bearer ${authToken}`,
       'Content-type': 'application/json'
     },
@@ -114,7 +110,6 @@ export const putCompanyData = (id, values) => (dispatch, getState) => {
   return fetch(`${API_BASE_URL}/companies/${id}`, {
     method: 'PUT',
     headers: {
-      // Provide our auth token as credentials
       Authorization: `Bearer ${authToken}`,
       'Content-type': 'application/json'
     },
@@ -145,13 +140,42 @@ export const deleteCompanyData = (id, data) => (dispatch, getState) => {
   return fetch(`${API_BASE_URL}/companies/${id}`, {
     method: "DELETE",
     headers: {
-      // Provide our auth token as credentials
       Authorization: `Bearer ${authToken}`
     }
   }).then(res => dispatch(deleteCompanyDataSuccess(id, data)));
 };
 
 // Person actions
+
+export const GET_PERSON_DATA_SUCCESS = 'GET_PERSON_DATA_SUCCESS';
+export const getPersonDataSuccess = data => ({
+  type: GET_PERSON_DATA_SUCCESS,
+  data
+});
+
+export const GET_PERSON_DATA_ERROR = 'GET_PERSON_DATA_ERROR';
+export const getPersonDataError = error => ({
+  type: GET_PERSON_DATA_ERROR,
+  error
+});
+
+export const getPersonData = () => (dispatch, getState) => {
+  const authToken = getState().auth.authToken;
+  const username = getState().auth.currentUser.username;
+  return fetch(`${API_BASE_URL}/companies/person/${username}`, {
+    method: 'GET',
+    headers: {
+      Authorization: `Bearer ${authToken}`,
+      'Content-type': 'application/json'
+    }
+  })
+    .then(res => normalizeResponseErrors(res))
+    .then(res => res.json())
+    .then(data => dispatch(getPersonDataSuccess(data)))
+    .catch(err => {
+      dispatch(getPersonDataError(err));
+    });
+};
 
 export const POST_PERSON_DATA_SUCCESS = 'POST_PERSON_DATA_SUCCESS';
 export const postPersonDataSuccess = data => ({
@@ -166,12 +190,11 @@ export const postPersonDataError = error => ({
 });
 
 export const postPersonData = values => (dispatch, getState) => {
-  values.username = getState().auth.currentUser.username;
   const authToken = getState().auth.authToken;
-  return fetch(`${API_BASE_URL}/person`, {
+  values.username = getState().auth.currentUser.username;
+  return fetch(`${API_BASE_URL}/companies/person`, {
     method: 'POST',
     headers: {
-      // Provide our auth token as credentials
       Authorization: `Bearer ${authToken}`
     }
   })
