@@ -18,7 +18,7 @@ export class PersonDetail extends React.Component {
         <p>{person.title}</p>
         <p>{person.status}</p>
         <p>{person.notes}</p>
-        
+        <Link to={`/person-edit/${person._id}`}>Edit Person</Link>
         <Link to='/dashboard'>Go Back</Link>
       </div>
     )
@@ -30,5 +30,3 @@ const mapStateToProps = state => ({
 });
 
 export default connect(mapStateToProps)(PersonDetail);
-
-//<Link to={`/person-edit/${person._id}`}>Edit Person</Link>

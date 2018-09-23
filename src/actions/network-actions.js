@@ -207,3 +207,55 @@ export const postPersonData = values => (dispatch, getState) => {
       dispatch(postPersonDataError(err));
     });
 };
+
+export const PUT_PERSON_DATA_SUCCESS = 'PUT_PERSON_DATA_SUCCESS';
+export const putPersonDataSuccess = data => ({
+  type: PUT_PERSON_DATA_SUCCESS,
+  data
+});
+
+export const PUT_PERSON_DATA_ERROR = 'PUT_PERSON_DATA_ERROR';
+export const putPersonDataError = error => ({
+  type: PUT_PERSON_DATA_ERROR,
+  error
+});
+
+export const putPersonData = (id, values) => (dispatch, getState) => {
+  const authToken = getState().auth.authToken;
+  return fetch(`${API_BASE_URL}/companies/person/${id}`, {
+    method: 'PUT',
+    headers: {
+      Authorization: `Bearer ${authToken}`,
+      'Content-type': 'application/json'
+    },
+    body: JSON.stringify(values)
+  })
+    .then(res => normalizeResponseErrors(res))
+    .then(res => res.json())
+    .then(({data}) => dispatch(putPersonDataSuccess(data)))
+    .catch(err => {
+      dispatch(putPersonDataError(err));
+    });
+};
+
+export const DELETE_PERSON_DATA_SUCCESS = 'DELETE_PERSON_DATA_SUCCESS';
+export const deletePersonDataSuccess = data => ({
+  type: DELETE_PERSON_DATA_SUCCESS,
+  data
+});
+
+export const DELETE_PERSON_DATA_ERROR = 'DELETE_PERSON_DATA_ERROR';
+export const deletePersonDataError = error => ({
+  type: DELETE_PERSON_DATA_ERROR,
+  error
+});
+
+export const deletePersonData = (id, data) => (dispatch, getState) => {
+  const authToken = getState().auth.authToken;
+  return fetch(`${API_BASE_URL}/companies/person/${id}`, {
+    method: "DELETE",
+    headers: {
+      Authorization: `Bearer ${authToken}`
+    }
+  }).then(res => dispatch(deletePersonDataSuccess(id, data)));
+};
