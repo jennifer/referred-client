@@ -28,18 +28,15 @@ export class CompanyEdit extends React.Component {
     this.props.initialize(selectedCompany);
   }
 
-  onSubmit(values) {
-    const id = this.props.companies._id;
-    return 
-      this.props.dispatch(putCompanyData(id, values));
-      this.props.history.push('/dashboard');
+  onSubmit(values, id) {
+    values.id = id;
+    this.props.dispatch(putCompanyData(id, values));
+    this.props.history.push('/dashboard');
   }
 
-  deleteCompany(values) {
-    const id = this.props.companies._id;
-    return 
-      this.props.dispatch(deleteCompanyData(id, values));
-      this.props.history.push('/dashboard');
+  deleteCompany(id) {
+    this.props.dispatch(deleteCompanyData(id));
+    this.props.history.push('/dashboard');
   }
 
   render () {
@@ -59,7 +56,7 @@ export class CompanyEdit extends React.Component {
     return (
       <div>
         <h1>Edit {company.companyName}</h1>
-        <form onSubmit={this.props.handleSubmit(values => this.onSubmit(values))}>
+        <form onSubmit={this.props.handleSubmit(values => this.onSubmit(values, company._id))}>
           {error}
           <fieldset className='company-fieldset'>
             <label htmlFor='companyName'>Company name:</label>
@@ -106,7 +103,7 @@ export class CompanyEdit extends React.Component {
             <button
               className='delete-button'
               type='button'
-              onClick={() => this.deleteProperty()}
+              onClick={() => this.deleteCompany(company._id)}
             >
               Delete Company
             </button>

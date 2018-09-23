@@ -18,14 +18,18 @@ export class CompanySummary extends React.Component {
           </td>
           <span className='tool-tip-text'>View details and add a person</span>
         </div>
-        <td>identify</td>
-        <td>contact</td>
-        <td>response</td>
-        <td>followup</td>
-        <td>referral</td>
+        
       </tr>
     )
   }
 };
 
 export default connect()(CompanySummary);
+
+/*
+<td>identify</td>
+        <td>contact</td>
+        <td>response</td>
+        <td>followup</td>
+        <td>referral</td>
+*/

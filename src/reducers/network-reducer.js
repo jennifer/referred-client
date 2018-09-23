@@ -53,7 +53,7 @@ export default function reducer(state = initialState, action) {
 
   if (action.type === POST_COMPANY_DATA_SUCCESS) {
     return Object.assign({}, state, {
-      company: [...state.company, action.data],
+      companies: [...state.companies, action.data],
       error: null
     });
   }
@@ -65,7 +65,7 @@ export default function reducer(state = initialState, action) {
 
   if (action.type === PUT_COMPANY_DATA_SUCCESS) {
     return Object.assign({}, state, {
-      company: [...state.company, action.data],
+      companies: [...state.companies, action.data],
       error: null
     });
   }
@@ -77,7 +77,7 @@ export default function reducer(state = initialState, action) {
 
   if (action.type === DELETE_COMPANY_DATA_SUCCESS) {
     return Object.assign({}, state, {
-      company: [...state.company, action.data],
+      companies: [...state.companies, action.data],
       error: null
     });
   }
@@ -109,7 +109,7 @@ export default function reducer(state = initialState, action) {
       error: null
     });
   }
-  
+
   if (action.type === POST_PERSON_DATA_ERROR) {
     return Object.assign({}, state, { 
       error: action.error 

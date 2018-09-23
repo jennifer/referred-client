@@ -4,13 +4,12 @@ table {
   text-align: left;
   border-collapse: collapse;
   border-style: hidden;
-  border-bottom: 1px black dashed;
 }
 
 th, td {
   font-weight: normal;
   padding: 10px;
-  border: 1px black dashed;
+  border-bottom: 1px black dashed;
 }
 
 tr:hover {
@@ -19,7 +18,7 @@ tr:hover {
 
 .tool-tip {
   position: relative;
-  float: right;
+  /*float: right;*/
 }
 
 .tool-tip .tool-tip-text {
