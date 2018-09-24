@@ -6,7 +6,7 @@ export class CompanySummary extends React.Component {
 
   render() {
     return (
-      <div key={this.props.index}>
+      <div className='company-card' key={this.props.index}>
         <Link to={`/company-detail/${this.props.company._id}`}>
           <h1>{this.props.company.companyName}</h1>
           <p>{this.props.company.location}</p>
