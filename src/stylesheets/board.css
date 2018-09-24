@@ -1,24 +1,47 @@
-table {
-  width: 100%;
-  table-layout: fixed;
-  text-align: left;
-  border-collapse: collapse;
-  border-style: hidden;
+.grid-wrapper {
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: auto;
 }
 
-th, td {
-  font-weight: normal;
-  padding: 10px;
-  border-bottom: 1px black dashed;
+.company {
+  grid-column-start: 1;
+  grid-column-end: 2;
 }
 
-tr:hover {
-  background-color: #fdffab;
+.identify {
+  grid-column-start: 2;
+  grid-column-end: 3;
 }
 
-.tool-tip {
+.contact {
+  grid-column-start: 3;
+  grid-column-end: 4;
+}
+
+.response {
+  grid-column-start: 4;
+  grid-column-end: 5;
+}
+
+.followup {
+  grid-column-start: 5;
+  grid-column-end: 6;
+}
+
+.referral {
+  grid-column-start: 6;
+  grid-column-end: 7;
+}
+
+.icon {
   position: relative;
-  /*float: right;*/
+  float: right;
+}
+
+.col {
+  text-align: center;
+  border-bottom: 2px black dashed;
 }
 
 .tool-tip .tool-tip-text {

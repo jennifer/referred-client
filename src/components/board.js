@@ -19,36 +19,37 @@ export class Board extends React.Component {
 
     return (
       <div>
-        
-        <table>
-          <tbody>
-            <tr>
-              <th>Company
-                <Link to='/company-form'>
-                  <div className='tool-tip'><FontAwesomeIcon icon='plus' />
-                    <span className='tool-tip-text'>Add a company</span>
-                  </div>
-                </Link>
-              </th>
-              <th className='identify' scope='col' index='0'>Identified a person</th>
-              <th className='contact' scope='col' index='1'>Made contact</th>
-              <th className='response' scope='col' index='2'>Got a response</th>
-              <th className='followup' scope='col' index='3'>Sent a follow-up</th>
-              <th className='referral' scope='col' index='4'>Got a referral!</th>
-            </tr>
+        <div className='grid-wrapper'>
+          <div className='company col'>Company
+            <Link to='/company-form'>
+              <div className='tool-tip'><FontAwesomeIcon icon='plus' className='icon' />
+                <span className='tool-tip-text'>Add a company</span>
+              </div>
+            </Link>
+          </div>
+          <div className='identify col' index='0'>Identified a person</div>
+          <div className='contact col' index='1'>Made contact</div>
+          <div className='response col' index='2'>Got a response</div>
+          <div className='followup col' index='3'>Sent a follow-up</div>
+          <div className='referral col' index='4'>Got a referral!</div>
+
+          <div className='companies'>
             {this.props.companies.map(function(company, index){
-              // const filterPeople = people.filter(person => person.company === company.name && person.status === 1);
               return (
                 <CompanySummary company={company} key={index} index={index} />
               )
-            })}
+            })} 
+          </div>
+          <div className='people'>
             {this.props.people.map(function(person, index){
               return (
                 <PersonSummary person={person} key={index} index={index} />
               )
-            })}
-          </tbody>
-        </table>
+            })} 
+          </div>
+        </div>  
+        
+        
       </div>
     )
   }
