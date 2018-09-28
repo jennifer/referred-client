@@ -15,6 +15,19 @@ export class Board extends React.Component {
     this.props.dispatch(getPersonData(this.props.username));
   }
 
+  renderPersonCard(index) {
+    const personCard = {
+
+    };
+    <div className='people' style={personCard}>
+      {this.props.people.map(function(person, index){
+        return (
+          <PersonSummary person={person} key={index} index={index} />
+        )
+      })} 
+    </div>
+  }
+
   render() {
 
     return (
@@ -35,18 +48,12 @@ export class Board extends React.Component {
         <div className='company'>
           {this.props.companies.map(function(company, index){
             return (
-              <CompanySummary company={company} key={index} index={index} />
-              // const filterPeople = people.filter(person => person.companyId === company._id && person.status === 1);
-            )
+              <CompanySummary company={company} key={index} index={index} />;
+              const filterPeople = people.filter(person => person.companyId === company._id);
+            );
           })} 
         </div>
-        <div className='people'>
-          {this.props.people.map(function(person, index){
-            return (
-              <PersonSummary person={person} key={index} index={index} />
-            )
-          })} 
-        </div>
+        
       </div>  
     )
   }
