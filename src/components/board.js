@@ -15,17 +15,23 @@ export class Board extends React.Component {
     this.props.dispatch(getPersonData(this.props.username));
   }
 
-  renderPersonCard(index) {
+  renderPersonCard(filterPeople, index) {
     const personCard = {
+      gridRowStart: `${index}` + 2,
+      gridRowEnd:`${index}` + 3
+    }
+    
+    filterPeople = this.props.people.filter(person => person.companyId === this.props.company._id)
 
-    };
-    <div className='people' style={personCard}>
-      {this.props.people.map(function(person, index){
+    if (filterPeople) {
+      filterPeople.map(function(person, index){
         return (
-          <PersonSummary person={person} key={index} index={index} />
+          <div className='people' style={personCard} >
+            <PersonSummary person={person} key={index} index={index} />
+          </div>
         )
-      })} 
-    </div>
+      })
+    }
   }
 
   render() {
@@ -48,12 +54,10 @@ export class Board extends React.Component {
         <div className='company'>
           {this.props.companies.map(function(company, index){
             return (
-              <CompanySummary company={company} key={index} index={index} />;
-              const filterPeople = people.filter(person => person.companyId === company._id);
-            );
-          })} 
+              <CompanySummary company={company} key={index} index={index} />
+            )
+          })}; 
         </div>
-        
       </div>  
     )
   }
@@ -68,3 +72,19 @@ const mapStateToProps = state => {
 };
 
 export default connect(mapStateToProps)(Board);
+
+/*
+  renderPersonCard(filterPeople, index) {
+    const personCard = {
+      gridRowStart: `${index}` + 2,
+      gridRowEnd:`${index}` + 3
+    };
+    filterPeople.map(function(person, index){
+      return (
+        <div className='people' style={personCard} >
+          <PersonSummary person={person} key={index} index={index} />
+        </div>
+      )
+    }
+  }
+*/
