@@ -1,6 +1,5 @@
 import React from 'react';
 import CompanySummary from './company-summary';
-import PersonSummary from './person-summary';
 import { connect } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { getCompanyData } from '../actions/network-actions';
@@ -13,25 +12,6 @@ export class Board extends React.Component {
   componentDidMount() {
     this.props.dispatch(getCompanyData(this.props.username));
     this.props.dispatch(getPersonData(this.props.username));
-  }
-
-  renderPersonCard(filterPeople, index) {
-    const personCard = {
-      gridRowStart: `${index}` + 2,
-      gridRowEnd:`${index}` + 3
-    }
-    
-    filterPeople = this.props.people.filter(person => person.companyId === this.props.company._id)
-
-    if (filterPeople) {
-      filterPeople.map(function(person, index){
-        return (
-          <div className='people' style={personCard} >
-            <PersonSummary person={person} key={index} index={index} />
-          </div>
-        )
-      })
-    }
   }
 
   render() {
@@ -52,9 +32,11 @@ export class Board extends React.Component {
         <div className='referral col' index='4'>Got a referral!</div>
 
         <div className='company'>
-          {this.props.companies.map(function(company, index){
+          {this.props.companies.map((company, index) => {
             return (
-              <CompanySummary company={company} key={index} index={index} />
+              <div>
+                <CompanySummary company={company} key={index} index={index} />
+              </div>
             )
           })}; 
         </div>
