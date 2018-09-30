@@ -1,46 +1,52 @@
 .grid-wrapper {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-  grid-template-rows: repeat(auto-fill, auto);
 }
 
 .company {
+  grid-row-start: 1;
+  grid-row-end: 2;
   grid-column-start: 1;
   grid-column-end: 2;
 }
 
-.identify, .person {
+.identify {
+  grid-row-start: 1;
+  grid-row-end: 2;
   grid-column-start: 2;
   grid-column-end: 3;
 }
 
 .contact {
+  grid-row-start: 1;
+  grid-row-end: 2;
   grid-column-start: 3;
   grid-column-end: 4;
 }
 
 .response {
+  grid-row-start: 1;
+  grid-row-end: 2;
   grid-column-start: 4;
   grid-column-end: 5;
 }
 
 .followup {
+  grid-row-start: 1;
+  grid-row-end: 2;
   grid-column-start: 5;
   grid-column-end: 6;
 }
 
 .referral {
+  grid-row-start: 1;
+  grid-row-end: 2;
   grid-column-start: 6;
   grid-column-end: 7;
 }
 
 .col {
   text-align: center;
-  border-bottom: 2px black dashed;
-}
-
-.company-card {
-  padding: 10px;
 }
 
 .tool-tip {

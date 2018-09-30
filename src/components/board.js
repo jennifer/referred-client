@@ -1,5 +1,5 @@
 import React from 'react';
-import CompanySummary from './company-summary';
+import CompanyCard from './company-card';
 import { connect } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { getCompanyData } from '../actions/network-actions';
@@ -17,32 +17,27 @@ export class Board extends React.Component {
     return (
 
       <div className='grid-wrapper'>
-        <div className='company col'>Company
+        <div className='company-head col'>Company
           <Link to='/company-form'>
             <div className='tool-tip'><FontAwesomeIcon icon='plus' className='icon' />
               <span className='tool-tip-text'>Add a company</span>
             </div>
           </Link>
         </div>
-        <div className='identify col' index='0'>Identified a person</div>
-        <div className='contact col' index='1'>Made contact</div>
-        <div className='response col' index='2'>Got a response</div>
-        <div className='followup col' index='3'>Sent a follow-up</div>
-        <div className='referral col' index='4'>Got a referral!</div>
-
-        <div className='company'>
-          {this.props.companies.map((company, index) => {
-            return (
-              <div>
-                <CompanySummary company={company} key={index} index={index} />
-              </div>
-            )
-          })}; 
-        </div>
+        <div className='identify col'>Identified a person</div>
+        <div className='contact col'>Made contact</div>
+        <div className='response col'>Got a response</div>
+        <div className='followup col'>Sent a follow-up</div>
+        <div className='referral col'>Got a referral!</div>
+        {this.props.companies.map((company, index) => {
+          return (
+            <CompanyCard company={company} key={index} index={index} />
+          )
+        })}
       </div>  
     )
   }
-};
+}
 
 const mapStateToProps = state => {
   return {
