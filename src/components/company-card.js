@@ -13,30 +13,27 @@ export class CompanySummary extends React.Component {
 
   render() {
 
-    const personCard = {
-      gridColumnStart: 2,
-      gridColumnEnd: 3,
-      gridRowStart: `${this.props.index}` + 2,
-      gridRowEnd:`${this.props.index}` + 3
-    };
-
-    const filterPeople = this.props.people.filter(person => person.companyId === this.props.company._id);
+      const filteredPeople = this.props.people.filter(person => person.companyId === this.props.company._id);
+      console.log(filteredPeople);
 
     return (
-      <div className='company-card' >
-        <div key={this.props.index} style={personCard}>
+      <React.Fragment>
+        <div key={this.props.index} className='company-card' >
           <Link to={`/company-detail/${this.props.company._id}`}>
             <h1>{this.props.company.companyName}</h1>
             <p>{this.props.company.location}</p>
             <p>{this.props.company.description}</p>
           </Link>
         </div>
-        {filterPeople.map((person, index) => {
-          return (
-            <PersonCard person={person} key={index} index={index} />
-          )
-        })}
-      </div>
+
+        <div>
+          {filteredPeople.map((person, index) => {
+            return (
+              <PersonCard person={person} key={index} index={index} />
+            )
+          })}
+        </div>
+      </React.Fragment>
     )
   }
 };
@@ -49,3 +46,14 @@ const mapStateToProps = state => {
 };
 
 export default connect(mapStateToProps)(CompanySummary);
+
+/*
+
+style={personCard} 
+const personCard = {
+      gridColumnStart: 2,
+      gridColumnEnd: 3,
+      gridRowStart: parseInt(`${this.props.index}`) + 2,
+      gridRowEnd: parseInt(`${this.props.index}`) + 3
+    };
+*/

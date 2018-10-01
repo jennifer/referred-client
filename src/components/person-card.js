@@ -8,7 +8,7 @@ export class PersonSummary extends React.Component {
   render() {
 
     return (
-	    <div className='person-card' key={this.props.index} >
+	    <div key={this.props.index} >
         <Link to={`/person-detail/${this.props.person._id}`}>
           <h1>{this.props.person.name}</h1>
           <p>{this.props.person.title}</p>
