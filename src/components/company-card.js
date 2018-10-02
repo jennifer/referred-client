@@ -11,14 +11,13 @@ export class CompanySummary extends React.Component {
     this.props.dispatch(getPersonData(this.props.username));
   }
 
+  assignColumn(index) {
+    gridColumnStart: index
+  }; 
+
   render() {
 
     const filteredPeople = this.props.people.filter(person => person.companyId === this.props.company._id);
-
-    const personCard = {
-      gridColumnStart: parseInt(`${this.props.people.statusIndex}`),
-      gridColumnEnd: parseInt(`${this.props.index}`) + 1
-    };
 
     return (
       <React.Fragment>
@@ -30,13 +29,13 @@ export class CompanySummary extends React.Component {
           </Link>
         </div>
 
-        <div className='person-card' >
-          {filteredPeople.map((person, index) => {
-            return (
+        {filteredPeople.map((person, index) => {
+          return (
+            <div className='person-card' style={this.assignColumn(person.statusIndex)}>
               <PersonCard person={person} key={index} index={index} />
-            )
-          })}
-        </div>
+            </div>
+          )
+        })}
       </React.Fragment>
     )
   }
@@ -50,9 +49,3 @@ const mapStateToProps = state => {
 };
 
 export default connect(mapStateToProps)(CompanySummary);
-
-/*
-
-style={personCard} 
-
-*/

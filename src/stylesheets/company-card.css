@@ -7,6 +7,4 @@
 
 .person-card {
   padding: 10px;
-  grid-column-start: 3;
-  grid-column-end: 4;
 }
