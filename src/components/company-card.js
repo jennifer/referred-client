@@ -11,10 +11,6 @@ export class CompanySummary extends React.Component {
     this.props.dispatch(getPersonData(this.props.username));
   }
 
-  assignColumn(index) {
-    gridColumnStart: index
-  }; 
-
   render() {
 
     const filteredPeople = this.props.people.filter(person => person.companyId === this.props.company._id);
@@ -31,7 +27,7 @@ export class CompanySummary extends React.Component {
 
         {filteredPeople.map((person, index) => {
           return (
-            <div className='person-card' style={this.assignColumn(person.statusIndex)}>
+            <div className='person-card' style={{gridColumnStart: person.statusIndex}}>
               <PersonCard person={person} key={index} index={index} />
             </div>
           )
