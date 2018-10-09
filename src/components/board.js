@@ -24,10 +24,10 @@ export class Board extends React.Component {
             </div>
           </Link>
         </div>
-        <div className='identify col'>Identified a person</div>
+        <div className='identify col'>Identified</div>
         <div className='contact col'>Made contact</div>
         <div className='response col'>Got a response</div>
-        <div className='followup col'>Sent a follow-up</div>
+        <div className='followup col'>Followed-up</div>
         <div className='referral col'>Got a referral!</div>
         {this.props.companies.map((company, index) => {
           return (

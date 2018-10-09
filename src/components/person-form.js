@@ -22,7 +22,8 @@ export class PersonForm extends React.Component {
     const company = this.props.companies.find(
       company => company._id === this.props.match.params.id
     );
-    const status = [ 'identified', 'made contact', 'got a response', 'followed up', 'got a referral!'  ];
+    
+    const status = [ 'Identified', 'Made contact', 'Got a response', 'Followed up', 'Got a referral!'  ];
 
     const renderDropdownList = ({ input, data, valueField, textField }) =>
       <DropdownList {...input}
@@ -100,9 +101,10 @@ const mapStateToProps = state => ({
 });
 
 PersonForm = reduxForm({
-    form: 'person',
-    onSubmitFail: (errors, dispatch) => dispatch(focus('person'))
-  })(PersonForm)
+  form: 'person',
+  onSubmitFail: (errors, dispatch) => dispatch(focus('person'))
+  //onSubmitSuccess: (props) => history.push('/dashboard')
+})(PersonForm)
 
 PersonForm = connect(mapStateToProps)(PersonForm);
 

@@ -47,7 +47,7 @@ export class PersonEdit extends React.Component {
     const person = this.props.people.find(
       person => person._id === this.props.match.params.id
     );
-    const status = [ 'identified', 'made contact', 'got a response', 'followed up', 'got a referral!'  ];
+    const status = [ 'Identified', 'Made contact', 'Got a response', 'Followed up', 'Got a referral!'  ];
 
     const renderDropdownList = ({ input, data, valueField, textField }) =>
       <DropdownList {...input}

@@ -7,4 +7,11 @@
 
 .person-card {
   padding: 10px;
+  text-align: center;
+}
+
+.row {
+  grid-column-start: 1;
+  grid-column-end: 7;
+  border-top: 1px black solid;
 }

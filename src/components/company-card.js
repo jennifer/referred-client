@@ -5,11 +5,17 @@ import { Link } from 'react-router-dom';
 import PersonCard from './person-card';
 import '../stylesheets/company-card.css';
 
-export class CompanySummary extends React.Component {
+export class CompanyCard extends React.Component {
 
   componentDidMount() {
     this.props.dispatch(getPersonData(this.props.username));
   }
+
+  //componentDidUpdate(prevProps, prevState) {
+  //  if (this.props.people !== prevProps.people) {
+  //    this.props.dispatch(getPersonData(this.props.username));
+  //  }
+  // }
 
   render() {
 
@@ -17,6 +23,7 @@ export class CompanySummary extends React.Component {
 
     return (
       <React.Fragment>
+        <div className='row'></div>
         <div key={this.props.index} className='company-card' >
           <Link to={`/company-detail/${this.props.company._id}`}>
             <h1>{this.props.company.companyName}</h1>
@@ -44,4 +51,4 @@ const mapStateToProps = state => {
   };
 };
 
-export default connect(mapStateToProps)(CompanySummary);
+export default connect(mapStateToProps)(CompanyCard);

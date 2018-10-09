@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import '../stylesheets/person-card.css';
 
-export class PersonSummary extends React.Component {
+export class PersonCard extends React.Component {
 
   render() {
 
@@ -18,4 +18,4 @@ export class PersonSummary extends React.Component {
   }
 };
 
-export default connect()(PersonSummary);
+export default connect()(PersonCard);
