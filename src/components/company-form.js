@@ -10,7 +10,7 @@ export class CompanyForm extends React.Component {
 
   onSubmit(values) {
     this.props.dispatch(postCompanyData(values));
-    this.props.history.push('/dashboard');
+    this.props.history.push('/dashboard')
   }
 
   render() {

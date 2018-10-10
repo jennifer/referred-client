@@ -15,11 +15,14 @@ export class CompanyCard extends React.Component {
   //  if (this.props.people !== prevProps.people) {
   //    this.props.dispatch(getPersonData(this.props.username));
   //  }
-  // }
+  //}
 
   render() {
 
-    const filteredPeople = this.props.people.filter(person => person.companyId === this.props.company._id);
+    let filteredPeople;
+    if (this.props.people) {
+      filteredPeople = this.props.people.filter(person => person.companyId === this.props.company._id)
+    };
 
     return (
       <React.Fragment>

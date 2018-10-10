@@ -14,7 +14,7 @@ export class PersonForm extends React.Component {
   onSubmit(values, id) {
     values.companyId = id;
     this.props.dispatch(postPersonData(values));
-    this.props.history.push('/dashboard');
+    this.props.history.push('/dashboard')
   }
 
   render() {

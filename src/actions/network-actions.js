@@ -87,7 +87,7 @@ export const postCompanyData = values => (dispatch, getState) => {
   })
     .then(res => normalizeResponseErrors(res))
     .then(res => res.json())
-    .then(({data}) => dispatch(postCompanyDataSuccess(data)))
+    .then((data) => dispatch(postCompanyDataSuccess(data)))
     .catch(err => {
       dispatch(postCompanyDataError(err));
     });
@@ -117,7 +117,7 @@ export const putCompanyData = (id, values) => (dispatch, getState) => {
   })
     .then(res => normalizeResponseErrors(res))
     .then(res => res.json())
-    .then(({data}) => dispatch(putCompanyDataSuccess(data)))
+    .then((data) => dispatch(putCompanyDataSuccess(data)))
     .catch(err => {
       dispatch(putCompanyDataError(err));
     });
@@ -189,7 +189,7 @@ export const postPersonDataError = error => ({
   error
 });
 
-export const postPersonData = values => (dispatch, getState) => {
+export const postPersonData = (values, history) => (dispatch, getState) => {
   const authToken = getState().auth.authToken;
   values.username = getState().auth.currentUser.username;
   if (values.status === 'Identified') {
@@ -217,7 +217,7 @@ export const postPersonData = values => (dispatch, getState) => {
   })
     .then(res => normalizeResponseErrors(res))
     .then(res => res.json())
-    .then(({data}) => dispatch(postPersonDataSuccess(data)))
+    .then((data) => dispatch(postPersonDataSuccess(data)))
     .catch(err => {
       dispatch(postPersonDataError(err));
     });
@@ -262,7 +262,7 @@ export const putPersonData = (id, values) => (dispatch, getState) => {
   })
     .then(res => normalizeResponseErrors(res))
     .then(res => res.json())
-    .then(({data}) => dispatch(putPersonDataSuccess(data)))
+    .then((data) => dispatch(putPersonDataSuccess(data)))
     .catch(err => {
       dispatch(putPersonDataError(err));
     });
