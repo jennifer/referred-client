@@ -2,6 +2,7 @@
 
 a, body, button, div, fieldset, form, h1, h2, html, input, label, legend, li, main, p, ul {
   margin: 0;
+  border: 0;
   box-sizing: border-box;
   font-family: 'Sunflower', sans-serif;
   font-size: 20px;
@@ -11,4 +12,5 @@ a, body, button, div, fieldset, form, h1, h2, html, input, label, legend, li, ma
 
 html, body { 
   min-height: 100%;
+  padding: 15px;
 }

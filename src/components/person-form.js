@@ -103,7 +103,6 @@ const mapStateToProps = state => ({
 PersonForm = reduxForm({
   form: 'person',
   onSubmitFail: (errors, dispatch) => dispatch(focus('person'))
-  //onSubmitSuccess: (props) => history.push('/dashboard')
 })(PersonForm)
 
 PersonForm = connect(mapStateToProps)(PersonForm);

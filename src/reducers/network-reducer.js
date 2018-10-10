@@ -108,7 +108,6 @@ export default function reducer(state = initialState, action) {
   }
 
   if (action.type === POST_PERSON_DATA_SUCCESS) {
-    console.log(action);
     return Object.assign({}, state, {
       people: [...state.people, action.data],
       error: null

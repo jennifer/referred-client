@@ -29,7 +29,7 @@ export class Board extends React.Component {
         <div className='response col'>Got a response</div>
         <div className='followup col'>Followed-up</div>
         <div className='referral col'>Got a referral!</div>
-        {this.props.companies && this.props.companies.map((company, index) => {
+        {this.props.companies.map((company, index) => {
           return (
             <CompanyCard company={company} key={index} index={index} />
           )

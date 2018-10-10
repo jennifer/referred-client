@@ -11,18 +11,9 @@ export class CompanyCard extends React.Component {
     this.props.dispatch(getPersonData(this.props.username));
   }
 
-  //componentDidUpdate(prevProps, prevState) {
-  //  if (this.props.people !== prevProps.people) {
-  //    this.props.dispatch(getPersonData(this.props.username));
-  //  }
-  //}
-
   render() {
 
-    let filteredPeople;
-    if (this.props.people) {
-      filteredPeople = this.props.people.filter(person => person.companyId === this.props.company._id)
-    };
+    const filteredPeople = this.props.people.filter(person => person.companyId === this.props.company._id);
 
     return (
       <React.Fragment>
