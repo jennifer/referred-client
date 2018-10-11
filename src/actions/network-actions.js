@@ -204,7 +204,7 @@ export const postPersonData = (values, history) => (dispatch, getState) => {
   if (values.status === 'Followed up') {
     values.statusIndex = 5;
   };
-  if (values.status === 'Got a referral!') {
+  if (values.status === 'Got a referral') {
     values.statusIndex = 6;
   };
   return fetch(`${API_BASE_URL}/companies/person`, {
@@ -249,7 +249,7 @@ export const putPersonData = (id, values) => (dispatch, getState) => {
   if (values.status === 'Followed up') {
     values.statusIndex = 5;
   };
-  if (values.status === 'Got a referral!') {
+  if (values.status === 'Got a referral') {
     values.statusIndex = 6;
   };
   return fetch(`${API_BASE_URL}/companies/person/${id}`, {

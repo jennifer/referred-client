@@ -1,21 +1,16 @@
 .nav {
-	height: 45px;
+	height: 40px;
   border-bottom: 1px black solid;
   background-color: white;
 }
 
 .app-title {
 	position: absolute;
-	padding: 10px;
+  padding: 5px;
 }
 
 .border-button {
 	position: relative;
 	float: right;
 	height: 100%;
-  border-bottom: 0;
-}
-
-.border-button:hover {
-  background-color: #fdffab;
 }

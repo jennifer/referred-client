@@ -16,7 +16,7 @@ export function TitlePage(props) {
       <h2>Login:</h2>
       <LoginForm />
       <p>or </p>
-      <Link to='/signup-page'>Make an account</Link>
+      <Link to='/signup-page' className='italic'>Make an account</Link>
     </div>
   );
 }

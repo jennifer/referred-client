@@ -1,7 +1,8 @@
 .grid-wrapper {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-  grid-gap: 1px;
+  /*background-color: #fbf0f0;*/
+  border-bottom: 1px black solid;
 }
 
 .company {
@@ -48,29 +49,9 @@
 
 .col {
   text-align: center;
-}
-
-.tool-tip {
-  position: relative;
-  float: right;
-}
-
-.icon {
-  margin-right: 50px;
-}
-
-.tool-tip .tool-tip-text {
-  visibility: hidden;
-  white-space:nowrap;
-  background-color: #aef4a4;
-  border: 2px black solid;
   padding: 5px;
-  position: absolute;
-  z-index: 1;
-  top: -8px;
-  left: 120%;
 }
 
-.tool-tip:hover .tool-tip-text {
-  visibility: visible;
+.company {
+  text-align: left;
 }

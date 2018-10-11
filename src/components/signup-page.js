@@ -9,14 +9,14 @@ export function SignupPage(props) {
   // If we are logged in (which happens automatically when registration
   // is successful) redirect to the user's dashboard
   if (props.loggedIn) {
-    return <Redirect to="/board" />;
+    return <Redirect to='/board' />;
   }
   return (
-    <div className="home">
+    <div className='home'>
       <h2>Make an account:</h2>
       <SignupForm />
       <p>or</p>
-      <Link to="/">Go back to login</Link>
+      <Link to='/' className='italic'>Go back to login</Link>
     </div>
   );
 }
