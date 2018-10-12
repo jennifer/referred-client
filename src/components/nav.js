@@ -20,13 +20,13 @@ export class Nav extends React.Component {
 
     if (this.props.loggedIn) {
       logOutButton = (
-        <span className='nav block'>
-          <button className='link vert' onClick={() => this.logOut()}>Log out</button>
+        <span className='nav block logout'>
+          <button className='link vert logout' onClick={() => this.logOut()}>Logout</button>
         </span>
       );
       aboutButton = (
         <span className='nav block'>
-          <div className='vert' >
+          <div className='vert about'>
             <Link className='link' to='/about'>About</Link>
           </div>
         </span>
@@ -34,11 +34,11 @@ export class Nav extends React.Component {
     }
     return (
       <React.Fragment>
-        <div className='nav block'>
-          <h1 className='link vert'>Referred</h1>
+        <div className='nav block referred'>
+          <h1 className='link vert referred'>Referred</h1>
         </div>
-        { logOutButton }
         { aboutButton }
+        { logOutButton }
       </React.Fragment>
     );
   }

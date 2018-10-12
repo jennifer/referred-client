@@ -1,9 +1,8 @@
 .nav {
-  text-align: center;
-  margin: 0;
-  padding: 3.2vw 0vw 2vw .15vw;
-  border-right: 1px black solid;
   height: 100vh;
+  width: 40px;
+    border-right: 1px black solid;
+
 }
 
 .vert {
@@ -12,4 +11,23 @@
   -ms-transform: rotate(-90deg);
   -o-transform: rotate(-90deg);
   transform: rotate(-90deg);
+  position: absolute;
 }
+
+.referred {
+  top: 4vw;
+  left: -1vw;
+}
+
+.logout {
+  top: 3.5vw;
+  left: 2.5vw;
+}
+
+.about {
+  top: 3.2vw;
+  left: 5.5vw;
+}
+/*
+padding: 3.2vw 0vw 2.5vw .15vw;
+*/
