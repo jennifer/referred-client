@@ -13,12 +13,14 @@ export function TitlePage(props) {
   }
 
   return (
-    <div className='home'>
+    <div className='flex'>
       <About />
-      <h2>Login:</h2>
-      <LoginForm />
-      <p>or </p>
-      <Link to='/signup-page' className='link'>Make an account</Link>
+      <div>
+        <h2>Login:</h2>
+        <LoginForm />
+        <p>or </p>
+        <Link to='/signup-page' className='link'>Make an account</Link>
+      </div>
     </div>
   );
 }

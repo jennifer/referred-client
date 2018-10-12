@@ -12,11 +12,13 @@ export function SignupPage(props) {
     return <Redirect to='/board' />;
   }
   return (
-    <div className='home'>
-      <h2>Make an account:</h2>
-      <SignupForm />
-      <p>or</p>
-      <Link to='/' className='link'>Go back to login</Link>
+    <div className='flex'>
+      <div >
+        <h2>Make an account:</h2>
+        <SignupForm />
+        <p>or</p>
+        <Link to='/' className='link'>Go back to login</Link>
+      </div>
     </div>
   );
 }

@@ -39,3 +39,8 @@ button:hover {
 	font-style: normal;
   text-decoration: underline;
 }
+
+.flex {
+  display: inline-flex;
+  flex-direction: row;
+}

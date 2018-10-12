@@ -4,15 +4,18 @@ import { Link, Redirect } from 'react-router-dom';
 
 export function About(props) {
 	if (props.loggedIn) {
-    return <Redirect to='/board' />;
+    return <Redirect to='/dashboard' />;
   }
   return (
-  	<div>
+  	<div className='flex'>
+      <div>
   		<h1>Referred helps you track your job-search network to stay organized and accountable</h1>
   		<p>Add a target company, then add your contact person.</p>
   		<p>Track each step of the relationship and </p>
   		<p>get referred.</p>
-      <Link to='/dashboard'>Close</Link>
+      <a href='https://github.com/jennifer/network' className='link'>Github</a>
+      <Link to='/dashboard' className='link'>Close</Link>
+      </div>
   	</div>
   )
 }

@@ -21,7 +21,7 @@ export class SignupForm extends React.Component {
   render() {
     return (
       <form
-        className='login-form'
+        className='login-form block'
         onSubmit={this.props.handleSubmit(values =>
           this.onSubmit(values)
         )}>
