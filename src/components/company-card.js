@@ -20,7 +20,7 @@ export class CompanyCard extends React.Component {
         <div className='row'></div>
         <div key={this.props.index} className='company-card' >
           <Link to={`/company-detail/${this.props.company._id}`}>
-            <h1 className='italic'>{this.props.company.companyName}</h1>
+            <h1 className='link'>{this.props.company.companyName}</h1>
             <p>{this.props.company.location}</p>
             <p>{this.props.company.description}</p>
           </Link>

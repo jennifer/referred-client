@@ -7,7 +7,6 @@ a, body, button, div, fieldset, form, h1, h2, html, label, legend, li, main, p, 
   font-family: 'Cormorant Garamond', serif;
   font-size: 24px;
   font-weight: normal;
-  color: black;
   text-decoration: none;
 }
 
@@ -31,6 +30,12 @@ button:hover {
 	font-style: italic
 }
 
-.italic:hover {
-	font-style: italic
+.link {
+  color: blue;
+  font-style: italic;
+}
+
+.link:hover {
+	font-style: normal;
+  text-decoration: underline;
 }

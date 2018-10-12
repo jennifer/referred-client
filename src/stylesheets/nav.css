@@ -1,3 +1,4 @@
+/*
 .nav {
 	height: 40px;
   border-bottom: 1px black solid;
@@ -13,4 +14,12 @@
 	position: relative;
 	float: right;
 	height: 100%;
+}
+*/
+
+.nav {
+  display: inline-block;
+  height: 100%;
+  width: 100px;
+  border-right: 1px black solid;
 }

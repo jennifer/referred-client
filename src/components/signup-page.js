@@ -16,7 +16,7 @@ export function SignupPage(props) {
       <h2>Make an account:</h2>
       <SignupForm />
       <p>or</p>
-      <Link to='/' className='italic'>Go back to login</Link>
+      <Link to='/' className='link'>Go back to login</Link>
     </div>
   );
 }
