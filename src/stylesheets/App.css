@@ -3,15 +3,19 @@
 a, body, button, div, fieldset, form, h1, h2, html, label, legend, li, main, p, ul {
   margin: 0;
   border: 0;
+  padding: 0;
   box-sizing: border-box;
   font-family: 'Cormorant Garamond', serif;
+  color: black;
   font-size: 24px;
   font-weight: normal;
   text-decoration: none;
+  vertical-align: baseline;
 }
 
 html, body { 
   min-height: 100%;
+  margin: 10px;
 }
 
 input {
@@ -40,7 +44,12 @@ button:hover {
   text-decoration: underline;
 }
 
-.flex {
-  display: inline-flex;
-  flex-direction: row;
+.block {
+  display: inline-block;
+}
+
+.right-pane {
+  height: 100vh;
+  position: absolute;
+  float: right;
 }

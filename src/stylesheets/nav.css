@@ -1,26 +1,15 @@
-/*
 .nav {
-	height: 40px;
-  border-bottom: 1px black solid;
-  background-color: white;
-}
-
-.app-title {
-	position: absolute;
-  padding: 5px;
-}
-
-.border-button {
-	position: relative;
-	float: right;
-	height: 100%;
-}
-
-
-.nav {
-  display: inline-block;
-  height: 100%;
-  width: 100px;
+  text-align: center;
+  margin: 0;
+  padding: 3.2vw 0vw 2vw .15vw;
   border-right: 1px black solid;
+  height: 100vh;
 }
-*/
+
+.vert {
+  -webkit-transform: rotate(-90deg);
+  -moz-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  -o-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+}

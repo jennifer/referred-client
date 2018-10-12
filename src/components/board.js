@@ -15,20 +15,21 @@ export class Board extends React.Component {
   render() {
 
     return (
-
-      <div className='grid-wrapper'>
-        <Link to='/company-form' className='link company col'>Companies +</Link>
-        <div className='identify col'>Identified a person</div>
-        <div className='contact col'>Made contact</div>
-        <div className='response col'>Got a response</div>
-        <div className='followup col'>Followed up</div>
-        <div className='referral col'>Got a referral</div>
-        {this.props.companies.map((company, index) => {
-          return (
-            <CompanyCard company={company} key={index} index={index} />
-          )
-        })}
-      </div>  
+      <div className='block right-pane'>
+        <div className='grid-wrapper'>
+          <Link to='/company-form' className='link company col'>Companies +</Link>
+          <div className='identify col'>Identified a person</div>
+          <div className='contact col'>Made contact</div>
+          <div className='response col'>Got a response</div>
+          <div className='followup col'>Followed up</div>
+          <div className='referral col'>Got a referral</div>
+          {this.props.companies.map((company, index) => {
+            return (
+              <CompanyCard company={company} key={index} index={index} />
+            )
+          })}
+        </div>  
+      </div>
     )
   }
 }
@@ -41,19 +42,3 @@ const mapStateToProps = state => {
 };
 
 export default connect(mapStateToProps)(Board);
-
-/*
-  renderPersonCard(filterPeople, index) {
-    const personCard = {
-      gridRowStart: `${index}` + 2,
-      gridRowEnd:`${index}` + 3
-    };
-    filterPeople.map(function(person, index){
-      return (
-        <div className='people' style={personCard} >
-          <PersonSummary person={person} key={index} index={index} />
-        </div>
-      )
-    }
-  }
-*/

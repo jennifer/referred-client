@@ -13,15 +13,15 @@ export function TitlePage(props) {
   }
 
   return (
-    <div className='flex'>
+    <React.Fragment>
       <About />
-      <div>
+      <div className='block right-pane'>
         <h2>Login:</h2>
         <LoginForm />
         <p>or </p>
         <Link to='/signup-page' className='link'>Make an account</Link>
       </div>
-    </div>
+    </React.Fragment>
   );
 }
 

@@ -1,4 +1,5 @@
 import React from 'react';
+import About from './about';
 import { connect } from 'react-redux';
 import { Link, Redirect } from 'react-router-dom';
 import '../stylesheets/signup-page.css';
@@ -13,7 +14,8 @@ export function SignupPage(props) {
   }
   return (
     <div className='flex'>
-      <div >
+      <About />
+      <div className='right-pane'>
         <h2>Make an account:</h2>
         <SignupForm />
         <p>or</p>

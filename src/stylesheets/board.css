@@ -3,6 +3,7 @@
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
   /*background-color: #fbf0f0;*/
   border-bottom: 1px black solid;
+  margin: 10px;
 }
 
 .company {
