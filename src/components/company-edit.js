@@ -54,7 +54,7 @@ export class CompanyEdit extends React.Component {
     }
 
     return (
-      <div>
+      <div className='block'>
         <h1>Edit {company.companyName}</h1>
         <form onSubmit={this.props.handleSubmit(values => this.onSubmit(values, company._id))}>
           {error}
@@ -97,11 +97,11 @@ export class CompanyEdit extends React.Component {
               name='notes'
               id='notes'
             />
-            <button className='submit-button' type='submit' disabled={this.props.pristine || this.props.submitting}>
+            <button className='link' type='submit' disabled={this.props.pristine || this.props.submitting}>
               Submit
             </button>
             <button
-              className='delete-button'
+              className='link'
               type='button'
               onClick={() => this.deleteCompany(company._id)}
             >
@@ -109,7 +109,7 @@ export class CompanyEdit extends React.Component {
             </button>
           </fieldset>
         </form>
-        <Link to={`/company-detail/${company._id}`}>Go Back</Link>
+        <Link to={`/company-detail/${company._id}`} className='link'>Go Back</Link>
       </div>
     )
   }

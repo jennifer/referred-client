@@ -6,7 +6,7 @@ a, body, button, div, fieldset, form, h1, h2, html, label, legend, li, main, p, 
   padding: 0;
   box-sizing: border-box;
   font-family: 'Cormorant Garamond', serif;
-  color: black;
+  color: red;
   font-size: 24px;
   font-weight: normal;
   text-decoration: none;
@@ -19,11 +19,12 @@ html, body {
 }
 
 input {
-	border: 1px black solid;
+	border: 1px red solid;
 	height: 24px;
 	width: 100%;
 	font-family: 'Cormorant Garamond', serif;
 	font-size: 20px;
+  color: red;
 }
 
 button {
@@ -35,13 +36,11 @@ button:hover {
 }
 
 .link {
-  color: blue;
   font-style: italic;
 }
 
 .link:hover {
 	font-style: normal;
-  text-decoration: underline;
 }
 
 .block {

@@ -7,7 +7,7 @@ export function About(props) {
     return <Redirect to='/dashboard' />;
   }
   return (
-  	<div className='block'>
+  	<div className='block about'>
       <div>
   		<h1>Referred helps you track your job-search network to stay organized and accountable</h1>
   		<p>Add a target company, then add your contact person.</p>

@@ -1,8 +1,6 @@
 .nav {
-  height: 100vh;
-  width: 40px;
-    border-right: 1px black solid;
-
+  width: 3vw;
+  border-right: 1px red solid;
 }
 
 .vert {
@@ -21,12 +19,12 @@
 
 .logout {
   top: 3.5vw;
-  left: 2.5vw;
+  left: 2.7vw;
 }
 
 .about {
   top: 3.2vw;
-  left: 5.5vw;
+  left: 6.1vw;
 }
 /*
 padding: 3.2vw 0vw 2.5vw .15vw;

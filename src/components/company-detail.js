@@ -10,16 +10,16 @@ export class CompanyDetail extends React.Component {
       company => company._id === this.props.match.params.id
     )
     return (
-      <div>
+      <div className='block'>
         <a href={company.url} target='_blank'>
           <h1>{company.companyName}</h1>
         </a>
         <h2>{company.location}</h2>
         <p>{company.description}</p>
         <p>{company.notes}</p>
-        <Link to={`/person-form/${company._id}`}>Add a Person</Link>
-        <Link to={`/company-edit/${company._id}`}>Edit Company</Link>
-        <Link to='/dashboard'>Go Back</Link>
+        <Link to={`/person-form/${company._id}`} className='link'>Add a Person</Link>
+        <Link to={`/company-edit/${company._id}`} className='link'>Edit Company</Link>
+        <Link to='/dashboard' className='link'>Go Back</Link>
       </div>
     )
   }

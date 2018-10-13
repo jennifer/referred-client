@@ -22,13 +22,12 @@ export class CompanyCard extends React.Component {
           <Link to={`/company-detail/${this.props.company._id}`}>
             <h1 className='link'>{this.props.company.companyName}</h1>
             <p>{this.props.company.location}</p>
-            <p>{this.props.company.description}</p>
           </Link>
         </div>
 
         {filteredPeople.map((person, index) => {
           return (
-            <div className='person-card' style={{gridColumnStart: person.statusIndex}}>
+            <div style={{gridColumnStart: person.statusIndex}}>
               <PersonCard person={person} key={index} index={index} />
             </div>
           )

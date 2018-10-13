@@ -26,8 +26,8 @@ export class Nav extends React.Component {
       );
       aboutButton = (
         <span className='nav block'>
-          <div className='vert about'>
-            <Link className='link' to='/about'>About</Link>
+          <div className='vert about link'>
+            <Link to='/about'>About</Link>
           </div>
         </span>
       );
