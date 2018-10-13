@@ -54,11 +54,11 @@ export class CompanyEdit extends React.Component {
     }
 
     return (
-      <div className='block'>
+      <div className='block right-pane'>
         <h1>Edit {company.companyName}</h1>
         <form onSubmit={this.props.handleSubmit(values => this.onSubmit(values, company._id))}>
           {error}
-          <fieldset className='company-fieldset'>
+          <fieldset>
             <label htmlFor='companyName'>Company name:</label>
             <Field
               component={Input}

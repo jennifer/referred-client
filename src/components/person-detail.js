@@ -10,7 +10,7 @@ export class PersonDetail extends React.Component {
       person => person._id === this.props.match.params.id
     )
     return (
-      <div className='block'>
+      <div className='block right-pane'>
         <a href={person.url} target='_blank'>
           <h1>{person.name}</h1>
         </a>

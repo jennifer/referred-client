@@ -15,7 +15,7 @@ export function TitlePage(props) {
   return (
     <React.Fragment>
       <About />
-      <div className='block right-pane'>
+      <div className='block right-pane border-left form-width'>
         <h2>Login:</h2>
         <LoginForm />
         <p>or </p>

@@ -43,7 +43,7 @@ export class PersonForm extends React.Component {
     }
 
     return (
-      <div>
+      <div className='block right-pane'>
         <form onSubmit={this.props.handleSubmit(values => this.onSubmit(values, company._id))}>
           {error}
           <fieldset className='person-fieldset'>

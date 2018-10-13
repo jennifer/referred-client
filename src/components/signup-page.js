@@ -13,15 +13,15 @@ export function SignupPage(props) {
     return <Redirect to='/board' />;
   }
   return (
-    <div className='flex'>
+    <React.Fragment>
       <About />
-      <div className='right-pane'>
+      <div className='block right-pane border-left'>
         <h2>Make an account:</h2>
         <SignupForm />
         <p>or</p>
         <Link to='/' className='link'>Go back to login</Link>
       </div>
-    </div>
+    </React.Fragment>
   );
 }
 

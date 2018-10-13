@@ -67,10 +67,10 @@ export class PersonEdit extends React.Component {
     }
 
     return (
-      <div className='block'>
+      <div className='block right-pane'>
         <form onSubmit={this.props.handleSubmit(values => this.onSubmit(values, person._id))}>
           {error}
-          <fieldset className='person-fieldset'>
+          <fieldset>
             <label htmlFor='status'>Status:</label>
             <Field
               component={renderDropdownList}

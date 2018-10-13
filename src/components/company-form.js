@@ -23,7 +23,7 @@ export class CompanyForm extends React.Component {
       );
     }
     return (
-      <div>
+      <div className='block right-pane'>
         <form onSubmit={this.props.handleSubmit(values => this.onSubmit(values))}>
           {error}
           <fieldset className='company-fieldset'>

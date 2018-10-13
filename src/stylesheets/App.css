@@ -15,7 +15,7 @@ a, body, button, div, fieldset, form, h1, h2, html, label, legend, li, main, p, 
 
 html, body { 
   min-height: 100%;
-  margin: 10px;
+  margin: 10px 0 10px 0;
 }
 
 input {
@@ -48,7 +48,16 @@ button:hover {
 }
 
 .right-pane {
-  height: 100vh;
   position: absolute;
   float: right;
+}
+
+.border-left {
+  height: 100vh;
+  border-left: 1px red solid;
+  padding-left: 10px;
+}
+
+.form-width {
+  min-width: 300px;
 }

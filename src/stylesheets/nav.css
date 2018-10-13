@@ -1,5 +1,13 @@
 .nav {
-  width: 3vw;
+  min-width: 44px;
+}
+
+.nav-border {
+  height: 100vh;
+  border-left: 1px red solid;
+}
+
+.nav-border-right {
   border-right: 1px red solid;
 }
 
@@ -13,19 +21,16 @@
 }
 
 .referred {
-  top: 4vw;
-  left: -1vw;
+  top: 3.4vw;
+  left: -1.3vw;
 }
 
 .logout {
-  top: 3.5vw;
-  left: 2.7vw;
+  top: 2.8vw;
+  left: 2.2vw;
 }
 
 .about {
-  top: 3.2vw;
-  left: 6.1vw;
+  top: 2.6vw;
+  left: 5.6vw;
 }
-/*
-padding: 3.2vw 0vw 2.5vw .15vw;
-*/

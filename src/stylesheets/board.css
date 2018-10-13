@@ -1,9 +1,8 @@
 .grid-wrapper {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-  /*background-color: #fbf0f0;*/
   border-bottom: 1px red solid;
-  margin: 10px;
+  margin: 0 10px 10px 10px;
 }
 
 .company {
@@ -11,6 +10,7 @@
   grid-row-end: 2;
   grid-column-start: 1;
   grid-column-end: 2;
+  padding-left: 10px;
 }
 
 .identify {
@@ -48,11 +48,12 @@
   grid-column-end: 7;
 }
 
-.col {
-  text-align: center;
-  padding: 5px;
-}
-
 .company {
   text-align: left;
+  margin-bottom: 5px;
+}
+
+.col {
+  text-align: center;
+  margin-bottom: 5px;
 }

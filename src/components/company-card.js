@@ -27,7 +27,7 @@ export class CompanyCard extends React.Component {
 
         {filteredPeople.map((person, index) => {
           return (
-            <div style={{gridColumnStart: person.statusIndex}}>
+            <div style={{gridColumnStart: person.statusIndex}} className='person-card'>
               <PersonCard person={person} key={index} index={index} />
             </div>
           )

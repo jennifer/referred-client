@@ -10,7 +10,7 @@ export class CompanyDetail extends React.Component {
       company => company._id === this.props.match.params.id
     )
     return (
-      <div className='block'>
+      <div className='block right-pane'>
         <a href={company.url} target='_blank'>
           <h1>{company.companyName}</h1>
         </a>

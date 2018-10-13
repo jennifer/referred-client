@@ -20,12 +20,12 @@ export class Nav extends React.Component {
 
     if (this.props.loggedIn) {
       logOutButton = (
-        <span className='nav block logout'>
+        <span className='nav block logout nav-border nav-border-right'>
           <button className='link vert logout' onClick={() => this.logOut()}>Logout</button>
         </span>
       );
       aboutButton = (
-        <span className='nav block'>
+        <span className='nav block nav-border'>
           <div className='vert about link'>
             <Link to='/about'>About</Link>
           </div>

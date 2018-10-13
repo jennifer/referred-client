@@ -17,7 +17,7 @@ export class Board extends React.Component {
     return (
       <div className='block right-pane'>
         <div className='grid-wrapper'>
-          <Link to='/company-form' className='link company col'>+ Companies +</Link>
+          <Link to='/company-form' className='link company'>Companies +</Link>
           <div className='identify col'>Identified a person</div>
           <div className='contact col'>Made contact</div>
           <div className='response col'>Got a response</div>
@@ -25,7 +25,7 @@ export class Board extends React.Component {
           <div className='referral col'>Got a referral</div>
           {this.props.companies.map((company, index) => {
             return (
-              <CompanyCard company={company} key={index} index={index} />
+              <CompanyCard company={company} key={index} index={index}/>
             )
           })}
         </div>  
