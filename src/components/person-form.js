@@ -43,7 +43,7 @@ export class PersonForm extends React.Component {
     }
 
     return (
-      <div className='block right-pane'>
+      <div className='block content-float detail'>
         <form onSubmit={this.props.handleSubmit(values => this.onSubmit(values, company._id))}>
           {error}
           <fieldset className='person-fieldset'>
@@ -86,10 +86,11 @@ export class PersonForm extends React.Component {
               id='notes'
             />
             <button className='submit-button' disabled={this.props.pristine || this.props.submitting}>
-              Submit
+              Submit Person
             </button>
           </fieldset>
         </form>
+        <p>or</p>
         <Link to={`/company-detail/${company._id}`}>Go Back</Link>
       </div>
     )

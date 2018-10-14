@@ -67,7 +67,7 @@ export class PersonEdit extends React.Component {
     }
 
     return (
-      <div className='block right-pane'>
+      <div className='block content-float'>
         <form onSubmit={this.props.handleSubmit(values => this.onSubmit(values, person._id))}>
           {error}
           <fieldset>
@@ -109,11 +109,11 @@ export class PersonEdit extends React.Component {
               name='notes'
               id='notes'
             />
-            <button className='link' disabled={this.props.pristine || this.props.submitting}>
-              Submit
-            </button>
+            <button className='italic underline' disabled={this.props.pristine || this.props.submitting}>
+              Submit Changes
+            </button><br/>
             <button
-              className='link'
+              className='italic underline'
               type='button'
               onClick={() => this.deletePerson(person._id)}
             >
@@ -121,7 +121,8 @@ export class PersonEdit extends React.Component {
             </button>
           </fieldset>
         </form>
-        <Link to={`/person-detail/${person._id}`} className='link'>Go Back</Link>
+        <p>or</p>
+        <Link to={`/person-detail/${person._id}`} className='italic underline'>Go Back</Link>
       </div>
     )};
 }

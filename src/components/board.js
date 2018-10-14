@@ -17,7 +17,7 @@ export class Board extends React.Component {
     return (
       <div className='block content-float'>
         <div className='grid-wrapper'>
-          <Link to='/company-form' className='italic company highlight'>Companies</Link>
+          <Link to='/company-form' className='italic company highlight'>+ Companies</Link>
           <div className='identify col'>Identified a person</div>
           <div className='contact col'>Made contact</div>
           <div className='response col'>Got a response</div>

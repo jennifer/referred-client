@@ -23,7 +23,7 @@ export class CompanyForm extends React.Component {
       );
     }
     return (
-      <div className='block right-pane'>
+      <div className='block content-float'>
         <form onSubmit={this.props.handleSubmit(values => this.onSubmit(values))}>
           {error}
           <fieldset className='company-fieldset'>
@@ -66,10 +66,11 @@ export class CompanyForm extends React.Component {
               id='notes'
             />
             <button className='submit-button' type='submit' disabled={this.props.pristine || this.props.submitting}>
-              Submit
+              Submit Company
             </button>
           </fieldset>
         </form>
+        <p>or</p>
         <Link to='/dashboard'>Go Back</Link>
       </div>
     )
