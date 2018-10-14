@@ -1,16 +1,7 @@
-.about {
+.about-page {
+	display: inline-block;
+	position: absolute;
+	float: right;
 	width: auto;
-	margin-right: 10px;
-}
-
-.large-text {
-	font-size: 4vw;
-}
-
-.medium-text {
-	font-size: 3vw;
-}
-
-.small-text {
-	font-size: 2vw;
+	margin-left: 12px;
 }

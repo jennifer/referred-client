@@ -15,7 +15,7 @@ export function SignupPage(props) {
   return (
     <React.Fragment>
       <About />
-      <div className='block right-pane border-left'>
+      <div className='block right-pane border-left form-width'>
         <h2>Make an account:</h2>
         <SignupForm />
         <p>or</p>

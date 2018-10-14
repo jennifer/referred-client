@@ -8,16 +8,16 @@ export function About(props) {
     return <Redirect to='/dashboard' />;
   }
   return (
-  	<div className='block border-left about'>
-      <div>
-  		<span><h1 className='large-text'>Referred</h1><p className='small-text'>helps you track your job-search network to stay organized and accountable</p></span>
-  		<p className='medium-text'>Add a target company, then add your contact person.</p>
-  		<p className='small-text'>Track each step of the relationship and </p>
-  		<p className='medium-text'>get referred.</p>
-      <a href='https://github.com/jennifer/network' className='link'>Github</a>
+    <div className='about-page'>
+  		<p>Track your job-search network to stay organized and accountable.</p>
+  		<p>Add a target company, then identify a contact person.</p>
+  		<p>Track relationship milestones: </p>
+      <p>Initiate one-on-one contact</p>
+      <p>Get a response</p>
+      <p>Follow up with more information</p>
+      <p>Get Referred: your contact passes your information to a hiring manager</p>
       <Link to='/dashboard' className='link'>Close</Link>
-      </div>
-  	</div>
+    </div>
   )
 }
 

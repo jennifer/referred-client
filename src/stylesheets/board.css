@@ -1,8 +1,13 @@
+.board-float {
+  position: absolute;
+  float: right;
+}
+
 .grid-wrapper {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
   border-bottom: 1px red solid;
-  margin: 0 10px 10px 10px;
+  margin: 0 12px 12px 12px;
 }
 
 .company {
@@ -10,7 +15,8 @@
   grid-row-end: 2;
   grid-column-start: 1;
   grid-column-end: 2;
-  padding-left: 10px;
+  padding-left: 12px;
+  margin-right: 12px;
 }
 
 .identify {
@@ -50,10 +56,11 @@
 
 .company {
   text-align: left;
-  margin-bottom: 5px;
+  padding-bottom: 5px;
 }
 
 .col {
   text-align: center;
-  margin-bottom: 5px;
+  padding-bottom: 5px;
+  margin-right: 12px;
 }

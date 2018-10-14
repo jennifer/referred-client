@@ -15,7 +15,7 @@ a, body, button, div, fieldset, form, h1, h2, html, label, legend, li, main, p, 
 
 html, body { 
   min-height: 100%;
-  margin: 10px 0 10px 0;
+  margin: 12px 0 12px 0;
 }
 
 input {
@@ -27,20 +27,9 @@ input {
   color: red;
 }
 
-button {
-	cursor: pointer;
-}
-
-button:hover {
-	font-style: italic
-}
-
-.link {
-  font-style: italic;
-}
-
-.link:hover {
-	font-style: normal;
+.highlight:hover, .link:hover, button:hover {
+  background-color: #ffe6e6;
+  cursor: pointer;
 }
 
 .block {
@@ -48,16 +37,16 @@ button:hover {
 }
 
 .right-pane {
-  position: absolute;
+  position: relative;
   float: right;
 }
 
 .border-left {
   height: 100vh;
   border-left: 1px red solid;
-  padding-left: 10px;
+  padding-left: 12px;
 }
 
 .form-width {
-  min-width: 300px;
+  width: 300px;
 }
