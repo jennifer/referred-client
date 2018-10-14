@@ -1,12 +1,12 @@
 .company-card {
   grid-column-start: 1;
   grid-column-end: 2;
-  padding: 10px;
+  padding: 12px;
   margin-right: 12px;
 }
 
 .person-card {
-  padding: 10px;
+  padding: 12px;
   text-align: center;
 }
 

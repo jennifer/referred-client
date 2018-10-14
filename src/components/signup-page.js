@@ -7,20 +7,18 @@ import '../stylesheets/signup-page.css';
 import SignupForm from './signup-form';
 
 export function SignupPage(props) {
-  // If we are logged in (which happens automatically when registration
-  // is successful) redirect to the user's dashboard
   if (props.loggedIn) {
     return <Redirect to='/board' />;
   }
   return (
     <React.Fragment>
-      <About />
-      <div className='block right-pane border-left form-width'>
-        <h2>Make an account:</h2>
+      <div className='block login-float border-left form-width'>
+        <h1>Make an Account</h1>
         <SignupForm />
         <p>or</p>
-        <Link to='/' className='link'>Go back to login</Link>
+        <Link to='/' className='italic underline'>Go back to login</Link>
       </div>
+      <About />
     </React.Fragment>
   );
 }

@@ -12,13 +12,8 @@ import PersonForm from './person-form';
 import { refreshAuthToken } from '../actions/auth';
 import { Route, withRouter } from 'react-router-dom';
 import SignupPage from './signup-page';
-import TitlePage from './title-page';
+import LoginPage from './login-page';
 import '../stylesheets/App.css';
-
-import { library } from '@fortawesome/fontawesome-svg-core';
-import { faPlus, faPencilAlt, faTimes, faCaretDown } from '@fortawesome/free-solid-svg-icons';
-
-library.add(faPlus, faPencilAlt, faTimes, faCaretDown);
 
 export class App extends React.Component {
   componentDidUpdate(prevProps) {
@@ -63,7 +58,7 @@ export class App extends React.Component {
         <Route exact path="/person-edit/:id" component={ PersonEdit } />      
         <Route exact path="/person-form/:id" component={ PersonForm } />
         <Route exact path="/signup-page" component={ SignupPage } />
-        <Route exact path="/" component={ TitlePage } />
+        <Route exact path="/" component={ LoginPage } />
       </div>
     );
   }

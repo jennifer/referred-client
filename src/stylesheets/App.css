@@ -14,8 +14,8 @@ a, body, button, div, fieldset, form, h1, h2, html, label, legend, li, main, p, 
 }
 
 html, body { 
-  min-height: 100%;
-  margin: 12px 0 12px 0;
+  padding: 12px 0 12px 0;
+  height: 100%;
 }
 
 input {
@@ -27,7 +27,11 @@ input {
   color: red;
 }
 
-.highlight:hover, .link:hover, button:hover {
+h1 {
+  font-size: 1.5em;
+}
+
+.highlight:hover, button:hover {
   background-color: #ffe6e6;
   cursor: pointer;
 }
@@ -36,17 +40,35 @@ input {
   display: inline-block;
 }
 
-.right-pane {
+.fixed-block {
+  display: inline-block;
+  position: relative;
+}
+
+.content-float {
+  position: absolute;
+  float: right;
+}
+
+.login-float {
   position: relative;
   float: right;
 }
 
 .border-left {
-  height: 100vh;
+  height: 97vh;
   border-left: 1px red solid;
   padding-left: 12px;
 }
 
 .form-width {
-  width: 300px;
+  min-width: 300px;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.underline {
+  border-bottom: 1px red solid;
 }

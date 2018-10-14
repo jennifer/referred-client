@@ -15,24 +15,39 @@ export class Nav extends React.Component {
 
   render() {
 
-    let logOutButton;
+    let loggedInNav;
+    let loggedOutTitle;
 
     if (this.props.loggedIn) {
-      logOutButton = (
-        <div className='nav block highlight nav-border-right'>
-          <a className='vert log-out' onClick={() => this.logOut()}>Logout</a>
-        </div>
+      loggedInNav = (
+        <React.Fragment>
+          <div className='nav block referred highlight nav-border-right'>
+            <p className='vert referred italic'>Referred.</p>
+          </div>
+          <div className='nav block highlight nav-border-right'>
+            <a href='https://github.com/jennifer/network' target='blank' className='vert github italic'>Github</a>
+          </div>
+          <div className='nav block highlight nav-border-right'>
+            <a className='vert log-out italic' onClick={() => this.logOut()}>Logout</a>
+          </div>
+        </React.Fragment>
       );
     }
+
+    else {
+      loggedOutTitle = (
+        <React.Fragment>
+          <div className='block highlight nav-border-right title-div'>
+            <p className='vert title'>Referred.</p>
+          </div>
+        </React.Fragment>
+      )
+    }
+
     return (
       <React.Fragment>
-        <div className='nav block referred highlight nav-border-right'>
-          <h1 className='vert referred'>Referred.</h1>
-        </div>
-        <div className='nav block highlight nav-border-right'>
-          <a href='https://github.com/jennifer/network' target='blank' className='vert github'>Github</a>
-        </div>
-        { logOutButton }
+        { loggedOutTitle }
+        { loggedInNav }
       </React.Fragment>
     );
   }

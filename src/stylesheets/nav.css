@@ -2,13 +2,8 @@
   min-width: 44px;
 }
 
-.nav-border-left {
-  height: 100vh;
-  border-left: 1px red solid;
-}
-
 .nav-border-right {
-  height: 100vh;
+  height: 97.5vh;
   border-right: 1px red solid;
 }
 
@@ -34,4 +29,15 @@
 .github {
   top: 40px;
   left: 32px;
+}
+
+.title-div {
+  min-width: 80px;
+}
+
+.title {
+  font-style: italic;
+  font-size: 60px;
+  top: 90px;
+  left: -65px;
 }

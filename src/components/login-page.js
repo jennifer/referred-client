@@ -6,7 +6,7 @@ import '../stylesheets/title-page.css';
 import LoginForm from './login-form';
 import About from './about';
 
-export function TitlePage(props) {
+export function LoginPage(props) {
   // If we are logged in redirect straight to the user's dashboard
   if (props.loggedIn) {
     return <Redirect to='/dashboard' />;
@@ -14,13 +14,13 @@ export function TitlePage(props) {
 
   return (
     <React.Fragment>
-      <About />
-      <div className='block right-pane border-left form-width'>
-        <h2>Login:</h2>
+      <div className='block login-float border-left form-width'>
+        <h1>Log In</h1>
         <LoginForm />
         <p>or </p>
-        <Link to='/signup-page' className='link'>Make an account</Link>
+        <Link to='/signup-page' className='italic underline'>Make an account</Link>
       </div>
+      <About />
     </React.Fragment>
   );
 }
@@ -29,4 +29,4 @@ const mapStateToProps = state => ({
   loggedIn: state.auth.currentUser !== null
 });
 
-export default connect(mapStateToProps)(TitlePage);
+export default connect(mapStateToProps)(LoginPage);

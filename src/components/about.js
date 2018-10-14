@@ -4,19 +4,26 @@ import { Link, Redirect } from 'react-router-dom';
 import '../stylesheets/about.css';
 
 export function About(props) {
+
+    let aboutPageClose;
+
 	if (props.loggedIn) {
     return <Redirect to='/dashboard' />;
+    aboutPageClose = (
+      <Link to='/dashboard' className='link italic'>Close</Link>
+    );
   }
+  
   return (
     <div className='about-page'>
-  		<p>Track your job-search network to stay organized and accountable.</p>
-  		<p>Add a target company, then identify a contact person.</p>
-  		<p>Track relationship milestones: </p>
+  		<h1>Track your job-search network to stay organized and accountable.</h1>
+  		<p>Add target companies, identify contact people, and track networking milestones:</p>
       <p>Initiate one-on-one contact</p>
-      <p>Get a response</p>
-      <p>Follow up with more information</p>
-      <p>Get Referred: your contact passes your information to a hiring manager</p>
-      <Link to='/dashboard' className='link'>Close</Link>
+      <p>Track responses</p>
+      <p>Follow up</p>
+      <h1>Get Referred.</h1>
+      <a href='https://github.com/jennifer/network' target='blank' className='italic highlight underline'>View on Github</a>
+      { aboutPageClose }
     </div>
   )
 }

@@ -1,7 +1,7 @@
 .about-page {
 	display: inline-block;
-	position: absolute;
-	float: right;
+	position: fixed;
 	width: auto;
 	margin-left: 12px;
+	margin-right: 312px;
 }
