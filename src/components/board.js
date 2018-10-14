@@ -18,11 +18,11 @@ export class Board extends React.Component {
       <div className='block content-float'>
         <div className='grid-wrapper'>
           <Link to='/company-form' className='italic company highlight'>+ Companies</Link>
-          <div className='identify col'>Identified a person</div>
-          <div className='contact col'>Made contact</div>
-          <div className='response col'>Got a response</div>
-          <div className='followup col'>Followed up</div>
-          <div className='referral col'>Got a referral</div>
+          <h1 className='identify col'>Identified <br/> a Person</h1>
+          <h1 className='contact col'>Made <br/> Contact</h1>
+          <h1 className='response col'>Got a <br/> Response</h1>
+          <h1 className='followup col'>Followed <br/> Up</h1>
+          <h1 className='referral col'>Got a <br/> Referral</h1>
           {this.props.companies.map((company, index) => {
             return (
               <CompanyCard company={company} key={index} index={index}/>

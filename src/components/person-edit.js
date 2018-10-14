@@ -67,10 +67,11 @@ export class PersonEdit extends React.Component {
     }
 
     return (
-      <div className='block content-float'>
+      <div className='block content-float detail form-width'>
         <form onSubmit={this.props.handleSubmit(values => this.onSubmit(values, person._id))}>
           {error}
           <fieldset>
+            <legend>Edit {person.name}</legend>
             <label htmlFor='status'>Status:</label>
             <Field
               component={renderDropdownList}
@@ -102,18 +103,20 @@ export class PersonEdit extends React.Component {
               name='url'
               id='url'
             />
-            <label htmlFor='notes'>Notes:</label>
+            <label htmlFor='notes'>Notes:</label><br/>
             <Field
-              component={Input}
+              component='textarea'
               type='text'
               name='notes'
               id='notes'
+              className='textarea form-width'
             />
-            <button className='italic underline' disabled={this.props.pristine || this.props.submitting}>
+            <button className='italic underline highlight margin-top' disabled={this.props.pristine || this.props.submitting}>
               Submit Changes
-            </button><br/>
+            </button>
+            <div className='margin-bottom-small'></div>
             <button
-              className='italic underline'
+              className='italic underline highlight'
               type='button'
               onClick={() => this.deletePerson(person._id)}
             >
@@ -122,7 +125,7 @@ export class PersonEdit extends React.Component {
           </fieldset>
         </form>
         <p>or</p>
-        <Link to={`/person-detail/${person._id}`} className='italic underline'>Go Back</Link>
+        <Link to={`/person-detail/${person._id}`} className='italic underline highlight'>Go Back</Link>
       </div>
     )};
 }

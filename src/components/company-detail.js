@@ -12,16 +12,17 @@ export class CompanyDetail extends React.Component {
     )
     return (
       <div className='detail block content-float'>
-        <a href={company.url} target='_blank'>
+        <a href={company.url} target='_blank' className='margin-bottom'>
           <h1>{company.companyName}</h1>
         </a>
-        <h2>{company.location}</h2>
-        <p>{company.description}</p>
-        <p>{company.notes}</p>
-        <Link to={`/person-form/${company._id}`} className='italic underline'>Add a Contact Person</Link><br/>
-        <Link to={`/company-edit/${company._id}`} className='italic underline'>Edit Company</Link>
+        <h2 className='margin-bottom'>{company.location}</h2>
+        <p className='margin-bottom'>{company.description}</p>
+        <p className='margin-bottom'>{company.notes}</p>
+        <Link to={`/person-form/${company._id}`} className='italic underline highlight'>Add a Contact Person</Link>
+        <div className='margin-bottom-small'></div>
+        <Link to={`/company-edit/${company._id}`} className='italic underline highlight'>Edit Company</Link>
         <p>or</p>
-        <Link to='/dashboard' className='italic underline'>Go Back</Link>
+        <Link to='/dashboard' className='italic underline highlight'>Go Back</Link>
       </div>
     )
   }

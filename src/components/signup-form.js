@@ -39,7 +39,7 @@ export class SignupForm extends React.Component {
           name='password'
           validate={[required, passwordLength, isTrimmed]}
         />
-        <label htmlFor='passwordConfirm'>Confirm password:</label>
+        <label htmlFor='passwordConfirm'>Confirm Password:</label>
         <Field
           component={Input}
           type='password'
@@ -48,7 +48,9 @@ export class SignupForm extends React.Component {
         />
         <button
           type='submit'
-          disabled={this.props.pristine || this.props.submitting} className='italic underline'>
+          disabled={this.props.pristine || this.props.submitting} className='italic underline highlight'
+          className='italic underline highlight margin-top'
+        >
           Submit
         </button>
       </form>

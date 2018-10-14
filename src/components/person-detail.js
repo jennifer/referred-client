@@ -12,15 +12,15 @@ export class PersonDetail extends React.Component {
     return (
       <div className='block content-float detail'>
         <a href={person.url} target='_blank'>
-          <h1>{person.name}</h1>
+          <h1 className='margin-bottom'>{person.name}</h1>
         </a>
-        <h2>{person.url}</h2>
-        <p>{person.title}</p>
-        <p>{person.status}</p>
-        <p>{person.notes}</p>
-        <Link to={`/person-edit/${person._id}`} className='italic underline'>Edit Person</Link>
+        <h2 className='margin-bottom'>{person.url}</h2>
+        <p className='margin-bottom'>{person.title}</p>
+        <p className='margin-bottom'>{person.status}</p>
+        <p className='margin-bottom'>{person.notes}</p>
+        <Link to={`/person-edit/${person._id}`} className='italic underline highlight'>Edit Person</Link>
         <p>or</p>
-        <Link to='/dashboard' className='italic underline'>Go Back</Link>
+        <Link to='/dashboard' className='italic underline highlight'>Go Back</Link>
       </div>
     )
   }

@@ -2,7 +2,6 @@ import React from 'react';
 import About from './about';
 import { connect } from 'react-redux';
 import { Link, Redirect } from 'react-router-dom';
-import '../stylesheets/signup-page.css';
 
 import SignupForm from './signup-form';
 
@@ -12,11 +11,11 @@ export function SignupPage(props) {
   }
   return (
     <React.Fragment>
-      <div className='block login-float border-left form-width'>
-        <h1>Make an Account</h1>
+      <div className='block login-float border-left login-width'>
+        <h1 className='margin-bottom'>Make an Account</h1>
         <SignupForm />
         <p>or</p>
-        <Link to='/' className='italic underline'>Go back to login</Link>
+        <Link to='/' className='italic underline highlight'>Go back to login</Link>
       </div>
       <About />
     </React.Fragment>

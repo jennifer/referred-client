@@ -43,10 +43,11 @@ export class PersonForm extends React.Component {
     }
 
     return (
-      <div className='block content-float detail'>
+      <div className='block content-float detail form-width'>
         <form onSubmit={this.props.handleSubmit(values => this.onSubmit(values, company._id))}>
           {error}
           <fieldset className='person-fieldset'>
+            <legend>Add a New Person</legend>
             <label htmlFor='status'>Status:</label>
             <Field
               component={renderDropdownList}
@@ -78,20 +79,21 @@ export class PersonForm extends React.Component {
               name='url'
               id='url'
             />
-            <label htmlFor='notes'>Notes:</label>
+            <label htmlFor='notes'>Notes:</label><br/>
             <Field
-              component={Input}
+              component='textarea'
               type='text'
               name='notes'
               id='notes'
+              className='textarea form-width'
             />
-            <button className='submit-button' disabled={this.props.pristine || this.props.submitting}>
+            <button className='submit-button italic underline highlight margin-top' disabled={this.props.pristine || this.props.submitting}>
               Submit Person
             </button>
           </fieldset>
         </form>
         <p>or</p>
-        <Link to={`/company-detail/${company._id}`}>Go Back</Link>
+        <Link to={`/company-detail/${company._id}`} className='italic underline highlight'>Go Back</Link>
       </div>
     )
   };

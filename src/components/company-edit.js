@@ -54,11 +54,11 @@ export class CompanyEdit extends React.Component {
     }
 
     return (
-      <div className='block content-float detail'>
-        <h1>Edit {company.companyName}</h1>
+      <div className='block content-float detail form-width'>
         <form onSubmit={this.props.handleSubmit(values => this.onSubmit(values, company._id))}>
           {error}
           <fieldset>
+          <legend>Edit {company.companyName}</legend>
             <label htmlFor='companyName'>Company name:</label>
             <Field
               component={Input}
@@ -90,18 +90,20 @@ export class CompanyEdit extends React.Component {
               name='description'
               id='description'
             />
-            <label htmlFor='notes'>Notes:</label>
+            <label htmlFor='notes'>Notes:</label><br/>
             <Field
-              component={Input}
+              component='textarea'
               type='text'
               name='notes'
               id='notes'
+              className='textarea form-width'
             />
-            <button className='italic underline' type='submit' disabled={this.props.pristine || this.props.submitting}>
+            <button className='italic underline highlight margin-top' type='submit' disabled={this.props.pristine || this.props.submitting}>
               Submit Changes
-            </button><br/>
+            </button>
+            <div className='margin-bottom-small'></div>
             <button
-              className='italic underline'
+              className='italic underline highlight'
               type='button'
               onClick={() => this.deleteCompany(company._id)}
             >
@@ -110,7 +112,7 @@ export class CompanyEdit extends React.Component {
           </fieldset>
         </form>
         <p>or</p>
-        <Link to={`/company-detail/${company._id}`} className='italic underline'>Go Back</Link>
+        <Link to={`/company-detail/${company._id}`} className='italic underline highlight'>Go Back</Link>
       </div>
     )
   }

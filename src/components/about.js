@@ -16,12 +16,12 @@ export function About(props) {
   
   return (
     <div className='about-page'>
-  		<h1>Track your job-search network to stay organized and accountable.</h1>
+  		<h1 className='margin-bottom'>Track your job-search network to stay organized and accountable.</h1>
   		<p>Add target companies, identify contact people, and track networking milestones:</p>
-      <p>Initiate one-on-one contact</p>
-      <p>Track responses</p>
-      <p>Follow up</p>
-      <h1>Get Referred.</h1>
+      <p>+ Initiate one-on-one contact</p>
+      <p>+ Track responses</p>
+      <p className='margin-bottom'>+ Follow up</p>
+      <h1 className='margin-bottom'>Get Referred.</h1>
       <a href='https://github.com/jennifer/network' target='blank' className='italic highlight underline'>View on Github</a>
       { aboutPageClose }
     </div>

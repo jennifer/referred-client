@@ -42,7 +42,7 @@ export class LoginForm extends React.Component {
           id='password'
           validate={[required, nonEmpty]}
         />
-        <button disabled={this.props.pristine || this.props.submitting} className='link italic underline'>
+        <button disabled={this.props.pristine || this.props.submitting} className='italic underline highlight margin-top'>
           Submit
         </button>
       </form>

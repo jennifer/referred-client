@@ -1,3 +1,5 @@
 .detail {
 	margin-left: 12px;
+	max-width: 500px;
+	word-wrap: break-word;
 }

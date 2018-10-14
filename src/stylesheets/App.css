@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Cormorant+Garamond');
 
-a, body, button, div, fieldset, form, h1, h2, html, label, legend, li, main, p, ul {
+a, body, button, div, fieldset, form, h1, h2, html, legend, li, main, p, ul {
   margin: 0;
   border: 0;
   padding: 0;
@@ -18,7 +18,7 @@ html, body {
   height: 100%;
 }
 
-input {
+input, .textarea {
 	border: 1px red solid;
 	height: 24px;
 	width: 100%;
@@ -27,11 +27,11 @@ input {
   color: red;
 }
 
-h1 {
+h1, legend {
   font-size: 1.5em;
 }
 
-.highlight:hover, button:hover {
+.highlight:hover {
   background-color: #ffe6e6;
   cursor: pointer;
 }
@@ -63,6 +63,11 @@ h1 {
 
 .form-width {
   min-width: 300px;
+  width: 400px;
+}
+
+.textarea {
+  height: 72px;
 }
 
 .italic {
@@ -71,4 +76,20 @@ h1 {
 
 .underline {
   border-bottom: 1px red solid;
+}
+
+.margin-top {
+  margin-top: 12px;
+}
+
+.margin-bottom {
+  margin-bottom: 12px;
+}
+
+.margin-bottom-small {
+  margin-bottom: 6px;
+}
+
+.form-error {
+  font-weight: bold;
 }

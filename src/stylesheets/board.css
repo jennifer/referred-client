@@ -3,6 +3,7 @@
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
   border-bottom: 1px red solid;
   margin: 0 12px 12px 12px;
+  align-items: end;
 }
 
 .company {
@@ -12,6 +13,7 @@
   grid-column-end: 2;
   text-align: left;
   padding-left: 12px;
+  padding-bottom: 6px;
   margin-right: 12px;
 }
 

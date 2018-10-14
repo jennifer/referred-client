@@ -23,10 +23,11 @@ export class CompanyForm extends React.Component {
       );
     }
     return (
-      <div className='block content-float'>
+      <div className='detail block content-float form-width'>
         <form onSubmit={this.props.handleSubmit(values => this.onSubmit(values))}>
           {error}
           <fieldset className='company-fieldset'>
+          <legend>Add a New Company</legend>
             <label htmlFor='companyName'>Company name:</label>
             <Field
               component={Input}
@@ -58,20 +59,21 @@ export class CompanyForm extends React.Component {
               name='description'
               id='description'
             />
-            <label htmlFor='notes'>Notes:</label>
+            <label htmlFor='notes'>Notes:</label><br/>
             <Field
-              component={Input}
+              component='textarea'
               type='text'
               name='notes'
               id='notes'
+              className='textarea form-width'
             />
-            <button className='submit-button' type='submit' disabled={this.props.pristine || this.props.submitting}>
+            <button className='submit-button italic underline highlight margin-top' type='submit' disabled={this.props.pristine || this.props.submitting}>
               Submit Company
             </button>
           </fieldset>
         </form>
         <p>or</p>
-        <Link to='/dashboard'>Go Back</Link>
+        <Link to='/dashboard' className='italic underline highlight'>Go Back</Link>
       </div>
     )
   };
