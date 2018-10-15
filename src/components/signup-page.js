@@ -1,14 +1,11 @@
 import React from 'react';
 import About from './about';
-import { connect } from 'react-redux';
-import { Link, Redirect } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 import SignupForm from './signup-form';
 
-export function SignupPage(props) {
-  if (props.loggedIn) {
-    return <Redirect to='/board' />;
-  }
+export default function SignupPage(props) {
+  
   return (
     <React.Fragment>
       <div className='block login-float border-left login-width'>
@@ -21,9 +18,3 @@ export function SignupPage(props) {
     </React.Fragment>
   );
 }
-
-const mapStateToProps = state => ({
-  loggedIn: state.auth.currentUser !== null
-});
-
-export default connect(mapStateToProps)(SignupPage);

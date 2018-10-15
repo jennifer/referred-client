@@ -48,7 +48,7 @@ export class SignupForm extends React.Component {
         />
         <button
           type='submit'
-          disabled={this.props.pristine || this.props.submitting} className='italic underline highlight'
+          disabled={this.props.pristine || this.props.submitting}
           className='italic underline highlight margin-top'
         >
           Submit

@@ -23,11 +23,6 @@
 
 .log-out {
   top: 40px;
-  left: 75px;
-}
-
-.github {
-  top: 40px;
   left: 32px;
 }
 
@@ -39,5 +34,5 @@
   font-style: italic;
   font-size: 60px;
   top: 90px;
-  left: -65px;
+  left: -68px;
 }

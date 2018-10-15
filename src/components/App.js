@@ -47,18 +47,18 @@ export class App extends React.Component {
 
   render() {
     return (
-      <div className="app">
+      <div className='app'>
         <Nav />
-        <Route exact path="/about" component={ About } />
-        <Route exact path="/dashboard" component={ Board } />
-        <Route exact path="/company-detail/:id" component={ CompanyDetail } />
-        <Route exact path="/company-edit/:id" component={ CompanyEdit } />
-        <Route exact path="/company-form" component={ CompanyForm } />
-        <Route exact path="/person-detail/:id" component={ PersonDetail } />
-        <Route exact path="/person-edit/:id" component={ PersonEdit } />      
-        <Route exact path="/person-form/:id" component={ PersonForm } />
-        <Route exact path="/signup-page" component={ SignupPage } />
-        <Route exact path="/" component={ LoginPage } />
+        <Route exact path='/about' component={ About } />
+        <Route exact path='/dashboard' component={ Board } />
+        <Route exact path='/company-detail/:id' component={ CompanyDetail } />
+        <Route exact path='/company-edit/:id' component={ CompanyEdit } />
+        <Route exact path='/company-form' component={ CompanyForm } />
+        <Route exact path='/person-detail/:id' component={ PersonDetail } />
+        <Route exact path='/person-edit/:id' component={ PersonEdit } />      
+        <Route exact path='/person-form/:id' component={ PersonForm } />
+        <Route exact path='/signup-page' component={ SignupPage } />
+        <Route exact path='/' component={ LoginPage } />
       </div>
     );
   }

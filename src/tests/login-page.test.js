@@ -3,13 +3,13 @@ import { Provider } from 'react-redux';
 import { shallow } from 'enzyme';
 import store from '../store';
 
-import TitlePage from '../components/title-page';
+import LoginPage from '../components/login-page';
 
-describe('<TitlePage />', () => {
+describe('<LoginPage />', () => {
   it('Renders without crashing', () => {
     shallow(
     	<Provider store={ store }>
-    		<TitlePage />
+    		<LoginPage />
     	</Provider>
     );
   });

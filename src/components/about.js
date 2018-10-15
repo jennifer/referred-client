@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Link, Redirect } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import '../stylesheets/about.css';
 
 export function About(props) {
@@ -8,9 +8,8 @@ export function About(props) {
     let aboutPageClose;
 
 	if (props.loggedIn) {
-    return <Redirect to='/dashboard' />;
     aboutPageClose = (
-      <Link to='/dashboard' className='link italic'>Close</Link>
+      <Link to='/dashboard' className='italic underline highlight'>Go back</Link>
     );
   }
   
@@ -23,6 +22,7 @@ export function About(props) {
       <p className='margin-bottom'>+ Follow up</p>
       <h1 className='margin-bottom'>Get Referred.</h1>
       <a href='https://github.com/jennifer/network' target='blank' className='italic highlight underline'>View on Github</a>
+      <div className='margin-bottom-small'></div>
       { aboutPageClose }
     </div>
   )
