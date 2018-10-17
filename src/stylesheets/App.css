@@ -54,17 +54,6 @@ h2 {
   float: right;
 }
 
-.login-float {
-  position: relative;
-  float: right;
-}
-
-.border-left {
-  height: 97vh;
-  border-left: 1px red solid;
-  padding-left: 12px;
-}
-
 .form-width {
   min-width: 300px;
   width: 400px;
@@ -97,3 +86,11 @@ h2 {
 .form-error, .bold {
   font-weight: bold;
 }
+
+@media (max-width: 767px) {
+
+}
+
+
+
+

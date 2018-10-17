@@ -1,11 +1,20 @@
+
 .about-page {
-	display: inline-block;
-	position: fixed;
-	width: auto;
+	order: 1;
+	flex-grow: 1;
 	margin-left: 12px;
-	margin-right: 312px;
 }
 
 .margin-top {
   margin-top: 12px;
+}
+
+@media (max-width: 767px) {
+
+  .about-page {
+  	width: 100%;
+  	margin: 50px 0 12px 12px;
+  	padding: 12px 0 12px 0;
+  	border-bottom: 1px red solid;
+  }
 }

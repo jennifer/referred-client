@@ -36,3 +36,42 @@
   top: 94px;
   left: -62px;
 }
+
+@media (max-width: 767px) {
+  
+  .nav {
+    
+  }
+
+  .nav-border-right {
+    height: auto;
+    border-bottom: 1px red solid;
+  }
+
+  .vert {
+    -webkit-transform: none;
+    -moz-transform: none;
+    -ms-transform: none;
+    -o-transform: none;
+    transform: none;
+    position: fixed;
+  }
+
+  .title-div {
+    position: fixed;
+    top: 0;
+    width: 92vw;
+    height: 60px;
+    border-bottom: 1px red solid;
+    background-color: white;
+    margin-left: 12px;
+  }
+
+  .title {
+    margin-left: 12px;
+    font-size: 50px;
+    top: 0;
+    left: 0;
+  }
+
+}

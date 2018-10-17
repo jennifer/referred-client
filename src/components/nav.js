@@ -34,7 +34,7 @@ export class Nav extends React.Component {
     else {
       loggedOutTitle = (
         <React.Fragment>
-          <div className='block nav-border-right title-div'>
+          <div className='title-div'>
             <p className='vert title'>Referred</p>
           </div>
         </React.Fragment>

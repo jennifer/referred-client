@@ -1,0 +1,33 @@
+.flex-wrapper {
+	display: flex;
+	width: 92vw;
+	float: left;
+  height: 97.5vh;
+	margin-left: 82px;
+	border-left: 1px red solid;
+}
+
+.login {
+	order: 2;
+	border-left: 1px red solid;
+	padding-left: 12px;
+	min-width: 260px;
+	margin-bottom: 12px;
+}
+
+@media (max-width: 767px) {
+
+	.flex-wrapper {
+		flex-direction: column;
+		margin: 0px;
+		border-left: none;
+	}
+
+	.login {
+		order: 2;
+		border-left: none;
+		padding-left: none;
+		min-width: 225px;
+	}
+
+}
