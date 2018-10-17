@@ -7,7 +7,7 @@ import SignupForm from './signup-form';
 
 export function SignupPage(props) {
   if (props.loggedIn) {
-    return <Redirect to='/dashboard' />;
+    return <Redirect to='/company-form' />;
   }
   return (
     <React.Fragment>

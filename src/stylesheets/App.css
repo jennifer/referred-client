@@ -31,6 +31,10 @@ h1, legend {
   font-size: 1.5em;
 }
 
+h2 {
+  font-size: 1.25em;
+}
+
 .highlight:hover {
   background-color: #ffe6e6;
   cursor: pointer;
@@ -90,6 +94,6 @@ h1, legend {
   margin-bottom: 6px;
 }
 
-.form-error {
+.form-error, .bold {
   font-weight: bold;
 }

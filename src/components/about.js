@@ -20,7 +20,7 @@ export function About(props) {
       <p>+ Initiate one-on-one contact</p>
       <p>+ Track responses</p>
       <p className='margin-bottom'>+ Follow up</p>
-      <h1 className='margin-bottom'>Get Referred.</h1>
+      <h1 className='margin-bottom'>Get Referred</h1>
       <a href='https://github.com/jennifer/network' target='blank' className='italic highlight underline'>View on Github</a>
       <div className='margin-bottom-small'></div>
       { aboutPageClose }

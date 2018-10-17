@@ -1,4 +1,5 @@
 .grid-wrapper {
+  width: 92vw;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
   border-bottom: 1px red solid;
@@ -56,4 +57,11 @@
   text-align: center;
   padding-bottom: 5px;
   margin-right: 12px;
+}
+
+.help-banner {
+  margin: 12px;
+  border-bottom: 1px red solid;
+  padding-bottom: 12px;
+  font-weight: bold;
 }

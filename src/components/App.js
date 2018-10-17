@@ -1,6 +1,6 @@
 import React from 'react';
 import About from './about';
-import Board from './board';
+import Dashboard from './dashboard';
 import CompanyDetail from './company-detail';
 import CompanyEdit from './company-edit';
 import CompanyForm from './company-form';
@@ -50,7 +50,7 @@ export class App extends React.Component {
       <div className='app'>
         <Nav />
         <Route exact path='/about' component={ About } />
-        <Route exact path='/dashboard' component={ Board } />
+        <Route exact path='/dashboard' component={ Dashboard } />
         <Route exact path='/company-detail/:id' component={ CompanyDetail } />
         <Route exact path='/company-edit/:id' component={ CompanyEdit } />
         <Route exact path='/company-form' component={ CompanyForm } />
