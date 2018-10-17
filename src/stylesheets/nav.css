@@ -39,13 +39,28 @@
 
 @media (max-width: 767px) {
   
-  .nav {
-    
-  }
-
   .nav-border-right {
     height: auto;
+    border-bottom: none;
+  }
+
+  .referred, .log-out {
+    width: 100%;
+    top: 0px;
+    left: 0px;
     border-bottom: 1px red solid;
+    padding: 5px;
+    background-color: white;
+    position: fixed;
+    z-index: 1;
+  }
+
+  .referred:hover, .log-out:hover {
+    background-color: #ffe6e6;
+  }
+
+  .log-out {
+    top: 40px;
   }
 
   .vert {
@@ -60,15 +75,13 @@
   .title-div {
     position: fixed;
     top: 0;
-    width: 92vw;
+    width: 100%;
     height: 60px;
-    border-bottom: 1px red solid;
     background-color: white;
-    margin-left: 12px;
   }
 
   .title {
-    margin-left: 12px;
+    padding-left: 12px;
     font-size: 50px;
     top: 0;
     left: 0;

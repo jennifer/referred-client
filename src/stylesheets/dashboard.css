@@ -1,5 +1,6 @@
 .grid-wrapper {
   width: 92vw;
+  min-width: 1000px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
   border-bottom: 1px red solid;
@@ -64,4 +65,10 @@
   border-bottom: 1px red solid;
   padding-bottom: 12px;
   font-weight: bold;
+}
+
+@media (max-width: 767px) {
+  .grid-wrapper {
+    width: 100%;
+  }
 }

@@ -88,7 +88,15 @@ h2 {
 }
 
 @media (max-width: 767px) {
+  .block {
+    display: block;
+  }
 
+  .content-float {
+    position: relative;
+    float: none;
+    margin-top: 80px;
+  }
 }
 
 

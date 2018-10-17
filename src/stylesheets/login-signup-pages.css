@@ -10,24 +10,28 @@
 .login {
 	order: 2;
 	border-left: 1px red solid;
-	padding-left: 12px;
 	min-width: 260px;
+	padding-left: 12px;
 	margin-bottom: 12px;
+	margin-left: 12px;
 }
 
 @media (max-width: 767px) {
 
 	.flex-wrapper {
 		flex-direction: column;
-		margin: 0px;
+		margin: 0;
 		border-left: none;
+		width: 96%;
 	}
 
 	.login {
 		order: 2;
+		margin: 0;
+		margin-bottom: 12px;
 		border-left: none;
 		padding-left: none;
-		min-width: 225px;
+		width: 225px;
 	}
 
 }
