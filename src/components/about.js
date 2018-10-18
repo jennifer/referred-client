@@ -14,7 +14,7 @@ export function About(props) {
   }
   
   return (
-    <div className='about-page'>
+    <div className='about-page' style={props.loggedIn ? {display:'inline-block', position:'absolute'} : {}}>
   		<h1 className='margin-bottom'>Track your job-search network to stay organized and accountable.</h1>
   		<p>Add target companies, identify contact people, and track networking milestones:</p>
       <p>+ Initiate one-on-one contact</p>
