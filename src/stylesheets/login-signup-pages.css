@@ -2,8 +2,8 @@
 	display: flex;
 	width: 92vw;
 	float: left;
-  height: 97.5vh;
-	margin-left: 82px;
+  height: 100vh;
+	margin-left: 75px;
 	border-left: 1px red solid;
 }
 
@@ -12,7 +12,6 @@
 	border-left: 1px red solid;
 	min-width: 260px;
 	padding-left: 12px;
-	margin-bottom: 12px;
 	margin-left: 12px;
 }
 
@@ -22,13 +21,12 @@
 		flex-direction: column;
 		margin: 0;
 		border-left: none;
-		width: 96%;
+		width: 100%;
 	}
 
 	.login {
 		order: 2;
-		margin: 0;
-		margin-bottom: 12px;
+		margin: 6px 0 18px 0;
 		border-left: none;
 		padding-left: none;
 		width: 225px;

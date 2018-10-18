@@ -3,7 +3,7 @@
 }
 
 .nav-border-right {
-  height: 97.5vh;
+  height: 100vh;
   border-right: 1px red solid;
 }
 
@@ -17,7 +17,7 @@
 }
 
 .referred {
-  top: 48px;
+  top: 50px;
   left: -20px;
 }
 
@@ -26,15 +26,11 @@
   left: 32px;
 }
 
-.title-div {
-  min-width: 80px;
-}
-
 .title {
   font-style: italic;
   font-size: 60px;
   top: 94px;
-  left: -62px;
+  left: -70px;
 }
 
 @media (max-width: 767px) {
@@ -72,15 +68,12 @@
     position: fixed;
   }
 
-  .title-div {
+  .title {
     position: fixed;
-    top: 0;
     width: 100%;
     height: 60px;
     background-color: white;
-  }
-
-  .title {
+    border-bottom: 1px red solid;
     padding-left: 12px;
     font-size: 50px;
     top: 0;

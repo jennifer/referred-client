@@ -13,11 +13,6 @@ a, body, button, div, fieldset, form, h1, h2, html, legend, li, main, p, ul {
   vertical-align: baseline;
 }
 
-html, body { 
-  padding: 12px 0 12px 0;
-  height: 100%;
-}
-
 input, .textarea {
 	border: 1px red solid;
 	height: 24px;
@@ -88,6 +83,7 @@ h2 {
 }
 
 @media (max-width: 767px) {
+
   .block {
     display: block;
   }
