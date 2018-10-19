@@ -1,9 +1,10 @@
-# Referred
+# Referred.
 
 A fullstack JavaScript+React application that helps job-seekers track their professional network. Users add target companies, identify contact people, and track networking milestones, including:
 * Initiating one-on-one contact
 * Tracking responses
 * Following up
+
 And ultimately, getting referred!
 
 ## Demo
@@ -29,7 +30,7 @@ As a job-seeker, I wanted to build an app that fellow job-seekers and I could us
 * A demo user account and indicate on the landing page how to use it.
 
 ## Built With
-*The client and API were deployed separately and stored in separate GitHub repos.* 
+Client and API were deployed separately and stored in separate GitHub repos.* 
 - [Referred API Repo](https://github.com/jennifer/referred-client)
 
 ### Front End
@@ -79,7 +80,7 @@ Person Form:
 
 Person Edit:
 
-![edit person]()
+![Edit Person]()
 
 
 ## Using the API
@@ -91,7 +92,7 @@ Person Edit:
 * Must provide valid Username and Password in request header
 * If authentication succeeds, a valid 7d expiry JWT will be provided in response body
 
-### Register New User
+### Register and Login New User
 ##### POST: /api/users 
 
 * Must provide Username and Password in request body
@@ -118,13 +119,6 @@ Person Edit:
 * Must provide company object in request body
 * Must provide valid JWT via Bearer Authentication
 
-### Add Person
-##### POST: /api/referred/companies
-
-* This endpoint adds a person to the Referred database/People collection
-* Must provide person object in request body
-* Must provide valid JWT via Bearer Authentication
-
 ### Update Company
 ##### PUT: /api/referred/companies/{company ID}
 
@@ -133,19 +127,26 @@ Person Edit:
 * Must provide company object in request body
 * Must provide valid JWT via Bearer Authentication
 
+### Delete Company
+##### DELETE: /api/referred/companies/{company ID}
+
+* This endpoint deletes a company from the Referred database/Companies collection
+* Must provide company ID as route parameter
+* Must provide valid JWT via Bearer Authentication
+
+### Add Person
+##### POST: /api/referred/companies
+
+* This endpoint adds a person to the Referred database/People collection
+* Must provide person object in request body
+* Must provide valid JWT via Bearer Authentication
+
 ### Update Person
 ##### PUT: /api/referred/companies/person/{person ID}
 
 * This endpoint updates a person in the Referred database/People collection
 * Must provide person ID as route parameter
 * Must provide person object in request body
-* Must provide valid JWT via Bearer Authentication
-
-### Delete Company
-##### DELETE: /api/referred/companies/{company ID}
-
-* This endpoint deletes a company from the Referred database/Companies collection
-* Must provide company ID as route parameter
 * Must provide valid JWT via Bearer Authentication
 
 ### Delete Person
