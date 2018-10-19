@@ -1,10 +1,10 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import { Field, reduxForm, focus } from 'redux-form';
 import Input from './input';
 import { Link } from 'react-router-dom';
 import { postCompanyData } from '../actions/network-actions';
 import { required, nonEmpty } from '../validators';
-import '../stylesheets/company-form.css'
 
 export class CompanyForm extends React.Component {
 
@@ -15,6 +15,14 @@ export class CompanyForm extends React.Component {
 
   render() {
     let error;
+    let newUserHelp;
+
+    if (this.props.nullCompanies) {
+      newUserHelp = (
+        <p className='bold help-margins'>To get started, add a target company.</p>
+      )
+    }
+
     if (this.props.error) {
       error = (
         <div className='form-error' aria-live='polite'>
@@ -22,13 +30,15 @@ export class CompanyForm extends React.Component {
         </div>
       );
     }
+
     return (
       <div className='detail block content-float form-width'>
+        { newUserHelp }
         <form onSubmit={this.props.handleSubmit(values => this.onSubmit(values))}>
           {error}
           <fieldset className='company-fieldset'>
           <legend>Add a New Company</legend>
-            <label htmlFor='companyName'>Company name:</label>
+            <label htmlFor='companyName'>Company Name:</label>
             <Field
               component={Input}
               type='text'
@@ -73,13 +83,19 @@ export class CompanyForm extends React.Component {
           </fieldset>
         </form>
         <p>or</p>
-        <Link to='/dashboard' className='italic underline highlight'>Go Back</Link>
+        <Link to='/dashboard' className='italic underline highlight'>{this.props.nullCompanies ? 'Go to Dashboard' : 'Go back'}</Link>
       </div>
     )
   };
 }
 
+const mapStateToProps = state => {
+  return {
+    nullCompanies: state.network.companies.length === 0,
+  };
+};
+
 export default reduxForm({
   form: 'company',
   onSubmitFail: (errors, dispatch) => dispatch(focus('company'))
-})(CompanyForm);
+})(connect(mapStateToProps)(CompanyForm));

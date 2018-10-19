@@ -7,7 +7,6 @@ import { Link } from 'react-router-dom';
 import { postPersonData } from '../actions/network-actions';
 import { required, nonEmpty } from '../validators';
 import 'react-widgets/dist/css/react-widgets.css';
-import '../stylesheets/person-form.css';
 
 export class PersonForm extends React.Component {
 

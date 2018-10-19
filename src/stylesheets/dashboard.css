@@ -4,7 +4,6 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
   border-bottom: 1px red solid;
-  margin: 12px;
   align-items: end;
 }
 
@@ -60,15 +59,18 @@
   margin-right: 12px;
 }
 
-.help-banner {
-  border-bottom: 1px red solid;
-  padding: 12px;
-  font-weight: bold;
+.help-margins {
+  margin-bottom: 12px;
 }
 
 @media (max-width: 767px) {
   .grid-wrapper {
     padding-top: 12px;
     padding-right: 12px;
+  }
+
+  .help-margins {
+    padding-top: 12px;
+    margin-bottom: 0;
   }
 }

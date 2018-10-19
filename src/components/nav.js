@@ -22,7 +22,7 @@ export class Nav extends React.Component {
       loggedInNav = (
         <React.Fragment>
           <div className='nav block highlight nav-border-right'>
-            <Link to= '/about' className='vert referred italic'>Referred</Link>
+            <Link to= '/about' className='vert referred italic'>Referred.</Link>
           </div>
           <div className='nav block highlight nav-border-right'>
             <a className='vert log-out italic' onClick={() => this.logOut()}>Logout</a>

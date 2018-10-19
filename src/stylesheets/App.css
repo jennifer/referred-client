@@ -47,6 +47,7 @@ h2 {
 .content-float {
   position: absolute;
   float: right;
+  margin: 12px;
 }
 
 .form-width {

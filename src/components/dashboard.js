@@ -11,27 +11,9 @@ export class Dashboard extends React.Component {
     this.props.dispatch(getCompanyData(this.props.username));
   }
 
-
-
   render() {
 
     let newUserHelp;
-
-    if (this.props.nullCompanies && this.props.nullPeople) {
-      newUserHelp = (
-        <div className='help-banner'>
-          <p className='bold'>Click on <span className='italic'>+ Companies</span> to add a target company</p>
-        </div>
-      )
-    }
-
-    if (this.props.nullCompanies === false && this.props.nullPeople) {
-      newUserHelp = (
-        <div className='help-banner'>
-          <p className='bold'>Click on {this.props.companies[0].companyName} to view details and add a contact person</p>
-        </div>
-      )
-    }
 
     return (
       <div className='block content-float'>
@@ -51,6 +33,18 @@ export class Dashboard extends React.Component {
         </div> 
       </div>
     )
+
+    if (this.props.nullCompanies && this.props.nullPeople) {
+      newUserHelp = (
+        <p className='bold help-margins'>Click on <span className='italic'>+ Companies</span> to add a target company.</p>
+      )
+    }
+
+    if (this.props.nullCompanies === false && this.props.nullPeople) {
+      newUserHelp = (
+        <p className='bold help-margins'>Click on {this.props.companies[0].companyName} to view details and add a contact person.</p>
+      )
+    }
   }
 }
 
