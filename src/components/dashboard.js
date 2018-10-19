@@ -15,6 +15,18 @@ export class Dashboard extends React.Component {
 
     let newUserHelp;
 
+    if (this.props.nullCompanies && this.props.nullPeople) {
+      newUserHelp = (
+        <p className='bold help-margins'>Click on <span className='italic'>+ Companies</span> to add a target company</p>
+      )
+    }
+
+    if (this.props.nullCompanies === false && this.props.nullPeople) {
+      newUserHelp = (
+        <p className='bold help-margins'>Click on {this.props.companies[0].companyName} to view details and add a contact person</p>
+      )
+    }
+
     return (
       <div className='block content-float'>
         { newUserHelp } 
@@ -33,18 +45,6 @@ export class Dashboard extends React.Component {
         </div> 
       </div>
     )
-
-    if (this.props.nullCompanies && this.props.nullPeople) {
-      newUserHelp = (
-        <p className='bold help-margins'>Click on <span className='italic'>+ Companies</span> to add a target company.</p>
-      )
-    }
-
-    if (this.props.nullCompanies === false && this.props.nullPeople) {
-      newUserHelp = (
-        <p className='bold help-margins'>Click on {this.props.companies[0].companyName} to view details and add a contact person.</p>
-      )
-    }
   }
 }
 

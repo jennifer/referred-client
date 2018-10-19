@@ -19,7 +19,7 @@ export class CompanyForm extends React.Component {
 
     if (this.props.nullCompanies) {
       newUserHelp = (
-        <p className='bold help-margins'>To get started, add a target company.</p>
+        <p className='bold help-margins'>To get started, add a target company</p>
       )
     }
 
