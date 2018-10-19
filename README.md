@@ -1,5 +1,7 @@
 # Referred.
 
+[![Build Status](https://travis-ci.org/jennifer/referred-client.svg?branch=master)](https://travis-ci.org/jennifer/referred-client)
+
 A fullstack JavaScript+React application that helps job-seekers track their professional network. Users add target companies, identify contact people, and track networking milestones, including:
 * Initiating one-on-one contact
 * Tracking responses
