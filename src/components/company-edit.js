@@ -83,20 +83,21 @@ export class CompanyEdit extends React.Component {
               id='location'
               validate={[required, nonEmpty]}
             />
-            <label htmlFor='description'>Description:</label>
+            <label htmlFor='description'>Description:</label><br/>
             <Field
-              component={Input}
-              type='text'
+              component='textarea'
+              type='textarea'
               name='description'
               id='description'
+              className='textarea desc-textarea form-width'
             />
             <label htmlFor='notes'>Notes:</label><br/>
             <Field
               component='textarea'
-              type='text'
+              type='textarea'
               name='notes'
               id='notes'
-              className='textarea form-width'
+              className='textarea notes-textarea form-width'
             />
             <button className='italic underline highlight margin-top' type='submit' disabled={this.props.pristine || this.props.submitting}>
               Submit Changes

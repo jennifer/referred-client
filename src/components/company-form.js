@@ -62,12 +62,13 @@ export class CompanyForm extends React.Component {
               id='location'
               validate={[required, nonEmpty]}
             />
-            <label htmlFor='description'>Description:</label>
+            <label htmlFor='description'>Description:</label><br/>
             <Field
-              component={Input}
-              type='text'
+              component='textarea'
+              type='textarea'
               name='description'
               id='description'
+              className='textarea desc-textarea form-width'
             />
             <label htmlFor='notes'>Notes:</label><br/>
             <Field
@@ -75,7 +76,7 @@ export class CompanyForm extends React.Component {
               type='text'
               name='notes'
               id='notes'
-              className='textarea form-width'
+              className='textarea notes-textarea form-width'
             />
             <button className='submit-button italic underline highlight margin-top' type='submit' disabled={this.props.pristine || this.props.submitting}>
               Submit Company
@@ -83,7 +84,7 @@ export class CompanyForm extends React.Component {
           </fieldset>
         </form>
         <p>or</p>
-        <Link to='/dashboard' className='italic underline highlight'>{this.props.nullCompanies ? 'Go to Dashboard' : 'Go back'}</Link>
+        <Link to='/dashboard' className='italic underline highlight'>{this.props.nullCompanies ? 'Go to Dashboard' : 'Go Back'}</Link>
       </div>
     )
   };

@@ -27,6 +27,16 @@ export class Dashboard extends React.Component {
       )
     }
 
+    // Sort companies alphabetically by name
+    const companyArray = this.props.companies.sort((a, b) => {
+     let companyA=a.companyName.toLowerCase(), companyB=b.companyName.toLowerCase();
+     if (companyA < companyB)
+      return -1;
+     if (companyA > companyB)
+      return 1;
+     return 0;
+    });
+
     return (
       <div className='block content-float'>
         { newUserHelp } 
@@ -37,10 +47,10 @@ export class Dashboard extends React.Component {
           <h2 className='response col italic'>Got a <br/> Response</h2>
           <h2 className='followup col italic'>Followed <br/> Up</h2>
           <h2 className='referral col italic'>Got a <br/> Referral</h2>
-          {this.props.companies.map((company, index) => {
+          {companyArray.map((company, index) => {
             return (
               <CompanyCard company={company} key={index} index={index}/>
-            )
+            );
           })}
         </div> 
       </div>

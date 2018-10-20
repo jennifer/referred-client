@@ -55,8 +55,12 @@ h2 {
   width: 400px;
 }
 
-.textarea {
-  height: 72px;
+.notes-textarea {
+  height: 72px
+}
+
+.desc-textarea {
+  height: 48px;
 }
 
 .italic {
