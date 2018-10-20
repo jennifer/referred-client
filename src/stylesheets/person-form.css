@@ -1,0 +1,74 @@
+.rw-btn,.rw-input-reset,.rw-input,.rw-dropdown-list-autofill,.rw-filter-input {
+	color:red;padding:0;
+	margin:0;
+	border:none;
+	box-shadow:none;
+	background:none;
+	background-image:none;
+	font-family:inherit;
+	font-size:inherit;
+	line-height:inherit
+	;-ms-touch-action:manipulation;
+	touch-action:manipulation
+}
+
+.rw-i {
+	display:inline-block;
+	color:red;
+	font-family:RwWidgets;
+	font-style:normal;
+	font-weight:normal;
+	font-variant:normal;
+	text-transform:none;
+	-moz-osx-font-smoothing:grayscale;
+	-webkit-font-smoothing:antialiased
+}
+
+.rw-widget-container {
+	background-color:#fff;
+	border:red 1px solid
+}
+
+.rw-input-reset:-ms-input-placeholder{
+	color:red
+}
+
+.rw-input-reset::-webkit-input-placeholder {
+	color:red
+}
+
+.rw-input,.rw-dropdown-list-autofill,.rw-filter-input {
+	color:red;
+	padding:0;
+	background-color:#fff
+}
+
+.rw-list-option {
+	-ms-user-select:none;
+	user-select:none;
+	color:red;
+	font-size:20px;
+	cursor:pointer;
+	border:1px solid transparent
+}
+
+.rw-list-option.rw-state-focus,
+.rw-list-option.rw-state-focus:hover{}.rw-list-option:hover,
+.rw-list-option:hover.rw-state-focus { 
+	background-color:#ffe6e6;
+	border:none;
+	color:red
+}
+
+.rw-list-option.rw-state-selected,
+.rw-list-option.rw-state-selected:hover {
+	background-color:#ffe6e6;
+	border:none;
+	color:red
+}
+
+.rw-popup {
+	border:red 1px solid;
+	border-top:none;
+	background:#fff
+}
