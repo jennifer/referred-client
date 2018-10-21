@@ -44,6 +44,7 @@ export class CompanyForm extends React.Component {
               type='text'
               name='companyName'
               id='companyName'
+              placeholder='Where do you want to work?'
               validate={[required, nonEmpty]}
             />
             <label htmlFor='url'>URL:</label>
@@ -52,6 +53,7 @@ export class CompanyForm extends React.Component {
               type='url'
               name='url'
               id='url'
+              placeholder='What is their website or careers page?'
               validate={[required, nonEmpty]}
             />
             <label htmlFor='location'>Location:</label>
@@ -60,6 +62,7 @@ export class CompanyForm extends React.Component {
               type='text'
               name='location'
               id='location'
+              placeholder='Where are they located?'
               validate={[required, nonEmpty]}
             />
             <label htmlFor='description'>Description:</label><br/>
@@ -68,6 +71,7 @@ export class CompanyForm extends React.Component {
               type='textarea'
               name='description'
               id='description'
+              placeholder='What do they do - insustry, product, service?'
               className='textarea desc-textarea form-width'
             />
             <label htmlFor='notes'>Notes:</label><br/>
@@ -76,6 +80,7 @@ export class CompanyForm extends React.Component {
               type='text'
               name='notes'
               id='notes'
+              placeholder='What else do you know about them - hiring, culture, events?'
               className='textarea notes-textarea form-width'
             />
             <button className='submit-button italic underline highlight margin-top' type='submit' disabled={this.props.pristine || this.props.submitting}>

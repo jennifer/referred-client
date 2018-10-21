@@ -56,6 +56,7 @@ export class PersonForm extends React.Component {
               textField='value'
               name='status'
               id='status'
+              placeholder='What is your relationship?'
             />
             <label htmlFor='name'>Name:</label>
             <Field
@@ -63,6 +64,7 @@ export class PersonForm extends React.Component {
               type='text'
               name='name'
               id='name'
+              placeholder={`Who is your contact at ${company.companyName}?`}
               validate={[required, nonEmpty]}
             />
             <label htmlFor='title'>Title:</label>
@@ -71,6 +73,7 @@ export class PersonForm extends React.Component {
               type='text'
               name='title'
               id='title'
+              placeholder='What is their job title?'
             />
             <label htmlFor='url'>Link:</label>
             <Field
@@ -78,6 +81,7 @@ export class PersonForm extends React.Component {
               type='url'
               name='url'
               id='url'
+              placeholder='What is their website or LinkedIn?'
             />
             <label htmlFor='notes'>Notes:</label><br/>
             <Field
@@ -85,7 +89,8 @@ export class PersonForm extends React.Component {
               type='text'
               name='notes'
               id='notes'
-              className='textarea form-width'
+              placeholder='How do you know them? What interactions have you had? What are your plans for following up?'
+              className='textarea notes-textarea form-width'
             />
             <button className='submit-button italic underline highlight margin-top' disabled={this.props.pristine || this.props.submitting}>
               Submit Person
