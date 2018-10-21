@@ -72,3 +72,21 @@
 	border-top:none;
 	background:#fff
 }
+
+.rw-open>.rw-widget-picker {
+	border-bottom-right-radius:0;
+	border-bottom-left-radius:0
+}
+
+.rw-open-up>.rw-widget-picker {
+	border-top-right-radius:0;
+	border-top-left-radius:0
+}
+
+.rw-dropup .rw-popup {
+	border-bottom-right-radius:0;
+	border-bottom-left-radius:0;
+	border-top-right-radius:3px;
+	border-top-left-radius:3px;
+	box-shadow:0 -2px 6px rgba(0,0,0,0.2)
+}

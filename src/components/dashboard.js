@@ -3,11 +3,12 @@ import CompanyCard from './company-card';
 import { connect } from 'react-redux';
 import { getCompanyData } from '../actions/network-actions';
 import { Link } from 'react-router-dom';
+import requiresLogin from "./requires-login";
 import '../stylesheets/dashboard.css';
 
 export class Dashboard extends React.Component {
 
-  componentDidMount() {
+  componentWillMount() {
     this.props.dispatch(getCompanyData(this.props.username));
   }
 
@@ -67,4 +68,4 @@ const mapStateToProps = state => {
   };
 };
 
-export default connect(mapStateToProps)(Dashboard);
+export default requiresLogin()(connect(mapStateToProps)(Dashboard));

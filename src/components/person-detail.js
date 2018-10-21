@@ -6,7 +6,7 @@ export class PersonDetail extends React.Component {
 
   render() {
 
-    const person = this.props.people.find(
+    const person = this.props.person.find(
       person => person._id === this.props.match.params.id
     )
     return (
@@ -27,7 +27,7 @@ export class PersonDetail extends React.Component {
 };
 
 const mapStateToProps = state => ({
-  people:state.network.people
+  person:state.network.people
 });
 
 export default connect(mapStateToProps)(PersonDetail);

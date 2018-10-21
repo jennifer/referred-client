@@ -9,7 +9,7 @@ export function About(props) {
 
 	if (props.loggedIn) {
     aboutPageClose = (
-      <Link to='/dashboard' className='italic underline highlight'>Go back to dashboard</Link>
+      <Link to='/dashboard' className='italic underline highlight'>Go to Dashboard</Link>
     );
   }
   
