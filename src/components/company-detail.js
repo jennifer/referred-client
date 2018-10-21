@@ -12,11 +12,8 @@ export class CompanyDetail extends React.Component {
     )
     return (
       <div className='detail block content-float'>
-        <a href={company.url} target='_blank' className='margin-bottom highlight'>
-          <h1>{company.companyName}</h1>
-        </a>
+        <a href={company.url} target='_blank'><h1 className='italic highlight'>{company.companyName}</h1></a>
         <h2 className='margin-bottom'>{company.location}</h2>
-        <a href={company.url} target='_blank' className='margin-bottom italic underline highlight'>View Website</a>
         <p className='margin-bottom'>{company.description}</p>
         <p className='margin-bottom'>{company.notes}</p>
         <Link to={`/person-form/${company._id}`} className='italic underline highlight'>Add a Contact Person</Link>

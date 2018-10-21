@@ -24,7 +24,7 @@ export class Dashboard extends React.Component {
 
     if (this.props.nullCompanies === false && this.props.nullPeople) {
       newUserHelp = (
-        <p className='bold help-margins'>Click on {this.props.companies[0].companyName} to view details and add a contact person</p>
+        <p className='bold help-margins'>Click on a company to view details and add a contact person</p>
       )
     }
 

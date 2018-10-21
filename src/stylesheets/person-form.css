@@ -1,6 +1,7 @@
 .rw-btn,.rw-input-reset,.rw-input,.rw-dropdown-list-autofill,.rw-filter-input {
 	color:red;padding:0;
 	margin:0;
+	padding:0;
 	border:none;
 	box-shadow:none;
 	background:none;
@@ -10,6 +11,10 @@
 	line-height:inherit
 	;-ms-touch-action:manipulation;
 	touch-action:manipulation
+}
+
+.rw-dropdown-list-input {
+	padding:0;
 }
 
 .rw-i {
@@ -86,7 +91,7 @@
 .rw-dropup .rw-popup {
 	border-bottom-right-radius:0;
 	border-bottom-left-radius:0;
-	border-top-right-radius:3px;
-	border-top-left-radius:3px;
+	border-top-right-radius:0;
+	border-top-left-radius:0;
 	box-shadow:0 -2px 6px rgba(0,0,0,0.2)
 }

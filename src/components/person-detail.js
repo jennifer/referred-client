@@ -11,9 +11,7 @@ export class PersonDetail extends React.Component {
     )
     return (
       <div className='block content-float detail'>
-        <a href={person.url} target='_blank'>
-          <h1 className='margin-bottom'>{person.name}</h1>
-        </a>
+        <a href={person.url} target='_blank'><h1 className='italic highlight'>{person.name}</h1></a>
         <h2 className='margin-bottom'>{person.url}</h2>
         <p className='margin-bottom'>{person.title}</p>
         <p className='margin-bottom'>{person.status}</p>
