@@ -83,6 +83,10 @@ h2 {
   margin-bottom: 6px;
 }
 
+.margin-bottom-large {
+  margin-bottom: 18px;
+}
+
 .form-error, .bold {
   font-weight: bold;
 }

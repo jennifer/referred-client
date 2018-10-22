@@ -109,7 +109,7 @@ export class PersonEdit extends React.Component {
               type='text'
               name='notes'
               id='notes'
-              className='textarea form-width'
+              className='textarea notes-textarea form-width'
             />
             <button className='italic underline highlight margin-top' disabled={this.props.pristine || this.props.submitting}>
               Submit Changes
