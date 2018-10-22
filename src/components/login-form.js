@@ -41,6 +41,9 @@ export class LoginForm extends React.Component {
           id='password'
           validate={[required, nonEmpty]}
         />
+        <p className='margin-top'>Demo Account</p>
+        <p>+ Username: username</p>
+        <p>+ Password: password</p>
         <button disabled={this.props.pristine || this.props.submitting} className='italic underline highlight margin-top'>
           Submit
         </button>

@@ -192,19 +192,19 @@ export const postPersonDataError = error => ({
 export const postPersonData = (values, history) => (dispatch, getState) => {
   const authToken = getState().auth.authToken;
   values.username = getState().auth.currentUser.username;
-  if (values.status === 'Identified') {
+  if (values.status === 'Identified a Person') {
     values.statusIndex = 2;
   };
-  if (values.status === 'Made contact') {
+  if (values.status === 'Initiated Contact') {
     values.statusIndex = 3;
   };
-  if (values.status === 'Got a response') {
+  if (values.status === 'Engaged in Conversation') {
     values.statusIndex = 4;
   };
-  if (values.status === 'Followed up') {
+  if (values.status === 'Followed Up') {
     values.statusIndex = 5;
   };
-  if (values.status === 'Got a referral') {
+  if (values.status === 'Got a Referral') {
     values.statusIndex = 6;
   };
   return fetch(`${API_BASE_URL}/companies/person`, {
@@ -237,19 +237,19 @@ export const putPersonDataError = error => ({
 
 export const putPersonData = (id, values) => (dispatch, getState) => {
   const authToken = getState().auth.authToken;
-  if (values.status === 'Identified') {
+  if (values.status === 'Identified a Person') {
     values.statusIndex = 2;
   };
-  if (values.status === 'Made contact') {
+  if (values.status === 'Initiated Contact') {
     values.statusIndex = 3;
   };
-  if (values.status === 'Got a response') {
+  if (values.status === 'Engaged in Conversation') {
     values.statusIndex = 4;
   };
-  if (values.status === 'Followed up') {
+  if (values.status === 'Followed Up') {
     values.statusIndex = 5;
   };
-  if (values.status === 'Got a referral') {
+  if (values.status === 'Got a Referral') {
     values.statusIndex = 6;
   };
   return fetch(`${API_BASE_URL}/companies/person/${id}`, {

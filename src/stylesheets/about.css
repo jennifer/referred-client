@@ -15,3 +15,13 @@
   	border-bottom: 1px red solid;
   }
 }
+
+ul {
+    list-style: none;
+    list-style-position: outside;
+}
+
+li:before {
+    content: "+";
+    margin-right: 6px;
+}

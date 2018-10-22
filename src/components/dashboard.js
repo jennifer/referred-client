@@ -44,8 +44,8 @@ export class Dashboard extends React.Component {
         <div className='grid-wrapper'>
           <Link to='/company-form' className='italic company highlight'>+ Companies</Link>
           <h2 className='identify col italic'>Identified <br/> a Person</h2>
-          <h2 className='contact col italic'>Made <br/> Contact</h2>
-          <h2 className='response col italic'>Got a <br/> Response</h2>
+          <h2 className='contact col italic'>Initiated <br/> Contact</h2>
+          <h2 className='response col italic'>Engaged in <br/>Conversation</h2>
           <h2 className='followup col italic'>Followed <br/> Up</h2>
           <h2 className='referral col italic'>Got a <br/> Referral</h2>
           {companyArray.map((company, index) => {

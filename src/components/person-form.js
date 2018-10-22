@@ -23,7 +23,7 @@ export class PersonForm extends React.Component {
       company => company._id === this.props.match.params.id
     );
     
-    const status = [ 'Identified', 'Made contact', 'Got a response', 'Followed up', 'Got a referral'  ];
+    const status = [ 'Identified a Person', 'Initiated Contact', 'Engaged in Conversation', 'Followed Up', 'Got a Referral'  ];
 
     const renderDropdownList = ({ input, data, valueField, textField }) =>
       <DropdownList {...input}
@@ -48,16 +48,6 @@ export class PersonForm extends React.Component {
           {error}
           <fieldset className='person-fieldset'>
             <legend>Add a New Person</legend>
-            <label htmlFor='status'>Status:</label>
-            <Field
-              component={renderDropdownList}
-              data={status}
-              valueField='status'
-              textField='value'
-              name='status'
-              id='status'
-              placeholder='What is your relationship?'
-            />
             <label htmlFor='name'>Name:</label>
             <Field
               component={Input}
@@ -75,6 +65,16 @@ export class PersonForm extends React.Component {
               id='title'
               placeholder='What is their job title?'
             />
+            <label htmlFor='status'>Contact Status:</label>
+            <Field
+              component={renderDropdownList}
+              data={status}
+              valueField='status'
+              textField='value'
+              name='status'
+              id='status'
+              placeholder='What is your relationship?'
+            />    
             <label htmlFor='url'>Link:</label>
             <Field
               component={Input}
@@ -82,7 +82,7 @@ export class PersonForm extends React.Component {
               name='url'
               id='url'
               placeholder='What is their website or LinkedIn?'
-            />
+            />        
             <label htmlFor='notes'>Notes:</label><br/>
             <Field
               component='textarea'
