@@ -2,7 +2,7 @@ import { createStore, applyMiddleware, combineReducers } from 'redux';
 import authReducer from './reducers/auth';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import { loadAuthToken } from "./local-storage";
-import networkReducer from './reducers/network-reducer';
+import networkReducer from './reducers/referred';
 import { reducer as formReducer } from 'redux-form';
 import { setAuthToken, refreshAuthToken } from "../src/actions/auth";
 import thunk from 'redux-thunk';  
@@ -18,7 +18,7 @@ const store = createStore(
   )
 );
 
-// Hydrate the authToken from localStorage if it exist
+// Hydrate the authToken from localStorage if it exists
 const authToken = loadAuthToken();
 if (authToken) {
   const token = authToken;

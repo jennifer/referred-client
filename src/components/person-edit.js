@@ -4,7 +4,7 @@ import DropdownList from 'react-widgets/lib/DropdownList';
 import { Field, reduxForm, focus } from 'redux-form';
 import Input from './input';
 import { Link } from 'react-router-dom';
-import { putPersonData, deletePersonData } from '../actions/network-actions';
+import { putPersonData, deletePersonData } from '../actions/referred';
 import { required, nonEmpty } from '../validators';
 import 'react-widgets/dist/css/react-widgets.css';
 

@@ -1,14 +1,14 @@
 import React from 'react';
 import CompanyCard from './company-card';
 import { connect } from 'react-redux';
-import { getCompanyData } from '../actions/network-actions';
+import { getCompanyData } from '../actions/referred';
 import { Link } from 'react-router-dom';
 import requiresLogin from "./requires-login";
 import '../stylesheets/dashboard.css';
 
 export class Dashboard extends React.Component {
 
-  componentWillMount() {
+  componentDidMount() {
     this.props.dispatch(getCompanyData(this.props.username));
   }
 
@@ -30,12 +30,12 @@ export class Dashboard extends React.Component {
 
     // Sort companies alphabetically by name
     const companyArray = this.props.companies.sort((a, b) => {
-     let companyA=a.companyName.toLowerCase(), companyB=b.companyName.toLowerCase();
-     if (companyA < companyB)
-      return -1;
-     if (companyA > companyB)
-      return 1;
-     return 0;
+      let companyA=a.companyName.toLowerCase(), companyB=b.companyName.toLowerCase();
+      if (companyA < companyB)
+        return -1;
+      if (companyA > companyB)
+        return 1;
+      return 0;
     });
 
     return (
@@ -50,7 +50,7 @@ export class Dashboard extends React.Component {
           <h2 className='referral col italic'>Got a <br/> Referral</h2>
           {companyArray.map((company, index) => {
             return (
-              <CompanyCard company={company} key={index} index={index}/>
+              <CompanyCard company={company} key={index} index={index} />
             );
           })}
         </div> 

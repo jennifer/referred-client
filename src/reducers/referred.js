@@ -17,7 +17,7 @@ import {
     PUT_PERSON_DATA_ERROR,
     DELETE_PERSON_DATA_SUCCESS,
     DELETE_PERSON_DATA_ERROR
-} from '../actions/network-actions';
+} from '../actions/referred';
 
 const initialState = {
     data: '',
@@ -127,7 +127,7 @@ export default function reducer(state = initialState, action) {
     });
   }
 
-  if (action.type === PUT_PERSON_DATA_SUCCESS) {
+  if (action.type === PUT_PERSON_DATA_ERROR) {
     return Object.assign({}, state, { 
       error: action.error 
     });
@@ -140,7 +140,7 @@ export default function reducer(state = initialState, action) {
     });
   }
 
-  if (action.type === DELETE_PERSON_DATA_SUCCESS) {
+  if (action.type === DELETE_PERSON_DATA_ERROR) {
     return Object.assign({}, state, { 
       error: action.error 
     });

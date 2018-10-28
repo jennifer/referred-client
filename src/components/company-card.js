@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { getPersonData } from '../actions/network-actions';
+import { getPersonData } from '../actions/referred';
 import { Link } from 'react-router-dom';
 import PersonCard from './person-card';
 import '../stylesheets/company-card.css';
@@ -16,9 +16,9 @@ export class CompanyCard extends React.Component {
     const filteredPeople = this.props.people.filter(person => person.companyId === this.props.company._id);
 
     return (
-      <React.Fragment>
+      <React.Fragment key={this.props.company._id}>
         <div className='row'></div>
-        <div key={this.props.index} className='company-card highlight' >
+        <div className='company-card highlight'>
           <Link to={`/company-detail/${this.props.company._id}`}>
             <p>{this.props.company.companyName}</p>
             <p>{this.props.company.location}</p>
@@ -27,7 +27,7 @@ export class CompanyCard extends React.Component {
 
         {filteredPeople.map((person, index) => {
           return (
-            <div style={{gridColumnStart: person.statusIndex}} className='person-card highlight'>
+            <div key={person._id} style={{gridColumnStart: person.statusIndex}} className='person-card highlight'>
               <PersonCard person={person} key={index} index={index} />
             </div>
           )

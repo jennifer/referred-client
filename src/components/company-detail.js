@@ -16,7 +16,7 @@ export class CompanyDetail extends React.Component {
         <h2 className='margin-bottom'>{company.location}</h2>
         <p className='margin-bottom'>{company.description}</p>
         <p className='margin-bottom-large'>{company.notes}</p>
-        <Link to={`/person-form/${company._id}`} className='italic underline highlight'>Add a Contact Person</Link>
+        <Link to={`/person-form/${company._id}`} className='italic underline highlight'>Add a Contact Person</Link><br />
         <Link to={`/company-edit/${company._id}`} className='italic underline highlight'>Edit Company</Link>
         <p>or</p>
         <Link to='/dashboard' className='italic underline highlight'>Go Back</Link>

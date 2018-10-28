@@ -7,7 +7,7 @@ export class PersonCard extends React.Component {
   render() {
 
     return (
-	    <div key={this.props.index}>
+	    <div key={this.props.person._id}>
         <Link to={`/person-detail/${this.props.person._id}`}>
           <p>{this.props.person.name}</p>
           <p>{this.props.person.title}</p>

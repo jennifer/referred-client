@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { Field, reduxForm, focus } from 'redux-form';
 import Input from './input';
 import { Link } from 'react-router-dom';
-import { postCompanyData } from '../actions/network-actions';
+import { postCompanyData } from '../actions/referred';
 import { required, nonEmpty } from '../validators';
 
 export class CompanyForm extends React.Component {

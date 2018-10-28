@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { Field, reduxForm, focus } from 'redux-form';
 import Input from './input';
 import { Link } from 'react-router-dom';
-import { putCompanyData, deleteCompanyData } from '../actions/network-actions';
+import { putCompanyData, deleteCompanyData } from '../actions/referred';
 import { required, nonEmpty } from '../validators';
 
 export class CompanyEdit extends React.Component {
