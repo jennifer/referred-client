@@ -92,7 +92,7 @@ export class PersonForm extends React.Component {
               placeholder='How do you know them? What interactions have you had? What are your plans for following up?'
               className='textarea notes-textarea form-width'
             />
-            <button className='submit-button italic underline highlight margin-top' disabled={this.props.pristine || this.props.submitting}>
+            <button className='submit-button italic underline highlight' disabled={this.props.pristine || this.props.submitting}>
               Submit Person
             </button>
           </fieldset>

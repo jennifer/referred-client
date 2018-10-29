@@ -14,12 +14,15 @@ a, body, button, div, fieldset, form, h1, h2, html, legend, li, main, p, ul {
 }
 
 input, .textarea {
+  box-sizing:border-box;
 	border: 1px #e60000 solid;
-	height: 24px;
+	height: 32px;
 	width: 100%;
 	font-family: 'Cormorant Garamond', serif;
 	font-size: 20px;
   color: #e60000;
+  padding: 3px;
+  margin-bottom: 6px;
 }
 
 h1, legend {
