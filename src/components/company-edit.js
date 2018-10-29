@@ -55,7 +55,7 @@ export class CompanyEdit extends React.Component {
 
     return (
       <div className='block content-float detail form-width'>
-        <form onSubmit={this.props.handleSubmit(values => this.onSubmit(values, company._id))}>
+        <form role='form' onSubmit={this.props.handleSubmit(values => this.onSubmit(values, company._id))}>
           {error}
           <fieldset>
           <legend>Edit {company.companyName}</legend>
@@ -120,7 +120,7 @@ export class CompanyEdit extends React.Component {
 };
 
 const mapStateToProps = state => ({
-  companies:state.network.companies
+  companies:state.referred.companies
 });
 
 CompanyEdit = reduxForm({

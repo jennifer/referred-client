@@ -11,7 +11,7 @@ export function SignupPage(props) {
   }
   return (
     <div className='flex-wrapper'>
-      <div className='login'>
+      <div role='form' className='login'>
         <h1 className='margin-bottom'>Make an account:</h1>
         <SignupForm />
         <p>or</p>

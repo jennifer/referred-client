@@ -10,7 +10,7 @@ export class PersonDetail extends React.Component {
       person => person._id === this.props.match.params.id
     )
     return (
-      <div className='block content-float detail'>
+      <div role='main' className='block content-float detail'>
         <a href={person.url} target='_blank'><h1 className='italic highlight'>{person.name}</h1></a>
         <h2 className='margin-bottom'>{person.title}</h2>
         <p className='margin-bottom'>{person.status}</p>
@@ -24,7 +24,7 @@ export class PersonDetail extends React.Component {
 };
 
 const mapStateToProps = state => ({
-  person:state.network.people
+  person:state.referred.people
 });
 
 export default connect(mapStateToProps)(PersonDetail);

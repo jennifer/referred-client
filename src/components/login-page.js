@@ -13,7 +13,7 @@ export function LoginPage(props) {
 
   return (
     <div className='flex-wrapper'>
-      <div className='login'>
+      <div role='form' className='login'>
         <h1 className='margin-bottom'>Log In</h1>
         <LoginForm />
         <p>or </p>

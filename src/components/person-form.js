@@ -44,7 +44,7 @@ export class PersonForm extends React.Component {
 
     return (
       <div className='block content-float detail form-width'>
-        <form onSubmit={this.props.handleSubmit(values => this.onSubmit(values, company._id))}>
+        <form role='form' onSubmit={this.props.handleSubmit(values => this.onSubmit(values, company._id))}>
           {error}
           <fieldset className='person-fieldset'>
             <legend>Add a New Person</legend>
@@ -105,7 +105,7 @@ export class PersonForm extends React.Component {
 }
 
 const mapStateToProps = state => ({
-  companies:state.network.companies
+  companies:state.referred.companies
 });
 
 PersonForm = reduxForm({

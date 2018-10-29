@@ -11,7 +11,7 @@ export class CompanyDetail extends React.Component {
       company => company._id === this.props.match.params.id
     )
     return (
-      <div className='detail block content-float'>
+      <div role='main' className='detail block content-float'>
         <a href={company.url} target='_blank'><h1 className='italic highlight'>{company.companyName}</h1></a>
         <h2 className='margin-bottom'>{company.location}</h2>
         <p className='margin-bottom'>{company.description}</p>
@@ -26,7 +26,7 @@ export class CompanyDetail extends React.Component {
 };
 
 const mapStateToProps = state => ({
-  companies:state.network.companies
+  companies:state.referred.companies
 });
 
 export default connect(mapStateToProps)(CompanyDetail);

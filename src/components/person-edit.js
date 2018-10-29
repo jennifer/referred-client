@@ -68,7 +68,7 @@ export class PersonEdit extends React.Component {
 
     return (
       <div className='block content-float detail form-width'>
-        <form onSubmit={this.props.handleSubmit(values => this.onSubmit(values, person._id))}>
+        <form role='form' onSubmit={this.props.handleSubmit(values => this.onSubmit(values, person._id))}>
           {error}
           <fieldset>
             <legend>Edit {person.name}</legend>
@@ -131,7 +131,7 @@ export class PersonEdit extends React.Component {
 }
 
 const mapStateToProps = state => ({
-  people:state.network.people
+  people:state.referred.people
 });
 
 PersonEdit = reduxForm({

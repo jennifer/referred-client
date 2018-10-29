@@ -34,7 +34,7 @@ export class CompanyForm extends React.Component {
     return (
       <div className='detail block content-float form-width'>
         { newUserHelp }
-        <form onSubmit={this.props.handleSubmit(values => this.onSubmit(values))}>
+        <form role='form' onSubmit={this.props.handleSubmit(values => this.onSubmit(values))}>
           {error}
           <fieldset className='company-fieldset'>
           <legend>Add a New Company</legend>
@@ -97,7 +97,7 @@ export class CompanyForm extends React.Component {
 
 const mapStateToProps = state => {
   return {
-    nullCompanies: state.network.companies.length === 0,
+    nullCompanies: state.referred.companies.length === 0,
   };
 };
 

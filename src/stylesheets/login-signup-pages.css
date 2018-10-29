@@ -4,12 +4,12 @@
 	float: left;
   height: 100vh;
 	margin-left: 75px;
-	border-left: 1px red solid;
+	border-left: 1px #e60000 solid;
 }
 
 .login {
 	order: 2;
-	border-left: 1px red solid;
+	border-left: 1px #e60000 solid;
 	min-width: 260px;
 	padding-left: 12px;
 	margin-left: 12px;

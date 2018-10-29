@@ -39,7 +39,7 @@ export class CompanyCard extends React.Component {
 
 const mapStateToProps = state => {
   return {
-    people: state.network.people,
+    people: state.referred.people,
     username: state.auth.currentUser.username
   };
 };

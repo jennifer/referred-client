@@ -3,7 +3,7 @@
   min-width: 1000px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-  border-bottom: 1px red solid;
+  border-bottom: 1px #e60000 solid;
   align-items: end;
 }
 

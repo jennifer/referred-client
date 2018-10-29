@@ -21,10 +21,10 @@ export class Nav extends React.Component {
     if (this.props.loggedIn) {
       loggedInNav = (
         <React.Fragment>
-          <div className='nav block highlight nav-border-right'>
+          <div role='navigation' aria-label='About Page' className='nav block highlight nav-border-right'>
             <Link to= '/about' className='vert referred italic'>Referred.</Link>
           </div>
-          <div className='nav block highlight nav-border-right'>
+          <div role='navigation' aria-label='Logout' className='nav block highlight nav-border-right'>
             <a className='vert log-out italic' onClick={() => this.logOut()}>Logout</a>
           </div>
         </React.Fragment>
@@ -34,7 +34,7 @@ export class Nav extends React.Component {
     else {
       loggedOutTitle = (
         <React.Fragment>
-          <p className='vert title'>Referred.</p>
+          <p role='banner' className='vert title'>Referred.</p>
         </React.Fragment>
       )
     }

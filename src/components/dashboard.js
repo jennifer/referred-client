@@ -18,13 +18,13 @@ export class Dashboard extends React.Component {
 
     if (this.props.nullCompanies && this.props.nullPeople) {
       newUserHelp = (
-        <p className='bold help-margins'>Click on <span className='italic'>+ Companies</span> to add a target company</p>
+        <p role='banner' className='bold help-margins'>Click on <span className='italic'>+ Companies</span> to add a target company</p>
       )
     }
 
     if (this.props.nullCompanies === false && this.props.nullPeople) {
       newUserHelp = (
-        <p className='bold help-margins'>Click on a company to view details and add a contact person</p>
+        <p role='banner' className='bold help-margins'>Click on a company to view details and add a contact person</p>
       )
     }
 
@@ -41,7 +41,7 @@ export class Dashboard extends React.Component {
     return (
       <div className='block content-float'>
         { newUserHelp } 
-        <div className='grid-wrapper'>
+        <div className='grid-wrapper' role='main'>
           <Link to='/company-form' className='italic company highlight'>+ Companies</Link>
           <h2 className='identify col italic'>Identified <br/> a Person</h2>
           <h2 className='contact col italic'>Initiated <br/> Contact</h2>
@@ -61,10 +61,10 @@ export class Dashboard extends React.Component {
 
 const mapStateToProps = state => {
   return {
-    companies: state.network.companies,
+    companies: state.referred.companies,
     username: state.auth.currentUser.username,
-    nullCompanies: state.network.companies.length === 0,
-    nullPeople: state.network.people.length === 0
+    nullCompanies: state.referred.companies.length === 0,
+    nullPeople: state.referred.people.length === 0
   };
 };
 

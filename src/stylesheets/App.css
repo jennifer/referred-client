@@ -6,7 +6,7 @@ a, body, button, div, fieldset, form, h1, h2, html, legend, li, main, p, ul {
   padding: 0;
   box-sizing: border-box;
   font-family: 'Cormorant Garamond', serif;
-  color: red;
+  color: #e60000;
   font-size: 24px;
   font-weight: normal;
   text-decoration: none;
@@ -14,12 +14,12 @@ a, body, button, div, fieldset, form, h1, h2, html, legend, li, main, p, ul {
 }
 
 input, .textarea {
-	border: 1px red solid;
+	border: 1px #e60000 solid;
 	height: 24px;
 	width: 100%;
 	font-family: 'Cormorant Garamond', serif;
 	font-size: 20px;
-  color: red;
+  color: #e60000;
 }
 
 h1, legend {
@@ -68,7 +68,7 @@ h2 {
 }
 
 .underline {
-  border-bottom: 1px red solid;
+  border-bottom: 1px #e60000 solid;
 }
 
 .margin-top {
