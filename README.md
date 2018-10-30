@@ -62,27 +62,27 @@ Client and API were deployed separately and stored in separate GitHub repos.*
 
 Title Page:
 
-![Title Page](https://i.imgur.com/zBxrQ5l.jpg)
+![Title Page](https://i.imgur.com/oolPOy4.jpg)
 
 Dashboard:
 
-![Dashboard](https://i.imgur.com/ivulVNh.jpg)
+![Dashboard](https://i.imgur.com/JY1LZPT.jpg)
 
 Company Detail:
 
-![Company Detail](https://i.imgur.com/2ZIxpKy.jpg)
+![Company Detail](https://i.imgur.com/1ERq0ZQ.jpg)
 
 Person Detail:
 
-![Person Detail](https://i.imgur.com/DRcDLrO.jpg)
+![Person Detail](https://i.imgur.com/YEEBQEY.jpg)
 
 Person Form:
 
-![Person Form](https://i.imgur.com/MSxzeVf.jpg)
+![Person Form](https://i.imgur.com/OuwpfdQ.jpg)
 
 Person Edit:
 
-![Edit Person](https://i.imgur.com/6YUfv3u.jpg)
+![Edit Person](https://i.imgur.com/eAFAIQm.jpg)
 
 
 ## Using the API
