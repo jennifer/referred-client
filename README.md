@@ -33,7 +33,7 @@ As a job-seeker, I wanted to build an app that fellow job-seekers and I could us
 
 ## Built With
 Client and API were deployed separately and stored in separate GitHub repos.* 
-- [Referred API Repo](https://github.com/jennifer/referred-client)
+- [Referred API Repo](https://github.com/jennifer/referred-server)
 
 ### Front End
 * JavaScript [ES6 & JSX]
