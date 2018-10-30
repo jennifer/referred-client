@@ -62,7 +62,7 @@ Client and API were deployed separately and stored in separate GitHub repos.*
 
 Title Page:
 
-![Title Page](https://i.imgur.com/oolPOy4.jpg)
+![Title Page](https://i.imgur.com/E31UtNp.jpg)
 
 Dashboard:
 
