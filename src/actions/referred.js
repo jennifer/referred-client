@@ -192,7 +192,7 @@ export const postPersonDataError = error => ({
 export const postPersonData = (values, history) => (dispatch, getState) => {
   const authToken = getState().auth.authToken;
   values.username = getState().auth.currentUser.username;
-  if (values.status === 'Identified a Person') {
+  if (values.status === 'Identified') {
     values.statusIndex = 2;
   };
   if (values.status === 'Initiated Contact') {
@@ -237,7 +237,7 @@ export const putPersonDataError = error => ({
 
 export const putPersonData = (id, values) => (dispatch, getState) => {
   const authToken = getState().auth.authToken;
-  if (values.status === 'Identified a Person') {
+  if (values.status === 'Identified') {
     values.statusIndex = 2;
   };
   if (values.status === 'Initiated Contact') {

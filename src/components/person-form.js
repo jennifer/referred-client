@@ -23,7 +23,7 @@ export class PersonForm extends React.Component {
       company => company._id === this.props.match.params.id
     );
     
-    const status = [ 'Identified a Person', 'Initiated Contact', 'Engaged in Conversation', 'Followed Up', 'Got a Referral'  ];
+    const status = [ 'Identified', 'Initiated Contact', 'Engaged in Conversation', 'Followed Up', 'Got a Referral'  ];
 
     const renderDropdownList = ({ input, data, valueField, textField }) =>
       <DropdownList {...input}
