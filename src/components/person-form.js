@@ -43,12 +43,12 @@ export class PersonForm extends React.Component {
     }
 
     return (
-      <div className='block content-float detail form-width'>
-        <form role='form' onSubmit={this.props.handleSubmit(values => this.onSubmit(values, company._id))}>
+      <div role='main' className='block content-float detail form-width'>
+        <form onSubmit={this.props.handleSubmit(values => this.onSubmit(values, company._id))}>
           {error}
           <fieldset className='person-fieldset'>
-            <legend>Add a New Person</legend>
-            <label htmlFor='name'>Name:</label>
+            <legend><h1>Add a New Person</h1></legend>
+            <label for='name'>Name:</label>
             <Field
               component={Input}
               type='text'
@@ -57,7 +57,7 @@ export class PersonForm extends React.Component {
               placeholder={`Who is your contact at ${company.companyName}?`}
               validate={[required, nonEmpty]}
             />
-            <label htmlFor='title'>Title:</label>
+            <label for='title'>Title:</label>
             <Field
               component={Input}
               type='text'
@@ -65,7 +65,7 @@ export class PersonForm extends React.Component {
               id='title'
               placeholder='What is their job title?'
             />
-            <label htmlFor='status'>Contact Status:</label>
+            <label for='status'>Contact Status:</label>
             <Field
               component={renderDropdownList}
               data={status}
@@ -75,7 +75,7 @@ export class PersonForm extends React.Component {
               id='status'
               placeholder='What is your relationship?'
             />    
-            <label htmlFor='url'>Link:</label>
+            <label for='url'>Link:</label>
             <Field
               component={Input}
               type='url'
@@ -83,7 +83,7 @@ export class PersonForm extends React.Component {
               id='url'
               placeholder='What is their website or LinkedIn?'
             />        
-            <label htmlFor='notes'>Notes:</label><br/>
+            <label for='notes'>Notes:</label><br/>
             <Field
               component='textarea'
               type='text'

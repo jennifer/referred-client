@@ -47,7 +47,7 @@ export class PersonEdit extends React.Component {
     const person = this.props.people.find(
       person => person._id === this.props.match.params.id
     );
-    const status = [ 'Identified a Person', 'Initiated Contact', 'Engaged in Conversation', 'Followed Up', 'Got a Referral'  ];
+    const status = [ 'Identified', 'Initiated Contact', 'Engaged in Conversation', 'Followed Up', 'Got a Referral'  ];
 
     const renderDropdownList = ({ input, data, valueField, textField }) =>
       <DropdownList {...input}
@@ -67,12 +67,12 @@ export class PersonEdit extends React.Component {
     }
 
     return (
-      <div className='block content-float detail form-width'>
-        <form role='form' onSubmit={this.props.handleSubmit(values => this.onSubmit(values, person._id))}>
+      <div role='main' className='block content-float detail form-width'>
+        <form onSubmit={this.props.handleSubmit(values => this.onSubmit(values, person._id))}>
           {error}
           <fieldset>
-            <legend>Edit {person.name}</legend>
-            <label htmlFor='status'>Status:</label>
+            <legend><h1>Edit {person.name}</h1></legend>
+            <label for='status'>Status:</label>
             <Field
               component={renderDropdownList}
               data={status}
@@ -81,7 +81,7 @@ export class PersonEdit extends React.Component {
               name='status'
               id='status'
             />
-            <label htmlFor='name'>Name:</label>
+            <label for='name'>Name:</label>
             <Field
               component={Input}
               type='text'
@@ -89,21 +89,21 @@ export class PersonEdit extends React.Component {
               id='name'
               validate={[required, nonEmpty]}
             />
-            <label htmlFor='title'>Title:</label>
+            <label for='title'>Title:</label>
             <Field
               component={Input}
               type='text'
               name='title'
               id='title'
             />
-            <label htmlFor='url'>Link:</label>
+            <label for='url'>Link:</label>
             <Field
               component={Input}
               type='url'
               name='url'
               id='url'
             />
-            <label htmlFor='notes'>Notes:</label><br/>
+            <label for='notes'>Notes:</label><br/>
             <Field
               component='textarea'
               type='text'

@@ -32,7 +32,7 @@ As a job-seeker, I wanted to build an app that fellow job-seekers and I could us
 * A demo user account and indicate on the landing page how to use it.
 
 ## Built With
-Client and API were deployed separately and stored in separate GitHub repos.* 
+Client and API were deployed separately and stored in separate GitHub repos. 
 - [Referred API Repo](https://github.com/jennifer/referred-server)
 
 ### Front End

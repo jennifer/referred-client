@@ -19,7 +19,7 @@ export class CompanyForm extends React.Component {
 
     if (this.props.nullCompanies) {
       newUserHelp = (
-        <p className='bold help-margins'>To get started, add a target company</p>
+        <p className='bold help-margins'>To get started, add a target company:</p>
       )
     }
 
@@ -32,13 +32,13 @@ export class CompanyForm extends React.Component {
     }
 
     return (
-      <div className='detail block content-float form-width'>
+      <div role='main' className='detail block content-float form-width'>
         { newUserHelp }
-        <form role='form' onSubmit={this.props.handleSubmit(values => this.onSubmit(values))}>
+        <form onSubmit={this.props.handleSubmit(values => this.onSubmit(values))}>
           {error}
           <fieldset className='company-fieldset'>
-          <legend>Add a New Company</legend>
-            <label htmlFor='companyName'>Company Name:</label>
+          <legend><h1>Add a New Company</h1></legend>
+            <label for='companyName'>Company Name:</label>
             <Field
               component={Input}
               type='text'
@@ -47,7 +47,7 @@ export class CompanyForm extends React.Component {
               placeholder='Where do you want to work?'
               validate={[required, nonEmpty]}
             />
-            <label htmlFor='url'>URL:</label>
+            <label for='url'>URL:</label>
             <Field
               component={Input}
               type='url'
@@ -56,7 +56,7 @@ export class CompanyForm extends React.Component {
               placeholder='What is their website or careers page?'
               validate={[required, nonEmpty]}
             />
-            <label htmlFor='location'>Location:</label>
+            <label for='location'>Location:</label>
             <Field
               component={Input}
               type='text'
@@ -65,7 +65,7 @@ export class CompanyForm extends React.Component {
               placeholder='Where are they located?'
               validate={[required, nonEmpty]}
             />
-            <label htmlFor='description'>Description:</label><br/>
+            <label for='description'>Description:</label><br/>
             <Field
               component='textarea'
               type='textarea'
@@ -74,7 +74,7 @@ export class CompanyForm extends React.Component {
               placeholder='What do they do - insustry, product, service?'
               className='textarea desc-textarea form-width'
             />
-            <label htmlFor='notes'>Notes:</label><br/>
+            <label for='notes'>Notes:</label><br/>
             <Field
               component='textarea'
               type='text'

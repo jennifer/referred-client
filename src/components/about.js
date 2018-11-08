@@ -15,7 +15,7 @@ export function About(props) {
   
   return (
     <div role='main' className='about-page' style={props.loggedIn ? {display:'inline-block', position:'absolute'} : {}}>
-  		<h1 className='margin-bottom'>Track your job-search network to stay organized and accountable.</h1>
+  		<h1 className='margin-bottom big-text'>Track your job-search network to stay organized and accountable.</h1>
   		<p className='margin-bottom'>Add target companies and track networking milestones:</p>
       <ul>
         <li><span className='bold'>Identify</span> a person to contact: check your social or alumni network for connections.</li>
@@ -23,7 +23,7 @@ export function About(props) {
         <li><span className='bold'>Engage</span> them in conversation. Learn about the company and tell them about yourself.</li>
         <li className='margin-bottom'><span className='bold'>Follow up</span> to build the relationship and learn about open positions.</li>
       </ul>
-      <h1 className='margin-bottom'>Get Referred.</h1>
+      <p className='margin-bottom big-text'>Get Referred.</p>
       <a href='https://github.com/jennifer/referred-client' target='blank' className='italic highlight underline'>View on Github</a>
       <div className='margin-bottom-small'></div>
       { aboutPageClose }

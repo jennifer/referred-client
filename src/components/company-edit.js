@@ -54,12 +54,12 @@ export class CompanyEdit extends React.Component {
     }
 
     return (
-      <div className='block content-float detail form-width'>
-        <form role='form' onSubmit={this.props.handleSubmit(values => this.onSubmit(values, company._id))}>
+      <div role='main' className='block content-float detail form-width'>
+        <form onSubmit={this.props.handleSubmit(values => this.onSubmit(values, company._id))}>
           {error}
           <fieldset>
-          <legend>Edit {company.companyName}</legend>
-            <label htmlFor='companyName'>Company name:</label>
+          <legend><h1>Edit {company.companyName}</h1></legend>
+            <label for='companyName'>Company name:</label>
             <Field
               component={Input}
               type='text'
@@ -67,7 +67,7 @@ export class CompanyEdit extends React.Component {
               id='companyName'
               validate={[required, nonEmpty]}
             />
-            <label htmlFor='url'>URL:</label>
+            <label for='url'>URL:</label>
             <Field
               component={Input}
               type='url'
@@ -75,7 +75,7 @@ export class CompanyEdit extends React.Component {
               id='url'
               validate={[required, nonEmpty]}
             />
-            <label htmlFor='location'>Location:</label>
+            <label for='location'>Location:</label>
             <Field
               component={Input}
               type='text'
@@ -83,7 +83,7 @@ export class CompanyEdit extends React.Component {
               id='location'
               validate={[required, nonEmpty]}
             />
-            <label htmlFor='description'>Description:</label><br/>
+            <label for='description'>Description:</label><br/>
             <Field
               component='textarea'
               type='textarea'
@@ -91,7 +91,7 @@ export class CompanyEdit extends React.Component {
               id='description'
               className='textarea desc-textarea form-width'
             />
-            <label htmlFor='notes'>Notes:</label><br/>
+            <label for='notes'>Notes:</label><br/>
             <Field
               component='textarea'
               type='textarea'
