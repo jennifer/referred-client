@@ -42,12 +42,12 @@ export class Dashboard extends React.Component {
       <div className='block content-float'>
         { newUserHelp } 
         <div className='grid-wrapper' role='main'>
-          <Link to='/company-form' className='italic company highlight'>+ Companies</Link>
-          <h2 className='identify col italic'>Identified <br/> a Person</h2>
-          <h2 className='contact col italic'>Initiated <br/> Contact</h2>
-          <h2 className='response col italic'>Engaged in <br/>Conversation</h2>
-          <h2 className='followup col italic'>Followed <br/> Up</h2>
-          <h2 className='referral col italic'>Got a <br/> Referral</h2>
+          <Link to='/company-form' scope='col' className='italic company highlight'>+ Companies</Link>
+          <h2 scope='col' className='identify col italic'>Identified <br/> a Person</h2>
+          <h2 scope='col' className='contact col italic'>Initiated <br/> Contact</h2>
+          <h2 scope='col' className='response col italic'>Engaged in <br/>Conversation</h2>
+          <h2 scope='col' className='followup col italic'>Followed <br/> Up</h2>
+          <h2 scope='col' className='referral col italic'>Got a <br/> Referral</h2>
           {companyArray.map((company, index) => {
             return (
               <CompanyCard company={company} key={index} index={index} />

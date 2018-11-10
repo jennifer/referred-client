@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import DropdownList from 'react-widgets/lib/DropdownList';
 import { Field, reduxForm, focus } from 'redux-form';
 import Input from './input';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import { putPersonData, deletePersonData } from '../actions/referred';
 import { required, nonEmpty } from '../validators';
 import 'react-widgets/dist/css/react-widgets.css';
@@ -15,6 +15,7 @@ export class PersonEdit extends React.Component {
   }
 
   handleInitialize() {
+
     const person = this.props.people.find(
       person => person._id === this.props.match.params.id
     )
@@ -43,6 +44,10 @@ export class PersonEdit extends React.Component {
   }
 
   render() {
+
+    if (this.props.nullPeople) {
+      return <Redirect to='/dashboard' />;
+    };
 
     const person = this.props.people.find(
       person => person._id === this.props.match.params.id
@@ -131,7 +136,8 @@ export class PersonEdit extends React.Component {
 }
 
 const mapStateToProps = state => ({
-  people:state.referred.people
+  people:state.referred.people,
+  nullPeople: state.referred.people.length === 0
 });
 
 PersonEdit = reduxForm({
