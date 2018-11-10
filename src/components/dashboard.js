@@ -14,6 +14,7 @@ export class Dashboard extends React.Component {
 
   render() {
 
+    // Give instructions for new users
     let newUserHelp;
 
     if (this.props.nullCompanies && this.props.nullPeople) {
@@ -38,6 +39,7 @@ export class Dashboard extends React.Component {
       return 0;
     });
 
+    // Build the table
     return (
       <div className='block content-float'>
         { newUserHelp } 
