@@ -18,7 +18,7 @@ export class CompanyCard extends React.Component {
     return (
       <React.Fragment key={this.props.company._id}>
         <div className='row'></div>
-        <div scope='row' className='company-card highlight'>
+        <div className='company-card highlight'>
           <Link to={`/company-detail/${this.props.company._id}`}>
             <p>{this.props.company.companyName}</p>
             <p>{this.props.company.location}</p>
