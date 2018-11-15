@@ -1,8 +1,8 @@
-import reducer from "./reducers/referred";
+import reducer from "../reducers/referred";
 import {
   postCompanyDataSuccess,
   postPersonDataSuccess
-} from "./actions/referred";
+} from "../actions/referred";
 
 describe("reducer", () => {
   // Set up some dummy data
