@@ -59,7 +59,7 @@ export class CompanyEdit extends React.Component {
           {error}
           <fieldset>
           <legend><h1>Edit {company.companyName}</h1></legend>
-            <label for='companyName'>Company name:</label>
+            <label htmlFor='companyName'>Company name:</label>
             <Field
               component={Input}
               type='text'
@@ -67,7 +67,7 @@ export class CompanyEdit extends React.Component {
               id='companyName'
               validate={[required, nonEmpty]}
             />
-            <label for='url'>URL:</label>
+            <label htmlFor='url'>URL:</label>
             <Field
               component={Input}
               type='url'
@@ -75,7 +75,7 @@ export class CompanyEdit extends React.Component {
               id='url'
               validate={[required, nonEmpty]}
             />
-            <label for='location'>Location:</label>
+            <label htmlFor='location'>Location:</label>
             <Field
               component={Input}
               type='text'
@@ -83,7 +83,7 @@ export class CompanyEdit extends React.Component {
               id='location'
               validate={[required, nonEmpty]}
             />
-            <label for='description'>Description:</label><br/>
+            <label htmlFor='description'>Description:</label><br/>
             <Field
               component='textarea'
               type='textarea'
@@ -91,7 +91,7 @@ export class CompanyEdit extends React.Component {
               id='description'
               className='textarea desc-textarea form-width'
             />
-            <label for='notes'>Notes:</label><br/>
+            <label htmlFor='notes'>Notes:</label><br/>
             <Field
               component='textarea'
               type='textarea'

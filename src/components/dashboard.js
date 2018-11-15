@@ -13,32 +13,39 @@ export class Dashboard extends React.Component {
   }
 
   render() {
-
     // Give instructions for new users
     let newUserHelp;
 
     if (this.props.nullCompanies && this.props.nullPeople) {
       newUserHelp = (
-        <p role='banner' className='bold help-margins'>Click on <span className='italic'>+ Companies</span> to add a target company</p>
+        <p role='banner' className='bold help-margins'>Click on <span className='italic'>+ Companies</span> to add a target company.</p>
       )
     }
 
-    if (this.props.nullCompanies === false && this.props.nullPeople) {
+    else if (this.props.oneCompany && this.props.nullPeople) {
       newUserHelp = (
-        <p role='banner' className='bold help-margins'>Click on a company to view details and add a contact person</p>
+        <div>
+          <p role='banner' className='bold'>Click on a company to view details and add a contact person.</p>
+          <p role='banner' className='bold help-margins'>Click on <span className='italic'>+ Companies</span> to add another company.</p>
+        </div>
       )
     }
 
-    // Sort companies alphabetically by name
-    const companyArray = this.props.companies.sort((a, b) => {
-      let companyA=a.companyName.toLowerCase(), companyB=b.companyName.toLowerCase();
-      if (companyA < companyB)
-        return -1;
-      if (companyA > companyB)
-        return 1;
-      return 0;
-    });
+    else if (this.props.oneCompany && this.props.onePerson) {
+      newUserHelp = (
+        <div>
+          <p role='banner' className='bold'>Click on <span className='italic'>+ Companies</span> to add another company.</p>
+          <p role='banner' className='bold help-margins'>Click on a person to view details, edit, or change their status.</p>
+        </div>
+      )
+    }
 
+    else if (this.props.onePerson) {
+      newUserHelp = (
+        <p role='banner' className='bold help-margins'>Click on a person to view details, edit, or change their status.</p>
+      )
+    }
+    
     // Build the table
     return (
       <div className='block content-float'>
@@ -50,7 +57,7 @@ export class Dashboard extends React.Component {
           <h2 className='response col italic'>Engaged in <br/>Conversation</h2>
           <h2 className='followup col italic'>Followed <br/> Up</h2>
           <h2 className='referral col italic'>Got a <br/> Referral</h2>
-          {companyArray.map((company, index) => {
+          {this.props.companies.map((company, index) => {
             return (
               <CompanyCard company={company} key={index} index={index} />
             );
@@ -66,7 +73,9 @@ const mapStateToProps = state => {
     companies: state.referred.companies,
     username: state.auth.currentUser.username,
     nullCompanies: state.referred.companies.length === 0,
-    nullPeople: state.referred.people.length === 0
+    nullPeople: state.referred.people.length === 0,
+    oneCompany: state.referred.companies.length === 1,
+    onePerson: state.referred.people.length === 1
   };
 };
 

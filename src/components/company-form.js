@@ -38,7 +38,7 @@ export class CompanyForm extends React.Component {
           {error}
           <fieldset className='company-fieldset'>
           <legend><h1>Add a New Company</h1></legend>
-            <label for='companyName'>Company Name:</label>
+            <label htmlFor='companyName'>Company Name:</label>
             <Field
               component={Input}
               type='text'
@@ -47,7 +47,7 @@ export class CompanyForm extends React.Component {
               placeholder='Where do you want to work?'
               validate={[required, nonEmpty]}
             />
-            <label for='url'>URL:</label>
+            <label htmlFor='url'>URL:</label>
             <Field
               component={Input}
               type='url'
@@ -56,7 +56,7 @@ export class CompanyForm extends React.Component {
               placeholder='What is their website or careers page?'
               validate={[required, nonEmpty]}
             />
-            <label for='location'>Location:</label>
+            <label htmlFor='location'>Location:</label>
             <Field
               component={Input}
               type='text'
@@ -65,7 +65,7 @@ export class CompanyForm extends React.Component {
               placeholder='Where are they located?'
               validate={[required, nonEmpty]}
             />
-            <label for='description'>Description:</label><br/>
+            <label htmlFor='description'>Description:</label><br/>
             <Field
               component='textarea'
               type='textarea'
@@ -74,7 +74,7 @@ export class CompanyForm extends React.Component {
               placeholder='What do they do - insustry, product, service?'
               className='textarea desc-textarea form-width'
             />
-            <label for='notes'>Notes:</label><br/>
+            <label htmlFor='notes'>Notes:</label><br/>
             <Field
               component='textarea'
               type='text'

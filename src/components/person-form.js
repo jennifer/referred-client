@@ -48,7 +48,7 @@ export class PersonForm extends React.Component {
           {error}
           <fieldset className='person-fieldset'>
             <legend><h1>Add a New Person</h1></legend>
-            <label for='name'>Name:</label>
+            <label htmlFor='name'>Name:</label>
             <Field
               component={Input}
               type='text'
@@ -57,7 +57,7 @@ export class PersonForm extends React.Component {
               placeholder={`Who is your contact at ${company.companyName}?`}
               validate={[required, nonEmpty]}
             />
-            <label for='title'>Title:</label>
+            <label htmlFor='title'>Title:</label>
             <Field
               component={Input}
               type='text'
@@ -65,7 +65,7 @@ export class PersonForm extends React.Component {
               id='title'
               placeholder='What is their job title?'
             />
-            <label for='status'>Contact Status:</label>
+            <label htmlFor='status'>Contact Status:</label>
             <Field
               component={renderDropdownList}
               data={status}
@@ -75,7 +75,7 @@ export class PersonForm extends React.Component {
               id='status'
               placeholder='What is your relationship?'
             />    
-            <label for='url'>Link:</label>
+            <label htmlFor='url'>Link:</label>
             <Field
               component={Input}
               type='url'
@@ -83,7 +83,7 @@ export class PersonForm extends React.Component {
               id='url'
               placeholder='What is their website or LinkedIn?'
             />        
-            <label for='notes'>Notes:</label><br/>
+            <label htmlFor='notes'>Notes:</label><br/>
             <Field
               component='textarea'
               type='text'

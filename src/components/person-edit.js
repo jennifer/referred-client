@@ -77,7 +77,7 @@ export class PersonEdit extends React.Component {
           {error}
           <fieldset>
             <legend><h1>Edit {person.name}</h1></legend>
-            <label for='status'>Status:</label>
+            <label htmlFor='status'>Status:</label>
             <Field
               component={renderDropdownList}
               data={status}
@@ -86,7 +86,7 @@ export class PersonEdit extends React.Component {
               name='status'
               id='status'
             />
-            <label for='name'>Name:</label>
+            <label htmlFor='name'>Name:</label>
             <Field
               component={Input}
               type='text'
@@ -94,21 +94,21 @@ export class PersonEdit extends React.Component {
               id='name'
               validate={[required, nonEmpty]}
             />
-            <label for='title'>Title:</label>
+            <label htmlFor='title'>Title:</label>
             <Field
               component={Input}
               type='text'
               name='title'
               id='title'
             />
-            <label for='url'>Link:</label>
+            <label htmlFor='url'>Link:</label>
             <Field
               component={Input}
               type='url'
               name='url'
               id='url'
             />
-            <label for='notes'>Notes:</label><br/>
+            <label htmlFor='notes'>Notes:</label><br/>
             <Field
               component='textarea'
               type='text'
