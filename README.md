@@ -15,7 +15,7 @@ And ultimately, getting referred!
 
 ## Motivation
 
-As a job-seeker, I wanted to build an app that fellow job-seekers and I could use to track my own professional networking. As an introvert, I wanted a project that would help me learn about networking, break it down into simple milestones, and get excited to meet new people.
+As a job-seeker, I wanted to build an app that fellow job-seekers could use to track professional networking. As an introvert, I wanted a project that would help me learn about networking, break it down into simple milestones, and get excited to meet new people.
 
 ## Requirements
 * Do something interesting or useful
